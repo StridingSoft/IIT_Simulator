@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{759259F8-1CB0-49BA-B1DF-B18F47B52AEC}</ProjectGuid>
+    <ProjectGuid>{5477C819-A224-4C57-9C21-3CA297FE7142}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{c9e5eea5-ca05-42a1-839b-61506e0a37df}</TemplateGuid>
     <OutputType>Library</OutputType>
@@ -93,7 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IIT_Simulator\IIT_Simulator.csproj">
-      <Project>{13DC43AE-8EAF-403F-9807-EC5FC64ECD42}</Project>
+      <Project>{CCF5B664-912C-4203-BCDA-000C3C5B8DB1}</Project>
       <Name>IIT_Simulator</Name>
     </ProjectReference>
   </ItemGroup>

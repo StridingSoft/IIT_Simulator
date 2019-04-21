@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="df3aeb0a-fb77-4fef-bdbc-1137973f5aab"
-    Publisher="CN=e4c9447d-04fb-467f-8102-0a8f0a256cf2"
+    Name="2b213ce5-7cc2-4284-84d1-e8f253e5c096"
+    Publisher="CN=019c65b2-fabf-4364-8ad2-d0be5c48415f"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="ec0cc741-fd3e-485c-81be-68815c480690" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>IIT_Simulator.UWP</DisplayName>
-    <PublisherDisplayName>e4c9447d-04fb-467f-8102-0a8f0a256cf2</PublisherDisplayName>
+    <PublisherDisplayName>019c65b2-fabf-4364-8ad2-d0be5c48415f</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 

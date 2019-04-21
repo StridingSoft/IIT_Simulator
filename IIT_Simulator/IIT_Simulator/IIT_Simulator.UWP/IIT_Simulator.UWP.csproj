@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{ACA426B9-28B3-4AFD-9F37-07A0F6EE0191}</ProjectGuid>
+    <ProjectGuid>{B30E0362-5AEE-442F-B117-2750187E5817}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IIT_Simulator.UWP</RootNamespace>
@@ -148,7 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IIT_Simulator\IIT_Simulator.csproj">
-      <Project>{13DC43AE-8EAF-403F-9807-EC5FC64ECD42}</Project>
+      <Project>{CCF5B664-912C-4203-BCDA-000C3C5B8DB1}</Project>
       <Name>IIT_Simulator</Name>
     </ProjectReference>
   </ItemGroup>
