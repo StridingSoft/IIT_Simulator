@@ -719,11 +719,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\stasi\\source\\repos\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator.iOS\\IIT_Simulator.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\stasi\\Documents\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator.iOS\\IIT_Simulator.iOS.csproj",
       "projectName": "IIT_Simulator.iOS",
-      "projectPath": "C:\\Users\\stasi\\source\\repos\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator.iOS\\IIT_Simulator.iOS.csproj",
+      "projectPath": "C:\\Users\\stasi\\Documents\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator.iOS\\IIT_Simulator.iOS.csproj",
       "packagesPath": "C:\\Users\\stasi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\stasi\\source\\repos\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator.iOS\\obj\\",
+      "outputPath": "C:\\Users\\stasi\\Documents\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -740,8 +740,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\stasi\\source\\repos\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator.csproj": {
-              "projectPath": "C:\\Users\\stasi\\source\\repos\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator.csproj"
+            "C:\\Users\\stasi\\Documents\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator.csproj": {
+              "projectPath": "C:\\Users\\stasi\\Documents\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator.csproj"
             }
           }
         }

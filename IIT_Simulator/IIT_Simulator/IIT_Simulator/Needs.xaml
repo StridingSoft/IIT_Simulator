@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IIT_Simulator.Needs"
+             Title="Потребности">
+    <ContentPage.Content>
+        <StackLayout x:Name="stackLayout" Spacing="10">
+            <StackLayout x:Name="slEat" Spacing="100" Orientation="Horizontal">
+                <Label Text="Сытость" FontSize="Default"  HorizontalOptions="Start" />
+                <Label x:Name="eatPoints" FontSize="Default"  HorizontalOptions="End" />
+            </StackLayout>
+            <ProgressBar x:Name="pbFood" HorizontalOptions="Start" WidthRequest="200" IsVisible="true" HeightRequest="15" Progress="0.5" ProgressColor="Yellow"/>
+            <StackLayout x:Name="slSleep" Spacing="95" Orientation="Horizontal">
+                <Label Text="Бодрость" FontSize="Default" HorizontalOptions="Start"/>
+                <Label x:Name="sleepPoints" FontSize="Default"  HorizontalOptions="End" />
+            </StackLayout>
+            <ProgressBar x:Name="pbSleep" HorizontalOptions="Start" WidthRequest="200" IsVisible="true" HeightRequest="15" Progress="0.5" ProgressColor="Yellow"/>
+            <StackLayout x:Name="slStress" Spacing="110" Orientation="Horizontal">
+                <Label Text="Стресс" FontSize="Default" HorizontalOptions="Start" />
+                <Label x:Name="stressPoints" FontSize="Default"  HorizontalOptions="End" />
+            </StackLayout>
+            <ProgressBar x:Name="pbStress" HorizontalOptions="Start" WidthRequest="200" IsVisible="true" HeightRequest="15" Progress="0.5" ProgressColor="Yellow"/>
+            <Button x:Name="btnEat"  Text="Сожрать все запасы" HorizontalOptions="Center" BackgroundColor="White" Clicked="btnEat_Click"/>
+            <Button x:Name="btnSleep"  Text="Проспать весь день" HorizontalOptions="Center" BackgroundColor="White" Clicked="btnSleep_Click"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

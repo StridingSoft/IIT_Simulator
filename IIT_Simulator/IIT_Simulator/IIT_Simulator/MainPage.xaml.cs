@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 namespace IIT_Simulator
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage : TabbedPage
     {
         public MainPage()
         {

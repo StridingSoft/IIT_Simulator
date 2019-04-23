@@ -349,11 +349,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\stasi\\source\\repos\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator.csproj",
+      "projectUniqueName": "C:\\Users\\stasi\\Documents\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator.csproj",
       "projectName": "IIT_Simulator",
-      "projectPath": "C:\\Users\\stasi\\source\\repos\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator.csproj",
+      "projectPath": "C:\\Users\\stasi\\Documents\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator.csproj",
       "packagesPath": "C:\\Users\\stasi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\stasi\\source\\repos\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator\\obj\\",
+      "outputPath": "C:\\Users\\stasi\\Documents\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

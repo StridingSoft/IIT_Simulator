@@ -7494,11 +7494,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\stasi\\source\\repos\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator.UWP\\IIT_Simulator.UWP.csproj",
+      "projectUniqueName": "C:\\Users\\stasi\\Documents\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator.UWP\\IIT_Simulator.UWP.csproj",
       "projectName": "IIT_Simulator.UWP",
-      "projectPath": "C:\\Users\\stasi\\source\\repos\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator.UWP\\IIT_Simulator.UWP.csproj",
+      "projectPath": "C:\\Users\\stasi\\Documents\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator.UWP\\IIT_Simulator.UWP.csproj",
       "packagesPath": "C:\\Users\\stasi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\stasi\\source\\repos\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator.UWP\\obj\\",
+      "outputPath": "C:\\Users\\stasi\\Documents\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator.UWP\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -7518,8 +7518,8 @@
       "frameworks": {
         "uap10.0.16299": {
           "projectReferences": {
-            "C:\\Users\\stasi\\source\\repos\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator.csproj": {
-              "projectPath": "C:\\Users\\stasi\\source\\repos\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator.csproj"
+            "C:\\Users\\stasi\\Documents\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator.csproj": {
+              "projectPath": "C:\\Users\\stasi\\Documents\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator\\IIT_Simulator.csproj"
             }
           }
         }

@@ -10,7 +10,6 @@ namespace IIT_Simulator
         public App()
         {
             InitializeComponent();
-
             MainPage = new MainPage();
         }
 
