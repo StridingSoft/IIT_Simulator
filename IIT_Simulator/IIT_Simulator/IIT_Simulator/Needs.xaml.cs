@@ -15,13 +15,13 @@ namespace IIT_Simulator
         int satiety = 50;
         int sleep = 50;
         int happiness = 50;
+        int study = 0;
+        int money = 2800;
 
         public Needs()
         {
             InitializeComponent();
-            eatPoints.Text = satiety + "/100";
-            sleepPoints.Text = sleep + "/100";
-            happyPoints.Text = happiness + "/100";
+            RefreshLabels();
         }
         private void btnEat_Click(object sender, EventArgs e)
         {
@@ -49,7 +49,7 @@ namespace IIT_Simulator
             else
                 pb.ProgressColor = Color.Green;
             pb.Progress = state / 100.0;
-            label.Text = state + "/100";
+            RefreshLabels();
             return state;
         }
 
@@ -65,8 +65,16 @@ namespace IIT_Simulator
             else
                 pb.ProgressColor = Color.Green;
             pb.Progress = state / 100.0;
-            label.Text = state + "/100";
+            RefreshLabels();
             return state;
+        }
+
+        private void RefreshLabels()
+        {
+            eatPoints.Text = satiety + "/100";
+            sleepPoints.Text = sleep + "/100";
+            happyPoints.Text = happiness + "/100";
+            studyPoints.Text = study + "/100";
         }
     }
 }

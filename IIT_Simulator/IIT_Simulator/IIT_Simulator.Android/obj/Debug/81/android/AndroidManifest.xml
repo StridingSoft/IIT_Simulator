@@ -5,7 +5,7 @@
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <application android:label="IIT_Simulator.Android" android:name="android.app.Application" android:allowBackup="true" android:icon="@mipmap/icon" android:debuggable="true">
-    <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/icon" android:label="IIT_Simulator" android:theme="@style/MainTheme" android:name="md51a6aa4574836ba948519e678858e7c14.MainActivity">
+    <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/icon" android:label="Симулятор ИИТ" android:theme="@style/MainTheme" android:name="md51a6aa4574836ba948519e678858e7c14.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
