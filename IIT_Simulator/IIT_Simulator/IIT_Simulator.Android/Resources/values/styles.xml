@@ -19,12 +19,21 @@
     <item name="colorAccent">#FF4081</item>
     <!-- You can also set colorControlNormal, colorControlActivated
          colorControlHighlight and colorSwitchThumbNormal. -->
-    <item name="windowActionModeOverlay">true</item>
 
+    <item name="windowActionModeOverlay">true</item>
     <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
   </style>
+  
+  <style name="MyTabLayout" parent="Base.Widget.Design.TabLayout">
+    <item name="tabTextAppearance">@style/MyTabTextAppearance</item>
+  </style>
 
+  <style name="MyTabTextAppearance" parent="TextAppearance.AppCompat.Button">
+    <item name="android:textSize">8sp</item>
+  </style>
+  
   <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
     <item name="colorAccent">#FF4081</item>
   </style>
+  
 </resources>

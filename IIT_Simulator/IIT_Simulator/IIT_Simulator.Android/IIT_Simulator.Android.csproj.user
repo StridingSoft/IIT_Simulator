@@ -3,5 +3,6 @@
   <PropertyGroup>
     <SelectedDevice>Asus ZB602KL</SelectedDevice>
     <DefaultDevice>Android_Accelerated_x86_Oreo</DefaultDevice>
+    <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>
   </PropertyGroup>
 </Project>

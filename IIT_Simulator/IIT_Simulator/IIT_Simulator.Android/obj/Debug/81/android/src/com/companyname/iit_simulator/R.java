@@ -3694,7 +3694,7 @@ containing a value of this type.
         public static final int Animation_AppCompat_DropDownUp=0x7f0c00a7;
         public static final int Animation_AppCompat_Tooltip=0x7f0c00a8;
         public static final int Animation_Design_BottomSheetDialog=0x7f0c016e;
-        public static final int AppCompatDialogStyle=0x7f0c0191;
+        public static final int AppCompatDialogStyle=0x7f0c0193;
         public static final int Base_AlertDialog_AppCompat=0x7f0c00a9;
         public static final int Base_AlertDialog_AppCompat_Light=0x7f0c00aa;
         public static final int Base_Animation_AppCompat_Dialog=0x7f0c00ab;
@@ -3866,6 +3866,8 @@ containing a value of this type.
         /**  Base theme applied no matter what API 
          */
         public static final int MainTheme_Base=0x7f0c0190;
+        public static final int MyTabLayout=0x7f0c0191;
+        public static final int MyTabTextAppearance=0x7f0c0192;
         public static final int Platform_AppCompat=0x7f0c002d;
         public static final int Platform_AppCompat_Light=0x7f0c002e;
         public static final int Platform_ThemeOverlay_AppCompat=0x7f0c008e;

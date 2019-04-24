@@ -4077,8 +4077,8 @@ namespace IIT_Simulator.Droid
 			// aapt resource value: 0x7F160006
 			public const int Animation_Design_BottomSheetDialog = 2132148230;
 			
-			// aapt resource value: 0x7F060004
-			public const int AppCompatDialogStyle = 2131099652;
+			// aapt resource value: 0x7F060006
+			public const int AppCompatDialogStyle = 2131099654;
 			
 			// aapt resource value: 0x7F160007
 			public const int Base_AlertDialog_AppCompat = 2132148231;
@@ -4586,6 +4586,12 @@ namespace IIT_Simulator.Droid
 			
 			// aapt resource value: 0x7F060003
 			public const int MainTheme_Base = 2131099651;
+			
+			// aapt resource value: 0x7F060004
+			public const int MyTabLayout = 2131099652;
+			
+			// aapt resource value: 0x7F060005
+			public const int MyTabTextAppearance = 2131099653;
 			
 			// aapt resource value: 0x7F1600AA
 			public const int Platform_AppCompat = 2132148394;
