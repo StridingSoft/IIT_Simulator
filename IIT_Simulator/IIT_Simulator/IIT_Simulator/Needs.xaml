@@ -6,28 +6,43 @@
              Icon="needs">
     <ContentPage.Content>
         <StackLayout x:Name="stackLayout" Spacing="10">
+            <Label BackgroundColor="White" HeightRequest="1" WidthRequest="500"/>
+            <Label x:Name="lbDay" BackgroundColor="DeepSkyBlue" HeightRequest="35" WidthRequest="500" TextColor="White" FontSize="Large" VerticalOptions="Center"/>
+            
             <StackLayout x:Name="slEat" Spacing="100" Orientation="Horizontal" HorizontalOptions="Center">
                 <Label Text="Сытость" FontSize="Default"  HorizontalOptions="Center" />
                 <Label x:Name="eatPoints" FontSize="Default"  HorizontalOptions="End" />
             </StackLayout>
+            
             <ProgressBar x:Name="pbFood" HorizontalOptions="Center" WidthRequest="200" IsVisible="true" HeightRequest="15" Progress="0.5" ProgressColor="Yellow"/>
+            
             <StackLayout x:Name="slSleep" Spacing="95" Orientation="Horizontal" HorizontalOptions="Center">
                 <Label Text="Бодрость" FontSize="Default" HorizontalOptions="Center"/>
                 <Label x:Name="sleepPoints" FontSize="Default"  HorizontalOptions="End" />
             </StackLayout>
+            
             <ProgressBar x:Name="pbSleep" HorizontalOptions="Center" WidthRequest="200" IsVisible="true" HeightRequest="15" Progress="0.5" ProgressColor="Yellow"/>
+            
             <StackLayout x:Name="slHappy" Spacing="105" Orientation="Horizontal" HorizontalOptions="Center">
                 <Label Text="Счастье" FontSize="Default" HorizontalOptions="Center" />
                 <Label x:Name="happyPoints" FontSize="Default"  HorizontalOptions="End" />
             </StackLayout>
+            
             <ProgressBar x:Name="pbHappiness" HorizontalOptions="Center" WidthRequest="200" IsVisible="true" HeightRequest="15" Progress="0.5" ProgressColor="Yellow"/>
+            
             <StackLayout x:Name="slStudy" Spacing="80" Orientation="Horizontal" HorizontalOptions="Center">
                 <Label Text="Успеваемость" FontSize="Default" HorizontalOptions="Center" />
                 <Label x:Name="studyPoints" FontSize="Default"  HorizontalOptions="End" />
             </StackLayout>
+            
             <ProgressBar x:Name="pbStudying" HorizontalOptions="Center" WidthRequest="200" IsVisible="true" HeightRequest="15" Progress="0.0" ProgressColor="Red"/>
-            <Button x:Name="btnEat"  Text="Сожрать все запасы" HorizontalOptions="Center" WidthRequest="500" HeightRequest="35" BackgroundColor="DeepSkyBlue" Clicked="btnEat_Click"/>
-            <Button x:Name="btnSleep"  Text="Проспать весь день" HorizontalOptions="Center" BackgroundColor="White" Clicked="btnSleep_Click"/>
+            
+            <Label BackgroundColor="DeepSkyBlue" HeightRequest="35" WidthRequest="500" Text="Действия" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large"/>
+            <Button x:Name="btnEat"  Text="Поесть в общепите - 300р" HorizontalOptions="Center" WidthRequest="500" HeightRequest="45" Clicked="btnEat_Click"/>
+            <Button x:Name="btnSleep"  Text="Сладко поспать" HorizontalOptions="Center" WidthRequest="500" HeightRequest="45" Clicked="btnSleep_Click"/>
+            <Button x:Name="btnEnjoy"  Text="Развлечься - 200р" HorizontalOptions="Center" WidthRequest="500" HeightRequest="45" Clicked="btnEnjoy_Click"/>
+            <Label x:Name="lbMoney" BackgroundColor="DeepSkyBlue" HeightRequest="35" WidthRequest="500" TextColor="White" VerticalTextAlignment="Center" FontSize="Large"/>
+            <Label x:Name="lbGrant" BackgroundColor="DeepSkyBlue" HeightRequest="35" WidthRequest="500" TextColor="White" VerticalTextAlignment="Center" FontSize="Large"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
