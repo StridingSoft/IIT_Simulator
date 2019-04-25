@@ -1,0 +1,1 @@
+C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator.UWP\IIT_Simulator.UWP.csproj;x86
