@@ -12,6 +12,7 @@ namespace IIT_Simulator
         public MainPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }

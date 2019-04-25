@@ -15,6 +15,17 @@ namespace IIT_Simulator
 		public Menu ()
 		{
 			InitializeComponent ();
+            NavigationPage.SetHasNavigationBar(this, false);
 		}
-	}
+
+        private async void GameStart_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MainPage());
+        }
+
+        private void Exit_Clicked(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+    }
 }

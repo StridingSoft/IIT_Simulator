@@ -39,12 +39,12 @@
             <ProgressBar x:Name="pbStudying" HorizontalOptions="Center" WidthRequest="200" IsVisible="true" HeightRequest="15" Progress="0.0" ProgressColor="Red"/>
             
             <Label BackgroundColor="DeepSkyBlue" HeightRequest="25" WidthRequest="500" Text="Действия" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
-            <Button x:Name="btnEat"  Text="Поесть в общепите - 300(руб.)" HorizontalOptions="Center" WidthRequest="500" HeightRequest="45" Clicked="btnEat_Click"/>
+            <Button x:Name="btnEat"  Text="Поесть в столовой - 100(руб.)" HorizontalOptions="Center" WidthRequest="500" HeightRequest="45" Clicked="btnEat_Click"/>
             <Button x:Name="btnSleep"  Text="Сладко поспать" HorizontalOptions="Center" WidthRequest="500" HeightRequest="45" Clicked="btnSleep_Click"/>
-            <Button x:Name="btnEnjoy"  Text="Развлечься - 200(руб.)" HorizontalOptions="Center" WidthRequest="500" HeightRequest="45" Clicked="btnEnjoy_Click"/>
-            <Label x:Name="lbMoney" BackgroundColor="DeepSkyBlue" HeightRequest="20" TextColor="White" VerticalTextAlignment="Center" FontSize="Medium"/>
-            <Label x:Name="lbGrant" BackgroundColor="DeepSkyBlue" HeightRequest="20" TextColor="White" VerticalTextAlignment="Center" FontSize="Medium"/>
-            <Label x:Name="lbDaysToGrant" BackgroundColor="DeepSkyBlue" HeightRequest="20" TextColor="White" VerticalTextAlignment="Center" FontSize="Medium"/>
+            <Button x:Name="btnEnjoy"  Text="Сходить в кино - 200(руб.)" HorizontalOptions="Center" WidthRequest="500" HeightRequest="45" Clicked="btnEnjoy_Click"/>
+            <Label x:Name="lbMoney" BackgroundColor="DeepSkyBlue" HeightRequest="20" TextColor="White" FontSize="Medium"/>
+            <Label x:Name="lbGrant" BackgroundColor="DeepSkyBlue" HeightRequest="20" TextColor="White" FontSize="Medium"/>
+            <Label x:Name="lbDaysToGrant" BackgroundColor="DeepSkyBlue" HeightRequest="20" TextColor="White" FontSize="Medium"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
