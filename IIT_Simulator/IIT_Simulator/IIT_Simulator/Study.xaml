@@ -5,10 +5,37 @@
              Title="Учеба"
              Icon="study">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout x:Name="stackLayout" Spacing="5">
+            <StackLayout x:Name="slEat" Spacing="100" Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Сытость" FontSize="Default"  HorizontalOptions="Center" />
+                <Label x:Name="eatPoints" FontSize="Default"  HorizontalOptions="End" />
+            </StackLayout>
+
+            <ProgressBar x:Name="pbFood" HorizontalOptions="Center" WidthRequest="200" IsVisible="true" HeightRequest="15" Progress="0.5" ProgressColor="Yellow"/>
+
+            <StackLayout x:Name="slSleep" Spacing="95" Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Бодрость" FontSize="Default" HorizontalOptions="Center"/>
+                <Label x:Name="sleepPoints" FontSize="Default"  HorizontalOptions="End" />
+            </StackLayout>
+
+            <ProgressBar x:Name="pbSleep" HorizontalOptions="Center" WidthRequest="200" IsVisible="true" HeightRequest="15" Progress="0.5" ProgressColor="Yellow"/>
+
+            <StackLayout x:Name="slHappy" Spacing="105" Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Счастье" FontSize="Default" HorizontalOptions="Center" />
+                <Label x:Name="happyPoints" FontSize="Default"  HorizontalOptions="End" />
+            </StackLayout>
+
+            <ProgressBar x:Name="pbHappiness" HorizontalOptions="Center" WidthRequest="200" IsVisible="true" HeightRequest="15" Progress="0.5" ProgressColor="Yellow"/>
+
+            <StackLayout x:Name="slStudy" Spacing="80" Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Успеваемость" FontSize="Default" HorizontalOptions="Center" />
+                <Label x:Name="studyPoints" FontSize="Default"  HorizontalOptions="End" />
+            </StackLayout>
+
+            <ProgressBar x:Name="pbStudying" HorizontalOptions="Center" WidthRequest="200" IsVisible="true" HeightRequest="15" Progress="0.0" ProgressColor="Red"/>
+
+            <Label BackgroundColor="DeepSkyBlue" HeightRequest="25" WidthRequest="500" Text="Обучение" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
+        
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

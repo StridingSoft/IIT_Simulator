@@ -30,3 +30,4 @@ C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator
 C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator\obj\Debug\netstandard2.0\IIT_Simulator.pdb
 C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator\obj\Debug\netstandard2.0\IIT_Simulator.Properties.Resources.resources
 C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator\obj\Debug\netstandard2.0\IIT_Simulator.csproj.GenerateResource.cache
+C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator\obj\Debug\netstandard2.0\HowToPlay.xaml.g.cs
