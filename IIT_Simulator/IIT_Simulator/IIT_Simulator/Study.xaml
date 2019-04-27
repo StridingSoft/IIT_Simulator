@@ -6,6 +6,9 @@
              Icon="study">
     <ContentPage.Content>
         <StackLayout x:Name="stackLayout" Spacing="5">
+            <Label BackgroundColor="White" HeightRequest="1"/>
+            <Label BackgroundColor="DeepSkyBlue" HeightRequest="22" Text="Показатели" TextColor="White" FontSize="Medium" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            
             <StackLayout x:Name="slEat" Spacing="100" Orientation="Horizontal" HorizontalOptions="Center">
                 <Label Text="Сытость" FontSize="Default"  HorizontalOptions="Center" />
                 <Label x:Name="eatPoints" FontSize="Default"  HorizontalOptions="End" />

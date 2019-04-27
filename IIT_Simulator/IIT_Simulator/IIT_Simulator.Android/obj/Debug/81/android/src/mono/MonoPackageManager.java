@@ -107,6 +107,8 @@ class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
 		/* We need to ensure that "IIT_Simulator.Android.dll" comes first in this list. */
 		"IIT_Simulator.Android.dll",
+		"FormsControls.Base.dll",
+		"FormsControls.Droid.dll",
 		"FormsViewGroup.dll",
 		"IIT_Simulator.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",

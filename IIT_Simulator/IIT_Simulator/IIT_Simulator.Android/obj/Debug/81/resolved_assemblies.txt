@@ -1,4 +1,6 @@
 C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator.Android\obj\Debug\81\android\assets\IIT_Simulator.Android.dll
+C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator.Android\obj\Debug\81\android\assets\FormsControls.Base.dll
+C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator.Android\obj\Debug\81\android\assets\FormsControls.Droid.dll
 C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator.Android\obj\Debug\81\android\assets\FormsViewGroup.dll
 C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator.Android\obj\Debug\81\android\assets\IIT_Simulator.dll
 C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator.Android\obj\Debug\81\android\assets\Java.Interop.dll

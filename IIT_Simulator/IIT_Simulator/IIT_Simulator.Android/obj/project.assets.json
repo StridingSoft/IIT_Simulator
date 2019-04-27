@@ -341,10 +341,25 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
+      "XForms.Plugin.AnimationNavigationPage/1.0.7": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "3.4.0.1008975"
+        },
+        "compile": {
+          "lib/MonoAndroid10/FormsControls.Base.dll": {},
+          "lib/MonoAndroid10/FormsControls.Droid.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/FormsControls.Base.dll": {},
+          "lib/MonoAndroid10/FormsControls.Droid.dll": {}
+        }
+      },
       "IIT_Simulator/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "XForms.Plugin.AnimationNavigationPage": "1.0.7",
           "Xamarin.Forms": "3.4.0.1008975"
         },
         "compile": {
@@ -775,6 +790,22 @@
         "lib/uap10.0/Xamarin.Forms.Xaml.xml",
         "xamarin.forms.3.4.0.1008975.nupkg.sha512",
         "xamarin.forms.nuspec"
+      ]
+    },
+    "XForms.Plugin.AnimationNavigationPage/1.0.7": {
+      "sha512": "v9/wSgVSa2cYjd/xP4GBNBiybH6u2qJac4QyNKg6G+CypoyDBaJVPdf/89hUPuG9Aix7at9wp0/qI/YbkmkUzA==",
+      "type": "package",
+      "path": "xforms.plugin.animationnavigationpage/1.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/FormsControls.Base.dll",
+        "lib/MonoAndroid10/FormsControls.Droid.dll",
+        "lib/Xamarin.iOS10/FormsControls.Base.dll",
+        "lib/Xamarin.iOS10/FormsControls.Touch.dll",
+        "lib/netstandard2.0/FormsControls.Base.dll",
+        "xforms.plugin.animationnavigationpage.1.0.7.nupkg.sha512",
+        "xforms.plugin.animationnavigationpage.nuspec"
       ]
     },
     "IIT_Simulator/1.0.0": {
