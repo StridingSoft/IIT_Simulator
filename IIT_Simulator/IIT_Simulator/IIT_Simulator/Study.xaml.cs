@@ -8,7 +8,16 @@ namespace IIT_Simulator
 	{
 		public Study ()
 		{
-			InitializeComponent ();
+			InitializeComponent();
+            InitializeStates();
 		}
+
+        private void InitializeStates()
+        {
+            eatPoints.Text = Needs.EatPoints.Text;
+            sleepPoints.Text = Needs.SleepPoints.Text;
+            happyPoints.Text = Needs.HappyPoints.Text;
+            studyPoints.Text = Needs.StudyPoints.Text;
+        }
 	}
 }

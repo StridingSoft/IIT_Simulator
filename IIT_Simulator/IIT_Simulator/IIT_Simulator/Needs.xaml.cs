@@ -8,55 +8,38 @@ namespace IIT_Simulator
     public partial class Needs : ContentPage
     {
         Random rnd = new Random();
-        int satiety = 50;
-        int sleep = 50;
-        int happiness = 50;
-        int study = 0;
-        int money = 2800;
-        int currentDay = 1;
-        int daysToSession = 15;
-        int sessionDays = 30;
-        bool semestr = true;
-        int grant = 2800;
-        int daysToGrant = 30;
 
         public Needs()
         {
             InitializeComponent();
-            RefreshLabels();
+            States.InitializeStates();
+            States.RefreshLabels();
         }
 
         private void btnEat_Click(object sender, EventArgs e)
         {
-            
+            States.Satiety += 20;
+            States.RefreshLabels();
+            CheckStates();
         }
 
         private void btnSleep_Click(object sender, EventArgs e)
         {
 
-
         }
-
-        private void RefreshLabels()
-        {
-            eatPoints.Text = satiety + "/100";
-            sleepPoints.Text = sleep + "/100";
-            happyPoints.Text = happiness + "/100";
-            studyPoints.Text = study + "/100";
-            lbDay.Text = "\t\t\tДень: " + currentDay;
-            if (!semestr)
-                lbSessionDays.Text = "\t\t\tДо конца сессии: " + sessionDays;
-            else
-                lbSessionDays.Text = "\t\t\tДней до сессии: " + daysToSession;
-            lbMoney.Text = "\t\t\tДеньги(руб.): " + money;
-            lbGrant.Text = "\t\t\tСтипендия(руб.): " + grant;
-            lbDaysToGrant.Text = "\t\t\tДней до стипендии: " + daysToGrant;
-        }
-
 
         private void btnEnjoy_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private async void CheckStates()
+        {
+            if (States.GameOver())
+            {
+                await DisplayAlert("Вы проиграли!", "Студент умер. Начать сначала?", "ОК");
+                await Navigation.PushAsync(new Menu());
+            }
         }
     }
 }
