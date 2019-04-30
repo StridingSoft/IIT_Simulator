@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IIT_Simulator.Menu">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <Image Source="iitsim" WidthRequest="300"/>
+            <Label HeightRequest="100"/>
+            <Button x:Name="gameStart" WidthRequest="200" BackgroundColor="DeepSkyBlue" HorizontalOptions="Center" Text="Начать игру" Clicked="GameStart_Clicked"/>
+            <Button x:Name="howToPlay" WidthRequest="200" BackgroundColor="DeepSkyBlue" HorizontalOptions="Center" Text="Как играть?" Clicked="HowToPlay_Clicked"/>
+            <Button x:Name="exit" WidthRequest="200" BackgroundColor="DeepSkyBlue" HorizontalOptions="Center" Text="Выход" Clicked="Exit_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

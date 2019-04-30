@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IIT_Simulator.Needs"
+             Title="Потребности"
+             Icon="needs">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout x:Name="stackLayout" Spacing="10">
+                <Label BackgroundColor="White" HeightRequest="1"/>
+                <Label x:Name="LbDay" BackgroundColor="DeepSkyBlue" HeightRequest="22" TextColor="White" FontSize="Medium" VerticalOptions="Center"/>
+                <Label x:Name="LbSessionDays" BackgroundColor="DeepSkyBlue" HeightRequest="22" TextColor="White" FontSize="Medium" VerticalOptions="Center"/>
+
+                <StackLayout x:Name="SlEat" Spacing="100" Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="Сытость" FontSize="Default"  HorizontalOptions="Center" />
+                    <Label x:Name="EatPoints" FontSize="Default"  HorizontalOptions="End" />
+                </StackLayout>
+
+                <ProgressBar x:Name="PbFood" HorizontalOptions="Center" WidthRequest="200" IsVisible="true" HeightRequest="15" Progress="0.5" ProgressColor="Yellow"/>
+            
+                <StackLayout x:Name="SlSleep" Spacing="95" Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="Бодрость" FontSize="Default" HorizontalOptions="Center"/>
+                    <Label x:Name="SleepPoints" FontSize="Default"  HorizontalOptions="End" />
+                </StackLayout>
+            
+                <ProgressBar x:Name="PbSleep" HorizontalOptions="Center" WidthRequest="200" IsVisible="true" HeightRequest="15" Progress="0.5" ProgressColor="Yellow"/>
+            
+                <StackLayout x:Name="SlHappy" Spacing="105" Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="Счастье" FontSize="Default" HorizontalOptions="Center" />
+                    <Label x:Name="HappyPoints" FontSize="Default"  HorizontalOptions="End" />
+                </StackLayout>
+            
+                <ProgressBar x:Name="PbHappiness" HorizontalOptions="Center" WidthRequest="200" IsVisible="true" HeightRequest="15" Progress="0.5" ProgressColor="Yellow"/>
+            
+                <StackLayout x:Name="SlStudy" Spacing="80" Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="Успеваемость" FontSize="Default" HorizontalOptions="Center" />
+                    <Label x:Name="StudyPoints" FontSize="Default"  HorizontalOptions="End" />
+                </StackLayout>
+            
+                <ProgressBar x:Name="PbStudying" HorizontalOptions="Center" WidthRequest="200" IsVisible="true" HeightRequest="15" Progress="0.0" ProgressColor="Red"/>
+            
+                <Label BackgroundColor="DeepSkyBlue" HeightRequest="25" WidthRequest="500" Text="Действия" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
+                <Button x:Name="btnEat"  Text="Поесть в столовой - 100(руб.)" HorizontalOptions="Center" BackgroundColor="Lavender" WidthRequest="500" HeightRequest="45" Clicked="btnEat_Click"/>
+                <Button x:Name="btnSleep"  Text="Сладко поспать" HorizontalOptions="Center" BackgroundColor="Lavender" WidthRequest="500" HeightRequest="45" Clicked="btnSleep_Click"/>
+                <Button x:Name="btnEnjoy"  Text="Сходить в кино - 200(руб.)" BackgroundColor="Lavender" HorizontalOptions="Center" WidthRequest="500" HeightRequest="45" Clicked="btnEnjoy_Click"/>
+                <Label x:Name="LbMoney" BackgroundColor="DeepSkyBlue" HeightRequest="22" TextColor="White" FontSize="Medium"/>
+                <Label x:Name="LbGrant" BackgroundColor="DeepSkyBlue" HeightRequest="22" TextColor="White" FontSize="Medium"/>
+                <Label x:Name="LbDaysToGrant" BackgroundColor="DeepSkyBlue" HeightRequest="22" TextColor="White" FontSize="Medium"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

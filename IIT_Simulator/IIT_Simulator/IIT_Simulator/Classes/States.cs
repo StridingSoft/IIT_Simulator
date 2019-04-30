@@ -48,6 +48,6 @@ namespace IIT_Simulator
                 Study = 0;
         }
 
-        public static bool GameOver() => Satiety == 0 || Sleep == 0 || Happiness == 0;
+        public static bool GameOver() => Satiety <= 0 || Sleep <= 0 || Happiness <= 0;
     }
 }
