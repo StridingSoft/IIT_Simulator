@@ -15,13 +15,15 @@ namespace IIT_Simulator
             InitializeComponent();
             SavingSystem.ReadFile();
             States.RefreshLabels();
+            States.RefreshProgressBars();
         }
 
         private void btnEat_Click(object sender, EventArgs e)
         {
             States.Satiety += 20;
             States.RefreshLabels();
-            CheckStates();
+            States.RefreshProgressBars();
+            ForceGameOverAlert();
         }
 
         private void btnSleep_Click(object sender, EventArgs e)
@@ -34,7 +36,7 @@ namespace IIT_Simulator
 
         }
 
-        private async void CheckStates()
+        private async void ForceGameOverAlert()
         {
             if (States.GameOver())
             {
