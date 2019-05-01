@@ -9,7 +9,7 @@ namespace IIT_Simulator
 	{
 		public Menu ()
 		{
-			InitializeComponent ();
+			InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
 		}
 

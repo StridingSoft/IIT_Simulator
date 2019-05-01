@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System.IO;
+using Xamarin.Forms;
 
 namespace IIT_Simulator
 {
@@ -8,6 +9,13 @@ namespace IIT_Simulator
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
+        }
+
+        protected override void OnDisappearing()
+        {
+            File.Delete(SavingSystem.GetPathToFile());
+            if (!States.GameOver())
+                SavingSystem.WriteAllData(SavingSystem.GetPathToFile());
         }
     }
 }

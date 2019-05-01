@@ -17,7 +17,7 @@ namespace IIT_Simulator {
     public partial class Needs : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.StackLayout stackLayout;
+        public static global::Xamarin.Forms.StackLayout stackLayout;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         public static global::Xamarin.Forms.Label LbDay;
@@ -26,7 +26,7 @@ namespace IIT_Simulator {
         public static global::Xamarin.Forms.Label LbSessionDays;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.StackLayout SlEat;
+        public static global::Xamarin.Forms.StackLayout SlEat;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         public static global::Xamarin.Forms.Label EatPoints;
@@ -53,7 +53,7 @@ namespace IIT_Simulator {
         public static global::Xamarin.Forms.ProgressBar PbHappiness;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.StackLayout SlStudy;
+        public static global::Xamarin.Forms.StackLayout SlStudy;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         public static global::Xamarin.Forms.Label StudyPoints;

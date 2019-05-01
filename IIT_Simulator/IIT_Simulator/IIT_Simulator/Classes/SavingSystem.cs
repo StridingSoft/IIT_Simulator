@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IIT_Simulator.Classes;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -10,10 +11,11 @@ namespace IIT_Simulator
         public static void ReadFile()
         {
             string fileName = GetPathToFile();
-
             if (!File.Exists(fileName))
             {
                 States.InitializeStates();
+                DaysControl.InitializeDays();
+                CashControl.InitializeCash();
                 WriteAllData(fileName);
             }
             else
@@ -25,8 +27,9 @@ namespace IIT_Simulator
             using (var streamWriter = new StreamWriter(fileName, true))
             {
                 streamWriter.Write($"{DaysControl.DaysCounter};{DaysControl.Countdown};{DaysControl.DaysToGrant};{DaysControl.Session};" +
-                                   $"{States.Satiety};{States.Sleep};{States.Happiness};{States.Study};" +
-                                   $"{CashControl.Money};{CashControl.Grant}");
+                                   $"{States.Satiety};{States.Sleep};{States.Happiness};{States.Studying};" +
+                                   $"{CashControl.Money};{CashControl.Grant};" +
+                                   $"{Studies.Programming};{Studies.Linal};{Studies.Math};{Studies.Asm_eco}");
             }
         }
 
@@ -35,7 +38,7 @@ namespace IIT_Simulator
             using (var streamReader = new StreamReader(fileName))
             {
                 var array = streamReader.ReadToEnd().Trim().Split(';');
-                if (array.Length == 10)
+                if (array.Length == 14)
                 {
                     DaysControl.DaysCounter = int.Parse(array[0]);
                     DaysControl.Countdown = int.Parse(array[1]);
@@ -45,10 +48,15 @@ namespace IIT_Simulator
                     States.Satiety = int.Parse(array[4]);
                     States.Sleep = int.Parse(array[5]);
                     States.Happiness = int.Parse(array[6]);
-                    States.Study = int.Parse(array[7]);
+                    States.Studying = int.Parse(array[7]);
 
                     CashControl.Money = int.Parse(array[8]);
                     CashControl.Grant = int.Parse(array[9]);
+
+                    Studies.Programming = int.Parse(array[10]);
+                    Studies.Linal = int.Parse(array[11]);
+                    Studies.Math = int.Parse(array[12]);
+                    Studies.Asm_eco = int.Parse(array[13]);
                 }
             }
         }

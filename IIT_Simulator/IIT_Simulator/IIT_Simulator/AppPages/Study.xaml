@@ -10,71 +10,71 @@
                 <Label BackgroundColor="White" HeightRequest="1"/>
                 <Label BackgroundColor="DeepSkyBlue" HeightRequest="22" Text="Показатели" TextColor="White" FontSize="Medium" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             
-                <StackLayout x:Name="slEat" Spacing="100" Orientation="Horizontal" HorizontalOptions="Center">
+                <StackLayout x:Name="SlEat" Spacing="100" Orientation="Horizontal" HorizontalOptions="Center">
                     <Label Text="Сытость" FontSize="Default"  HorizontalOptions="Center" />
-                    <Label x:Name="eatPoints" FontSize="Default"  HorizontalOptions="End" />
+                    <Label x:Name="EatPoints" FontSize="Default"  HorizontalOptions="End" />
                 </StackLayout>
 
-                <ProgressBar x:Name="pbFood" HorizontalOptions="Center" WidthRequest="200" IsVisible="true" HeightRequest="15" Progress="0.5" ProgressColor="Yellow"/>
+                <ProgressBar x:Name="PbFood" HorizontalOptions="Center" WidthRequest="200" IsVisible="true" HeightRequest="15" Progress="0.5" ProgressColor="Yellow"/>
 
-                <StackLayout x:Name="slSleep" Spacing="95" Orientation="Horizontal" HorizontalOptions="Center">
+                <StackLayout x:Name="SlSleep" Spacing="95" Orientation="Horizontal" HorizontalOptions="Center">
                     <Label Text="Бодрость" FontSize="Default" HorizontalOptions="Center"/>
-                    <Label x:Name="sleepPoints" FontSize="Default"  HorizontalOptions="End" />
+                    <Label x:Name="SleepPoints" FontSize="Default"  HorizontalOptions="End" />
                 </StackLayout>
 
-                <ProgressBar x:Name="pbSleep" HorizontalOptions="Center" WidthRequest="200" IsVisible="true" HeightRequest="15" Progress="0.5" ProgressColor="Yellow"/>
+                <ProgressBar x:Name="PbSleep" HorizontalOptions="Center" WidthRequest="200" IsVisible="true" HeightRequest="15" Progress="0.5" ProgressColor="Yellow"/>
 
-                <StackLayout x:Name="slHappy" Spacing="105" Orientation="Horizontal" HorizontalOptions="Center">
+                <StackLayout x:Name="SlHappy" Spacing="105" Orientation="Horizontal" HorizontalOptions="Center">
                     <Label Text="Счастье" FontSize="Default" HorizontalOptions="Center" />
-                    <Label x:Name="happyPoints" FontSize="Default"  HorizontalOptions="End" />
+                    <Label x:Name="HappyPoints" FontSize="Default"  HorizontalOptions="End" />
                 </StackLayout>
 
-                <ProgressBar x:Name="pbHappiness" HorizontalOptions="Center" WidthRequest="200" IsVisible="true" HeightRequest="15" Progress="0.5" ProgressColor="Yellow"/>
+                <ProgressBar x:Name="PbHappiness" HorizontalOptions="Center" WidthRequest="200" IsVisible="true" HeightRequest="15" Progress="0.5" ProgressColor="Yellow"/>
 
-                <StackLayout x:Name="slStudy" Spacing="80" Orientation="Horizontal" HorizontalOptions="Center">
+                <StackLayout x:Name="SlStudy" Spacing="80" Orientation="Horizontal" HorizontalOptions="Center">
                     <Label Text="Успеваемость" FontSize="Default" HorizontalOptions="Center" />
-                    <Label x:Name="studyPoints" FontSize="Default"  HorizontalOptions="End" />
+                    <Label x:Name="StudyPoints" FontSize="Default"  HorizontalOptions="End" />
                 </StackLayout>
 
-                <ProgressBar x:Name="pbStudying" HorizontalOptions="Center" WidthRequest="200" IsVisible="true" HeightRequest="15" Progress="0.0" ProgressColor="Red"/>
+                <ProgressBar x:Name="PbStudying" HorizontalOptions="Center" WidthRequest="200" IsVisible="true" HeightRequest="15" Progress="0.0" ProgressColor="Red"/>
 
                 <Label BackgroundColor="DeepSkyBlue" HeightRequest="25" WidthRequest="500" Text="Обучение" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
 
-                <StackLayout x:Name="programming" Spacing="120" Orientation="Horizontal" HorizontalOptions="Center">
+                <StackLayout x:Name="Programming" Spacing="120" Orientation="Horizontal" HorizontalOptions="Center">
                     <Label Text="Программирование" FontSize="Default" HorizontalOptions="Center" />
-                    <Label x:Name="progrPoints" FontSize="Default"  HorizontalOptions="End" />
+                    <Label x:Name="ProgrPoints" FontSize="Default"  HorizontalOptions="End" />
                 </StackLayout>
             
-                <ProgressBar x:Name="pbProg" HorizontalOptions="Center" WidthRequest="250" IsVisible="true" HeightRequest="15" Progress="0.0" ProgressColor="Red"/>
+                <ProgressBar x:Name="PbProg" HorizontalOptions="Center" WidthRequest="250" IsVisible="true" HeightRequest="15" Progress="0.0" ProgressColor="DeepSkyBlue"/>
                 
-                <Button x:Name="btnProg" HorizontalOptions="Center" WidthRequest="250" HeightRequest="35" Text="Зайти на ulearn.me" BackgroundColor="Lavender"/>
+                <Button x:Name="BtnProg" HorizontalOptions="Center" WidthRequest="250" HeightRequest="35" Text="Зайти на ulearn.me" BackgroundColor="Lavender" Clicked="BtnProg_Clicked"/>
 
-                <StackLayout x:Name="linal" Spacing="130" Orientation="Horizontal" HorizontalOptions="Center">
+                <StackLayout x:Name="Linal" Spacing="130" Orientation="Horizontal" HorizontalOptions="Center">
                     <Label Text="Линейная алгебра" FontSize="Default" HorizontalOptions="Center" />
-                    <Label x:Name="linalPoints" FontSize="Default"  HorizontalOptions="End" />
+                    <Label x:Name="LinalPoints" FontSize="Default"  HorizontalOptions="End" />
                 </StackLayout>
 
-                <ProgressBar x:Name="pbLinal" HorizontalOptions="Center" WidthRequest="250" IsVisible="true" HeightRequest="15" Progress="0.0" ProgressColor="Red"/>
+                <ProgressBar x:Name="PbLinal" HorizontalOptions="Center" WidthRequest="250" IsVisible="true" HeightRequest="15" Progress="0.0" ProgressColor="DeepSkyBlue"/>
 
-                <Button x:Name="btnLinal" HorizontalOptions="Center" WidthRequest="250" HeightRequest="35" Text="Считать определитель" BackgroundColor="Lavender"/>
+                <Button x:Name="BtnLinal" HorizontalOptions="Center" WidthRequest="250" HeightRequest="35" Text="Считать определитель" BackgroundColor="Lavender" Clicked="BtnLinal_Clicked"/>
 
-                <StackLayout x:Name="asm_economics" Spacing="20" Orientation="Horizontal" HorizontalOptions="Center">
+                <StackLayout x:Name="Asm_economics" Spacing="20" Orientation="Horizontal" HorizontalOptions="Center">
                     <Label Text="Архитектура вычислительных систем" FontSize="Default" HorizontalOptions="Center" />
-                    <Label x:Name="asm_economicsPoints" FontSize="Default"  HorizontalOptions="End" />
+                    <Label x:Name="Asm_economicsPoints" FontSize="Default"  HorizontalOptions="End" />
                 </StackLayout>
 
-                <ProgressBar x:Name="pbASM_ECO" HorizontalOptions="Center" WidthRequest="250" IsVisible="true" HeightRequest="15" Progress="0.0" ProgressColor="Red"/>
+                <ProgressBar x:Name="PbASM_ECO" HorizontalOptions="Center" WidthRequest="250" IsVisible="true" HeightRequest="15" Progress="0.0" ProgressColor="DeepSkyBlue"/>
 
-                <Button x:Name="btnASM_ECO" HorizontalOptions="Center" WidthRequest="250" HeightRequest="35" Text="Писать ассемблерные вставки" BackgroundColor="Lavender"/>
+                <Button x:Name="BtnASM_ECO" HorizontalOptions="Center" WidthRequest="250" HeightRequest="35" Text="Писать ассемблерные вставки" BackgroundColor="Lavender" Clicked="BtnASM_ECO_Clicked"/>
 
-                <StackLayout x:Name="math" Spacing="170" Orientation="Horizontal" HorizontalOptions="Center">
+                <StackLayout x:Name="Math" Spacing="170" Orientation="Horizontal" HorizontalOptions="Center">
                     <Label Text="Матанализ" FontSize="Default" HorizontalOptions="Center" />
-                    <Label x:Name="mathPoints" FontSize="Default"  HorizontalOptions="End" />
+                    <Label x:Name="MathPoints" FontSize="Default"  HorizontalOptions="End" />
                 </StackLayout>
 
-                <ProgressBar x:Name="pbMath" HorizontalOptions="Center" WidthRequest="250" IsVisible="true" HeightRequest="15" Progress="0.0" ProgressColor="Red"/>
+                <ProgressBar x:Name="PbMath" HorizontalOptions="Center" WidthRequest="250" IsVisible="true" HeightRequest="15" Progress="0.0" ProgressColor="DeepSkyBlue"/>
 
-                <Button x:Name="btnMath" HorizontalOptions="Center" WidthRequest="250" HeightRequest="35" Text="Читать про кружочки" BackgroundColor="Lavender"/>
+                <Button x:Name="BtnMath" HorizontalOptions="Center" WidthRequest="250" HeightRequest="35" Text="Читать про кружочки" BackgroundColor="Lavender" Clicked="BtnMath_Clicked"/>
 
             </StackLayout>
         </ScrollView>
