@@ -17,91 +17,91 @@ namespace IIT_Simulator {
     public partial class Study : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.StackLayout stackLayout;
+        private global::Xamarin.Forms.StackLayout stackLayout;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.StackLayout SlEat;
+        private global::Xamarin.Forms.StackLayout SlEat;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Label EatPoints;
+        private global::Xamarin.Forms.Label EatPoints;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.ProgressBar PbFood;
+        private global::Xamarin.Forms.ProgressBar PbFood;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.StackLayout SlSleep;
+        private global::Xamarin.Forms.StackLayout SlSleep;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Label SleepPoints;
+        private global::Xamarin.Forms.Label SleepPoints;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.ProgressBar PbSleep;
+        private global::Xamarin.Forms.ProgressBar PbSleep;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.StackLayout SlHappy;
+        private global::Xamarin.Forms.StackLayout SlHappy;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Label HappyPoints;
+        private global::Xamarin.Forms.Label HappyPoints;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.ProgressBar PbHappiness;
+        private global::Xamarin.Forms.ProgressBar PbHappiness;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.StackLayout SlStudy;
+        private global::Xamarin.Forms.StackLayout SlStudy;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Label StudyPoints;
+        private global::Xamarin.Forms.Label StudyPoints;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.ProgressBar PbStudying;
+        private global::Xamarin.Forms.ProgressBar PbStudying;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.StackLayout Programming;
+        private global::Xamarin.Forms.StackLayout Programming;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Label ProgrPoints;
+        private global::Xamarin.Forms.Label ProgrPoints;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.ProgressBar PbProg;
+        private global::Xamarin.Forms.ProgressBar PbProg;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Button BtnProg;
+        private global::Xamarin.Forms.Button BtnProg;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.StackLayout Linal;
+        private global::Xamarin.Forms.StackLayout Linal;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Label LinalPoints;
+        private global::Xamarin.Forms.Label LinalPoints;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.ProgressBar PbLinal;
+        private global::Xamarin.Forms.ProgressBar PbLinal;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Button BtnLinal;
+        private global::Xamarin.Forms.Button BtnLinal;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.StackLayout Asm_economics;
+        private global::Xamarin.Forms.StackLayout Asm_economics;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Label Asm_economicsPoints;
+        private global::Xamarin.Forms.Label Asm_economicsPoints;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.ProgressBar PbASM_ECO;
+        private global::Xamarin.Forms.ProgressBar PbASM_ECO;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Button BtnASM_ECO;
+        private global::Xamarin.Forms.Button BtnASM_ECO;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.StackLayout Math;
+        private global::Xamarin.Forms.StackLayout Math;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Label MathPoints;
+        private global::Xamarin.Forms.Label MathPoints;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.ProgressBar PbMath;
+        private global::Xamarin.Forms.ProgressBar PbMath;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Button BtnMath;
+        private global::Xamarin.Forms.Button BtnMath;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
