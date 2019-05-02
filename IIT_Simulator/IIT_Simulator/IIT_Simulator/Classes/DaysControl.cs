@@ -28,6 +28,7 @@ namespace IIT_Simulator
             {
                 if (States.Studying < 50 || ExamsControl.ExamsCounter < 4)
                     Deducted = true;
+                ExamsControl.ExamsCounter = 0;
                 Session = !Session;
                 Countdown = 150;
 

@@ -9,6 +9,7 @@ namespace IIT_Simulator.Classes
         public static string Group;
         public static int Course;
         public static int Semestr;
+        public static bool Expelled;
 
         public static void InitializeCourse()
         {

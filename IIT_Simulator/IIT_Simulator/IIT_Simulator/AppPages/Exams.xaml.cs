@@ -18,7 +18,7 @@ namespace IIT_Simulator
             if (isPassed(Studies.Programming))
             {
                 await DisplayAlert("Успех!", "Вы сдали программирование. Поздравляем", "Ура!");
-                Exams.BtnProg.IsEnabled = false;
+                BtnProg.IsEnabled = false;
                 ExamsControl.ExamsCounter++;
             }
             else
@@ -30,7 +30,7 @@ namespace IIT_Simulator
             if (isPassed(Studies.Linal))
             {
                 await DisplayAlert("Успех!", "Вы сдали линейную алгебру. Поздравляем", "Ура!");
-                Exams.BtnLinal.IsEnabled = false;
+                BtnLinal.IsEnabled = false;
                 ExamsControl.ExamsCounter++;
             }
             else
@@ -42,7 +42,7 @@ namespace IIT_Simulator
             if (isPassed(Studies.Asm_eco))
             {
                 await DisplayAlert("Успех!", "Вы сдали архитектуру вычислительных систем. Поздравляем", "Ура!");
-                Exams.BtnASM_ECO.IsEnabled = false;
+                BtnASM_ECO.IsEnabled = false;
                 ExamsControl.ExamsCounter++;
             }
             else
@@ -54,7 +54,7 @@ namespace IIT_Simulator
             if (isPassed(Studies.Math))
             {
                 await DisplayAlert("Успех!", "Вы сдали матанализ. Поздравляем", "Ура!");
-                Exams.BtnMath.IsEnabled = false;
+                BtnMath.IsEnabled = false;
                 ExamsControl.ExamsCounter++;
             }
             else

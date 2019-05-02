@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using IIT_Simulator.Classes;
+using System.IO;
 using Xamarin.Forms;
 
 namespace IIT_Simulator
@@ -14,7 +15,7 @@ namespace IIT_Simulator
         protected override void OnDisappearing()
         {
             File.Delete(SavingSystem.GetPathToFile());
-            if (!States.GameOver() && !DaysControl.Deducted && !DaysControl.Congratulate)
+            if (!States.GameOver() && !DaysControl.Deducted && !DaysControl.Congratulate && !CourseControl.Expelled)
                 SavingSystem.WriteAllData(SavingSystem.GetPathToFile()); 
         }
     }
