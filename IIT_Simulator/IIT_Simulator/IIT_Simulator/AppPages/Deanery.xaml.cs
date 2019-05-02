@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using IIT_Simulator.Classes;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace IIT_Simulator
@@ -9,6 +10,7 @@ namespace IIT_Simulator
 		public Deanery ()
 		{
 			InitializeComponent ();
+            CourseControl.RefreshCourse();
 		}
 	}
 }

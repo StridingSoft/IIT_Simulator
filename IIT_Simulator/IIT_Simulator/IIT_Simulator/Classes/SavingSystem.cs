@@ -11,6 +11,7 @@ namespace IIT_Simulator
         public static void ReadFile()
         {
             string fileName = GetPathToFile();
+
             if (!File.Exists(fileName))
             {
                 States.InitializeStates();
@@ -18,6 +19,7 @@ namespace IIT_Simulator
                 CashControl.InitializeCash();
                 Studies.InitializeSubjects();
                 ExamsControl.InitializeExams();
+                CourseControl.InitializeCourse();
                 WriteAllData(fileName);
             }
             else
@@ -32,7 +34,8 @@ namespace IIT_Simulator
                                    $"{States.Satiety};{States.Sleep};{States.Happiness};{States.Studying};" +
                                    $"{CashControl.Money};{CashControl.Grant};" +
                                    $"{Studies.Programming};{Studies.Linal};{Studies.Math};{Studies.Asm_eco};" +
-                                   $"{ExamsControl.ExamsCounter}");
+                                   $"{ExamsControl.ExamsCounter};" +
+                                   $"{CourseControl.Group};{CourseControl.Course };{CourseControl.Semestr}");
             }
         }
 
@@ -41,7 +44,8 @@ namespace IIT_Simulator
             using (var streamReader = new StreamReader(fileName))
             {
                 var array = streamReader.ReadToEnd().Trim().Split(';');
-                if (array.Length == 15)
+
+                if (array.Length == 18)
                 {
                     DaysControl.DaysCounter = int.Parse(array[0]);
                     DaysControl.Countdown = int.Parse(array[1]);
@@ -62,6 +66,10 @@ namespace IIT_Simulator
                     Studies.Asm_eco = int.Parse(array[13]);
 
                     ExamsControl.ExamsCounter = int.Parse(array[14]);
+
+                    CourseControl.Group = array[15];
+                    CourseControl.Course = int.Parse(array[16]);
+                    CourseControl.Semestr = int.Parse(array[17]);
                 }
             }
         }

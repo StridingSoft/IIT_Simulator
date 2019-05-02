@@ -59,6 +59,13 @@ namespace IIT_Simulator.Classes
             Study.PbASM_ECO.Progress = Asm_eco * 0.01;
         }
 
+        public static void Refresh()
+        {
+            RefreshStates();
+            RefreshLabels();
+            RefreshProgressBars();
+        }
+
         private static void CalculatePerformance()
         {
             States.Studying = (Programming + Linal + Math + Asm_eco) / 4;

@@ -12,6 +12,7 @@ namespace IIT_Simulator
         public static bool Session;
         public static int DaysToGrant;
         public static bool Deducted;
+        public static bool Congratulate;
 
         public static void InitializeDays()
         {
@@ -29,9 +30,18 @@ namespace IIT_Simulator
                     Deducted = true;
                 Session = !Session;
                 Countdown = 150;
-                CashControl.Grant = Convert.ToInt32((1-(80-States.Studying))*0.01);
+
+                CashControl.CalculateGrant();
+
+                if (States.Studying < 60)
+                    CashControl.Grant = 0;
+
                 Studies.InitializeSubjects();
+                Studies.Refresh();
+
                 ExamsControl.DeactivateButtons();
+
+                CourseControl.ChangeCourse();
             }
             else if (Countdown == 0 && !Session)
             {

@@ -1,4 +1,5 @@
-﻿using IIT_Simulator.Classes;
+﻿using IIT_Simulator.AppPages;
+using IIT_Simulator.Classes;
 using System;
 using System.IO;
 using Xamarin.Forms;
@@ -78,6 +79,11 @@ namespace IIT_Simulator
             {
                 await DisplayAlert("Неуспеваемость!", "Студент был отчислен. Начните сначала", "ОК");
                 await Navigation.PushAsync(new Menu());
+            }
+            else if (DaysControl.Congratulate)
+            {
+                await DisplayAlert("Выпускной!", "Ваш студент только что закончил унивеститет!", "Получить диплом");
+                await Navigation.PushAsync(new Winner());
             }
         }
     }

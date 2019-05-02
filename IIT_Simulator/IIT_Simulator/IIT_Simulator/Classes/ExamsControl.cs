@@ -7,7 +7,6 @@ namespace IIT_Simulator.Classes
     public static class ExamsControl
     {
         public static int ExamsCounter;
-        public static double lucky = 0.07;
 
         public static void InitializeExams()
         {

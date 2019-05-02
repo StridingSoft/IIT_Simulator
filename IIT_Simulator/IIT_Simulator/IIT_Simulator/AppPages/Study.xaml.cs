@@ -1,4 +1,5 @@
-﻿using IIT_Simulator.Classes;
+﻿using IIT_Simulator.AppPages;
+using IIT_Simulator.Classes;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -9,12 +10,10 @@ namespace IIT_Simulator
 	public partial class Study : ContentPage
 	{
         Random rnd = new Random();
-		public Study ()
+		public Study()
 		{
 			InitializeComponent();
-            Studies.RefreshStates();
-            Studies.RefreshLabels();
-            Studies.RefreshProgressBars();
+            Studies.Refresh();
         }
 
         private void BtnProg_Clicked(object sender, System.EventArgs e)
@@ -47,28 +46,19 @@ namespace IIT_Simulator
             States.Sleep -= rnd.Next(5, 13) + (int)(0.1 * subject);
             States.Happiness -= rnd.Next(5, 13) + (int)(0.1 * subject);
 
-            subject += new Random().Next(1, 7);
+            subject += new Random().Next(1,8);
             return subject;
         }
 
         private void Refreshing()
         {
-            IncreaseDays();
-            DaysControl.ChangePeriodIfNeeded();
+            DaysControl.DecreaseDays();
             States.RefreshLabels();
             States.RefreshProgressBars();
-            Studies.RefreshLabels();
-            Studies.RefreshProgressBars();
-            Studies.RefreshStates();
+            Studies.Refresh();
             ForceGameOverAlert();
         }
 
-        private void IncreaseDays()
-        {
-            DaysControl.Countdown--;
-            DaysControl.DaysCounter++;
-            DaysControl.DaysToGrant--;
-        }
 
         private async void ForceGameOverAlert()
         {
@@ -81,6 +71,11 @@ namespace IIT_Simulator
             {
                 await DisplayAlert("Неуспеваемость!", "Студент был отчислен. Начните сначала", "ОК");
                 await Navigation.PushAsync(new Menu());
+            }
+            else if (DaysControl.Congratulate)
+            {
+                await DisplayAlert("Выпускной!", "Ваш студент только что закончил унивеститет!", "Получить диплом");
+                await Navigation.PushAsync(new Winner());
             }
         }
     }
