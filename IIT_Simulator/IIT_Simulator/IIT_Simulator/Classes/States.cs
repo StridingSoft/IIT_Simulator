@@ -20,7 +20,7 @@ namespace IIT_Simulator
             Studying = 0;
         }
 
-        public static void RefreshLabels() //мне не нравится как это выглядит, переделай?
+        public static void RefreshLabels()
         {
             Satiety = RemoveOverflowing(Satiety);
             Sleep = RemoveOverflowing(Sleep);

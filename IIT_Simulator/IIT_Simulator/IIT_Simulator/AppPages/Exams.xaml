@@ -6,9 +6,39 @@
              Icon="exams">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label BackgroundColor="White" HeightRequest="1"/>
+            <Label BackgroundColor="DeepSkyBlue" HeightRequest="25" WidthRequest="500" Text="Экзамены" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium"/>
+
+            <StackLayout x:Name="Programming" Spacing="120" Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Программирование" FontSize="Default" HorizontalOptions="Center" />
+                <Label x:Name="ProgrPoints" FontSize="Default"  HorizontalOptions="End" />
+            </StackLayout>
+
+            <Button x:Name="BtnProg" IsEnabled="False" HorizontalOptions="Center" WidthRequest="250" HeightRequest="35" Text="Сдать экзамен" BackgroundColor="Lavender" Clicked ="BtnProg_Clicked"/>
+
+            <StackLayout x:Name="Linal" Spacing="130" Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Линейная алгебра" FontSize="Default" HorizontalOptions="Center" />
+                <Label x:Name="LinalPoints" FontSize="Default"  HorizontalOptions="End" />
+            </StackLayout>
+
+            <Button x:Name="BtnLinal" IsEnabled="False" HorizontalOptions="Center" WidthRequest="250" HeightRequest="35" Text="Сдать экзамен" BackgroundColor="Lavender" Clicked="BtnLinal_Clicked"/>
+
+            <StackLayout x:Name="Asm_economics" Spacing="20" Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Архитектура вычислительных систем" FontSize="Default" HorizontalOptions="Center" />
+                <Label x:Name="Asm_economicsPoints" FontSize="Default"  HorizontalOptions="End" />
+            </StackLayout>
+
+            <Button x:Name="BtnASM_ECO" IsEnabled="False" HorizontalOptions="Center" WidthRequest="250" HeightRequest="35" Text="Сдать экзамен" BackgroundColor="Lavender" Clicked="BtnASM_ECO_Clicked"/>
+
+            <StackLayout x:Name="Math" Spacing="170" Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Матанализ" FontSize="Default" HorizontalOptions="Center" />
+                <Label x:Name="MathPoints" FontSize="Default"  HorizontalOptions="End" />
+            </StackLayout>
+
+            <Button x:Name="BtnMath" IsEnabled="False" HorizontalOptions="Center" WidthRequest="250" HeightRequest="35" Text="Сдать экзамен" BackgroundColor="Lavender" Clicked="BtnMath_Clicked"/>
+
+            <Label BackgroundColor="DeepSkyBlue" HeightRequest="25" WidthRequest="500"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

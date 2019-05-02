@@ -11,6 +11,14 @@ namespace IIT_Simulator.Classes
         public static int Math;
         public static int Asm_eco;
 
+        public static void InitializeSubjects()
+        {
+            Programming = 0;
+            Linal = 0;
+            Math = 0;
+            Asm_eco = 0;
+        }
+
         public static void RefreshStates()
         {
             CalculatePerformance();

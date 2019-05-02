@@ -53,6 +53,8 @@ namespace IIT_Simulator
 
         private void Refreshing()
         {
+            IncreaseDays();
+            DaysControl.ChangePeriodIfNeeded();
             States.RefreshLabels();
             States.RefreshProgressBars();
             Studies.RefreshLabels();
@@ -61,11 +63,23 @@ namespace IIT_Simulator
             ForceGameOverAlert();
         }
 
+        private void IncreaseDays()
+        {
+            DaysControl.Countdown--;
+            DaysControl.DaysCounter++;
+            DaysControl.DaysToGrant--;
+        }
+
         private async void ForceGameOverAlert()
         {
             if (States.GameOver())
             {
                 await DisplayAlert("Вы проиграли!", "Студент умер. Начните сначала", "ОК");
+                await Navigation.PushAsync(new Menu());
+            }
+            else if (DaysControl.Deducted)
+            {
+                await DisplayAlert("Неуспеваемость!", "Студент был отчислен. Начните сначала", "ОК");
                 await Navigation.PushAsync(new Menu());
             }
         }

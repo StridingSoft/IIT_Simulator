@@ -74,6 +74,11 @@ namespace IIT_Simulator
                 await DisplayAlert("Вы проиграли!", "Студент умер. Начните сначала", "ОК");
                 await Navigation.PushAsync(new Menu());
             }
+            else if (DaysControl.Deducted)
+            {
+                await DisplayAlert("Неуспеваемость!", "Студент был отчислен. Начните сначала", "ОК");
+                await Navigation.PushAsync(new Menu());
+            }
         }
     }
 }

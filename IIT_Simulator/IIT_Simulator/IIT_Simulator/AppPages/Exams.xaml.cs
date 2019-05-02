@@ -11,5 +11,25 @@ namespace IIT_Simulator
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private void BtnProg_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnLinal_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnASM_ECO_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnMath_Clicked(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
