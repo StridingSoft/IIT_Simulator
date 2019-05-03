@@ -56,6 +56,17 @@ namespace IIT_Simulator
                 DaysToGrant = 30;
                 States.RefreshLabels();
             }
+            RefreshDays();
+        }
+
+        public static void RefreshDays()
+        {
+            Needs.LbDay.Text = "\t\t\tДень: " + DaysCounter;
+            if (Session)
+                Needs.LbSessionDays.Text = "\t\t\tДо конца сессии: " + Countdown;
+            else
+                Needs.LbSessionDays.Text = "\t\t\tДней до сессии: " + Countdown;
+            Needs.LbDaysToGrant.Text = "\t\t\tДней до стипендии: " + DaysToGrant;
         }
 
         public static void DecreaseDays()

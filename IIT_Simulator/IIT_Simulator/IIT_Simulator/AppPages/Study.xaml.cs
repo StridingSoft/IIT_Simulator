@@ -18,47 +18,61 @@ namespace IIT_Simulator
 
         private void BtnProg_Clicked(object sender, System.EventArgs e)
         {
-            Studies.Programming = ChangeStats(Studies.Programming);
+            Studies.Programming += LearningPoints();
+            Studies.Programming += LuckyCharm();
             Refreshing();
         }
 
         private void BtnLinal_Clicked(object sender, System.EventArgs e)
         {
-            Studies.Linal = ChangeStats(Studies.Linal);
+            Studies.Linal += LearningPoints();
+            Studies.Linal += LuckyCharm();
             Refreshing();
         }
 
         private void BtnASM_ECO_Clicked(object sender, System.EventArgs e)
         {
-            Studies.Asm_eco = ChangeStats(Studies.Asm_eco);
+            Studies.Asm_eco += LearningPoints();
+            Studies.Asm_eco += LuckyCharm();
             Refreshing();
         }
 
         private void BtnMath_Clicked(object sender, System.EventArgs e)
         {
-            Studies.Math = ChangeStats(Studies.Math);
+            Studies.Math += LearningPoints();
+            Studies.Math += LuckyCharm();
             Refreshing();
         }
 
-        private int ChangeStats(int subject)
+        private int LearningPoints()
         {
-            States.Satiety -= rnd.Next(5,13) + (int)(0.1 * subject);
-            States.Sleep -= rnd.Next(5, 13) + (int)(0.1 * subject);
-            States.Happiness -= rnd.Next(5, 13) + (int)(0.1 * subject);
-
-            subject += new Random().Next(1,8);
-            return subject;
+            States.Satiety -= rnd.Next(5,13) + (int)(0.1 * States.Studying);
+            States.Sleep -= rnd.Next(5, 13) + (int)(0.1 * States.Studying);
+            States.Happiness -= rnd.Next(5, 13) + (int)(0.1 * States.Studying);
+            return new Random().Next(1, 8);
         }
 
         private void Refreshing()
         {
             DaysControl.DecreaseDays();
+            DaysControl.RefreshDays();
             States.RefreshLabels();
             States.RefreshProgressBars();
             Studies.Refresh();
             ForceGameOverAlert();
         }
 
+        private int LuckyCharm()
+        {
+            if (rnd.Next(1, 100) == rnd.Next(1, 100))
+            {
+                Congrat();
+                return 100;
+            }
+            else return 0;
+        }
+
+        private async void Congrat() => await DisplayAlert("Везунчик!", "Ты был удостоен автомата. Поздравляем!", "Ура!");
 
         private async void ForceGameOverAlert()
         {

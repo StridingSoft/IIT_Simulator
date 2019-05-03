@@ -31,14 +31,6 @@ namespace IIT_Simulator
             Needs.SleepPoints.Text = Sleep + "/100";
             Needs.HappyPoints.Text = Happiness + "/100";
             Needs.StudyPoints.Text = Studying + "/100";
-            Needs.LbDay.Text = "\t\t\tДень: " + DaysControl.DaysCounter;
-            if (DaysControl.Session)
-                Needs.LbSessionDays.Text = "\t\t\tДо конца сессии: " + DaysControl.Countdown;
-            else
-                Needs.LbSessionDays.Text = "\t\t\tДней до сессии: " + DaysControl.Countdown;
-            Needs.LbMoney.Text = "\t\t\tДеньги(руб.): " + CashControl.Money;
-            Needs.LbGrant.Text = "\t\t\tСтипендия(руб.): " + CashControl.Grant;
-            Needs.LbDaysToGrant.Text = "\t\t\tДней до стипендии: " + DaysControl.DaysToGrant; 
         }
 
         public static void RefreshProgressBars()

@@ -18,6 +18,8 @@ namespace IIT_Simulator
             SavingSystem.ReadFile();
             States.RefreshLabels();
             States.RefreshProgressBars();
+            DaysControl.RefreshDays();
+            CashControl.RefreshCash();
         }
 
         private void btnEat_Click(object sender, EventArgs e)
@@ -28,10 +30,7 @@ namespace IIT_Simulator
                 States.Sleep -= rnd.Next(1, 7);
                 CashControl.Money -= 100;
                 DaysControl.DecreaseDays();
-                States.RefreshLabels();
-                States.RefreshProgressBars();
-                Studies.RefreshStates();
-                ForceGameOverAlert();
+                Refresh();
             }
             else
                 ForceNoMoneyAlert();
@@ -42,10 +41,7 @@ namespace IIT_Simulator
             States.Sleep += 20 + rnd.Next(1, 10);
             States.Satiety -= rnd.Next(1, 7);
             DaysControl.DecreaseDays();
-            States.RefreshLabels();
-            States.RefreshProgressBars();
-            Studies.RefreshStates();
-            ForceGameOverAlert();
+            Refresh();
         }
 
         private void btnEnjoy_Click(object sender, EventArgs e)
@@ -57,13 +53,20 @@ namespace IIT_Simulator
                 States.Sleep -= rnd.Next(5, 15);
                 CashControl.Money -= 200;
                 DaysControl.DecreaseDays();
-                States.RefreshLabels();
-                States.RefreshProgressBars();
-                Studies.RefreshStates();
-                ForceGameOverAlert();
+                Refresh();
             }
             else
                 ForceNoMoneyAlert();
+        }
+
+        private void Refresh()
+        {
+            States.RefreshLabels();
+            States.RefreshProgressBars();
+            Studies.RefreshStates();
+            DaysControl.RefreshDays();
+            CashControl.RefreshCash();
+            ForceGameOverAlert();
         }
 
         private async void ForceNoMoneyAlert() => await DisplayAlert("Недостаточно средств", "У вас закончились деньги", "ОК");
