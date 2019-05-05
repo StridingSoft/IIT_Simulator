@@ -15,6 +15,7 @@ namespace IIT_Simulator.AppPages
         public Winner()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }

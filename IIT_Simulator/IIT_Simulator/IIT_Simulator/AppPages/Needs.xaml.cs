@@ -85,7 +85,7 @@ namespace IIT_Simulator
             }
             else if (DaysControl.Congratulate)
             {
-                await DisplayAlert("Выпускной!", "Ваш студент только что закончил унивеститет!", "Получить диплом");
+                await DisplayAlert("Выпускной!", "Ваш студент только что закончил университет!", "Получить диплом");
                 await Navigation.PushAsync(new Winner());
             }
         }

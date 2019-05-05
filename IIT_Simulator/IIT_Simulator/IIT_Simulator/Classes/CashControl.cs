@@ -12,7 +12,7 @@ namespace IIT_Simulator
 
         public static void InitializeCash()
         {
-            Money = 2000;
+            Money = 1500;
             Grant = fixedGrant;
         }
 
@@ -23,5 +23,11 @@ namespace IIT_Simulator
         }
 
         public static void CalculateGrant()=> Grant = Convert.ToInt32(fixedGrant * (1 - (80 - States.Studying) * 0.01));
+
+        public static void CheckPerformance()
+        {
+            if (States.Studying < 60)
+                Grant = 0;
+        }
     }
 }

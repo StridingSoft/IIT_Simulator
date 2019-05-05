@@ -13,7 +13,7 @@ namespace IIT_Simulator
             CourseControl.RefreshCourse();
 		}
 
-        private void BtnAcceptCode_Clicked(object sender, System.EventArgs e)=>CheatCodes.Cheat();
+        private void BtnAcceptCode_Clicked(object sender, System.EventArgs e) => CheatCodes.Cheat();
 
         private async void BtnLeave_Clicked(object sender, System.EventArgs e)
         {
@@ -24,17 +24,19 @@ namespace IIT_Simulator
 
         private void BtnCorpus_Clicked(object sender, System.EventArgs e)
         {
-
+            //рандом, от 1 до 20 - вы заплатили вступительный взнос но ничего не получилось, от 21 до 50 успех + 2000к, от 51 до 100 - ничего не произошло
+            //при получении-потере денег обновлять деньги
         }
 
         private void BtnGetHelp_Clicked(object sender, System.EventArgs e)
         {
-
+                //получить помощь 10к (или меньше) раз за семестр
+                //деактивировать кнопку и сохранять ее состояние
         }
 
         private void BtnTransfer_Clicked(object sender, System.EventArgs e)
         {
-
+            //перевод из одной группы в другую, обнуляет предмет который меняется, возможен не более трех раз
         }
     }
 }

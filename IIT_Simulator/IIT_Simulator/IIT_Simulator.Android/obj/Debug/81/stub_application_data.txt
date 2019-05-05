@@ -1,2 +1,2 @@
 android.app.Application
-com.companyname.IIT_Simulator
+com.stasenash.IIT_Simulator

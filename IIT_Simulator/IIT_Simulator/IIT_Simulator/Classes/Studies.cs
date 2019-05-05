@@ -6,10 +6,10 @@ namespace IIT_Simulator.Classes
 {
     public static class Studies
     {
-        public static int Programming;
-        public static int Linal;
-        public static int Math;
-        public static int Asm_eco;
+        public static int Programming { get; set; }
+        public static int Linal { get; set; }
+        public static int Math { get; set; }
+        public static int Asm_eco { get; set; }
 
         public static void InitializeSubjects()
         {

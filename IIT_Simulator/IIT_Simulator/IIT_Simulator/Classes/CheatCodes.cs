@@ -31,6 +31,7 @@ namespace IIT_Simulator.Classes
             States.RefreshLabels();
             States.RefreshProgressBars();
             Studies.Refresh();
+            CashControl.RefreshCash();
             Deanery.CheatCode.Text = "";
         }
     }

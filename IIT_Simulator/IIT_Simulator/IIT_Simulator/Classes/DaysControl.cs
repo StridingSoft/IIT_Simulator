@@ -28,14 +28,14 @@ namespace IIT_Simulator
             {
                 if (States.Studying < 50 || ExamsControl.ExamsCounter < 4)
                     Deducted = true;
-                ExamsControl.ExamsCounter = 0;
+                
                 Session = !Session;
                 Countdown = 150;
 
                 CashControl.CalculateGrant();
+                CashControl.CheckPerformance();
 
-                if (States.Studying < 60)
-                    CashControl.Grant = 0;
+                ExamsControl.ExamsCounter = 0;
 
                 Studies.InitializeSubjects();
                 Studies.Refresh();
@@ -55,6 +55,7 @@ namespace IIT_Simulator
                 CashControl.Money += CashControl.Grant;
                 DaysToGrant = 30;
                 States.RefreshLabels();
+                CashControl.RefreshCash();
             }
             RefreshDays();
         }

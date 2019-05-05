@@ -9,6 +9,7 @@ namespace IIT_Simulator
 		public HowToPlay ()
 		{
 			InitializeComponent ();
-		}
+            NavigationPage.SetHasNavigationBar(this, false);
+        }
 	}
 }
