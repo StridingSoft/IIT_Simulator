@@ -17,9 +17,13 @@ namespace IIT_Simulator
 
         private async void BtnLeave_Clicked(object sender, System.EventArgs e)
         {
-            CourseControl.Expelled = true;
-            await DisplayAlert("Отчислен!", "Студент забрал документы из вуза", "ОК");
-            await Navigation.PushAsync(new Menu());
+            bool res = await DisplayAlert("Процесс отчисления", "Вы уверены, что не хотите учиться?", "Да", "Нет");
+            if (res)
+            {
+                CourseControl.Expelled = true;
+                await DisplayAlert("Отчислен!", "Студент забрал документы из вуза", "ОК");
+                await Navigation.PushAsync(new Menu());
+            }
         }
 
         private void BtnCorpus_Clicked(object sender, System.EventArgs e)
@@ -28,15 +32,15 @@ namespace IIT_Simulator
             //при получении-потере денег обновлять деньги
         }
 
-        private void BtnGetHelp_Clicked(object sender, System.EventArgs e)
+        private async void BtnGetHelp_Clicked(object sender, System.EventArgs e)
         {
-                //получить помощь 10к (или меньше) раз за семестр
-                //деактивировать кнопку и сохранять ее состояние
+            await DisplayAlert("Прибавка!","Вам начислено 10 000(руб.)","Ура!");
+            CashControl.Money += 10000;
+            CashControl.RefreshCash();
+            CourseControl.GotHelp = true;
+            BtnGetHelp.IsEnabled = false;
         }
 
-        private void BtnTransfer_Clicked(object sender, System.EventArgs e)
-        {
-            //перевод из одной группы в другую, обнуляет предмет который меняется, возможен не более трех раз
-        }
+        private void BtnTransfer_Clicked(object sender, System.EventArgs e)=> CourseControl.ChangeSpeciality();
     }
 }

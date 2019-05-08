@@ -35,7 +35,7 @@ namespace IIT_Simulator
                                    $"{CashControl.Money};{CashControl.Grant};" +
                                    $"{Studies.Programming};{Studies.Linal};{Studies.Math};{Studies.Asm_eco};" +
                                    $"{ExamsControl.ExamsCounter};" +
-                                   $"{CourseControl.Group};{CourseControl.Course };{CourseControl.Semestr}");
+                                   $"{CourseControl.Group};{CourseControl.Course };{CourseControl.Semestr};{CourseControl.GotHelp}");
             }
         }
 
@@ -45,7 +45,7 @@ namespace IIT_Simulator
             {
                 var array = streamReader.ReadToEnd().Trim().Split(';');
 
-                if (array.Length == 18)
+                if (array.Length == 19)
                 {
                     DaysControl.DaysCounter = int.Parse(array[0]);
                     DaysControl.Countdown = int.Parse(array[1]);
@@ -70,6 +70,7 @@ namespace IIT_Simulator
                     CourseControl.Group = array[15];
                     CourseControl.Course = int.Parse(array[16]);
                     CourseControl.Semestr = int.Parse(array[17]);
+                    CourseControl.GotHelp = bool.Parse(array[18]);
                 }
             }
         }

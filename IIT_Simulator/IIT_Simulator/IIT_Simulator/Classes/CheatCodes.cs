@@ -9,6 +9,7 @@ namespace IIT_Simulator.Classes
         private static string maxNeeds = "maxmotives";
         private static string maxPerformance = "maxstudy";
         private static string addMoney = "motherlode";
+        private static string upToCourse = "fourcourse";
 
         public static void Cheat()
         {
@@ -28,10 +29,14 @@ namespace IIT_Simulator.Classes
             }
             else if (Deanery.CheatCode.Text == addMoney)
                 CashControl.Money += 5000;
+            else if (Deanery.CheatCode.Text == upToCourse)
+                CourseControl.Course = 4;
+
             States.RefreshLabels();
             States.RefreshProgressBars();
             Studies.Refresh();
             CashControl.RefreshCash();
+            CourseControl.RefreshCourse();
             Deanery.CheatCode.Text = "";
         }
     }
