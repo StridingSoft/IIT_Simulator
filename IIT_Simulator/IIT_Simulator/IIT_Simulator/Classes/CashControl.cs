@@ -22,7 +22,7 @@ namespace IIT_Simulator
             Needs.LbGrant.Text = "\t\t\tСтипендия(руб.): " + Grant;
         }
 
-        public static void CalculateGrant()=> Grant = Convert.ToInt32(fixedGrant * (1 - (80 - States.Studying) * 0.01));
+        public static void CalculateGrant() => Grant = Convert.ToInt32(fixedGrant * (1 - (80 - States.Studying) * 0.01));
 
         public static void CheckPerformance()
         {

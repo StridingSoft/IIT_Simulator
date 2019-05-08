@@ -110,6 +110,4 @@ C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator
 C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator.Android\bin\Debug\com.stasenash.IIT_Simulator-Signed.apk
 C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator.Android\obj\Debug\81\android\bin\com.stasenash.IIT_Simulator.apk
 C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator.Android\obj\Debug\81\res\drawable\winningpage.png
-C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator\bin\Debug\netstandard2.0\IIT_Simulator.dll
-C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator.Android\bin\Debug\IIT_Simulator.dll.mdb
 C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator.Android\obj\Debug\81\linksrc\IIT_Simulator.dll.mdb
