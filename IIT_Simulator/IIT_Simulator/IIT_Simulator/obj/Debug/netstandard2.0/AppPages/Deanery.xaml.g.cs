@@ -17,34 +17,34 @@ namespace IIT_Simulator {
     public partial class Deanery : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.StackLayout stackLayout;
+        private global::Xamarin.Forms.StackLayout stackLayout;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Label Group;
+        private global::Xamarin.Forms.Label Group;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Button BtnTransfer;
+        private global::Xamarin.Forms.Button BtnTransfer;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Button BtnGetHelp;
+        private global::Xamarin.Forms.Button BtnGetHelp;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Button BtnCorpus;
+        private global::Xamarin.Forms.Button BtnCorpus;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Button BtnLeave;
+        private global::Xamarin.Forms.Button BtnLeave;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Label Course;
+        private global::Xamarin.Forms.Label Course;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Label Semestr;
+        private global::Xamarin.Forms.Label Semestr;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Entry CheatCode;
+        private global::Xamarin.Forms.Entry CheatCode;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Button BtnAcceptCode;
+        private global::Xamarin.Forms.Button BtnAcceptCode;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {

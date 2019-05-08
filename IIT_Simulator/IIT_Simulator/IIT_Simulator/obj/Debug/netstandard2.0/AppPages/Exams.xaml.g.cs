@@ -17,31 +17,31 @@ namespace IIT_Simulator {
     public partial class Exams : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Label ProgrPoints;
+        private global::Xamarin.Forms.Label ProgrPoints;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Button BtnProg;
+        private global::Xamarin.Forms.Button BtnProg;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Label LinalPoints;
+        private global::Xamarin.Forms.Label LinalPoints;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Button BtnLinal;
+        private global::Xamarin.Forms.Button BtnLinal;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Label Asm_economics;
+        private global::Xamarin.Forms.Label Asm_economics;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Label Asm_economicsPoints;
+        private global::Xamarin.Forms.Label Asm_economicsPoints;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Button BtnASM_ECO;
+        private global::Xamarin.Forms.Button BtnASM_ECO;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Label MathPoints;
+        private global::Xamarin.Forms.Label MathPoints;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        public static global::Xamarin.Forms.Button BtnMath;
+        private global::Xamarin.Forms.Button BtnMath;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {

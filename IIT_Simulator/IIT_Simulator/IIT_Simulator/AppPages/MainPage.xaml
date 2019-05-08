@@ -5,7 +5,7 @@
              x:Class="IIT_Simulator.MainPage"
              BarBackgroundColor="DeepSkyBlue">
     <TabbedPage.Children>
-        <local:Needs/>
+        <local:NeedsPage/>
         <local:Study/>
         <local:Deanery/>
         <local:Exams/>
