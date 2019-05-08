@@ -32,3 +32,4 @@ C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator
 C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator\obj\Debug\netstandard2.0\AppPages\Needs.xaml.g.cs
 C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator\obj\Debug\netstandard2.0\AppPages\Study.xaml.g.cs
 C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator\obj\Debug\netstandard2.0\AppPages\Winner.xaml.g.cs
+C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator\obj\Debug\netstandard2.0\AppPages\NeedsPage.xaml.g.cs

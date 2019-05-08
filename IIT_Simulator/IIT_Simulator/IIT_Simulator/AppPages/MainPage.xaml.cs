@@ -15,7 +15,7 @@ namespace IIT_Simulator
         protected override void OnDisappearing()
         {
             File.Delete(SavingSystem.GetPathToFile());
-            if (!States.GameOver() && !DaysControl.Deducted && !DaysControl.Congratulate && !CourseControl.Expelled)
+            if (!States.GameOver() && !DaysControl.Deducted && !DaysControl.Congratulate && !Simulator.Course.Expelled)
                 SavingSystem.WriteAllData(SavingSystem.GetPathToFile()); 
         }
     }

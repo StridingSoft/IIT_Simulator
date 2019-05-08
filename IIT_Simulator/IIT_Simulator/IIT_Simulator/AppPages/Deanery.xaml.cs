@@ -10,7 +10,7 @@ namespace IIT_Simulator
 		public Deanery ()
 		{
 			InitializeComponent ();
-            CourseControl.RefreshCourse();
+            Simulator.Course.RefreshCourse();
 		}
 
         private void BtnAcceptCode_Clicked(object sender, System.EventArgs e) => CheatCodes.Cheat();
@@ -20,10 +20,19 @@ namespace IIT_Simulator
             bool res = await DisplayAlert("Процесс отчисления", "Вы уверены, что не хотите учиться?", "Да", "Нет");
             if (res)
             {
-                CourseControl.Expelled = true;
+                Simulator.Course.Expelled = true;
                 await DisplayAlert("Отчислен!", "Студент забрал документы из вуза", "ОК");
                 await Navigation.PushAsync(new Menu());
             }
+        }
+
+        public static void RefreshCourse()
+        {
+            Deanery.Group.Text = " Группа: " + Simulator.Course.Group;
+            Deanery.Course.Text = " Курс: " + Simulator.Course.CourseNumber;
+            Deanery.Semestr.Text = " Семестр: " + Simulator.Course.Semestr;
+            if (Simulator.Course.GotHelp)
+                Deanery.BtnGetHelp.IsEnabled = false;
         }
 
         private void BtnCorpus_Clicked(object sender, System.EventArgs e)
@@ -35,12 +44,12 @@ namespace IIT_Simulator
         private async void BtnGetHelp_Clicked(object sender, System.EventArgs e)
         {
             await DisplayAlert("Прибавка!","Вам начислено 10 000(руб.)","Ура!");
-            CashControl.Money += 10000;
-            CashControl.RefreshCash();
-            CourseControl.GotHelp = true;
+            Simulator.Cash.Money += 10000;
+            NeedsPage.RefreshCash();
+            Simulator.Course.GotHelp = true;
             BtnGetHelp.IsEnabled = false;
         }
 
-        private void BtnTransfer_Clicked(object sender, System.EventArgs e)=> CourseControl.ChangeSpeciality();
+        private void BtnTransfer_Clicked(object sender, System.EventArgs e) => Simulator.Course.ChangeSpeciality();
     }
 }

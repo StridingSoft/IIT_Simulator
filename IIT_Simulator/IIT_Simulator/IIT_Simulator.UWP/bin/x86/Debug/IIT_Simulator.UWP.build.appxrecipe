@@ -532,6 +532,9 @@
     <AppxPackagedFile Include="C:\Users\stasi\.nuget\packages\xamarin.forms\3.4.0.1008975\lib\uap10.0\Xamarin.Forms.Xaml.dll">
       <PackagePath>Xamarin.Forms.Xaml.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stasi\.nuget\packages\xforms.plugin.animationnavigationpage\1.0.7\lib\netstandard2.0\FormsControls.Base.dll">
+      <PackagePath>FormsControls.Base.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator\bin\Debug\netstandard2.0\IIT_Simulator.dll">
       <PackagePath>IIT_Simulator.dll</PackagePath>
     </AppxPackagedFile>

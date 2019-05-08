@@ -28,18 +28,18 @@ namespace IIT_Simulator.Classes
                 Studies.Math = 100;
             }
             else if (Deanery.CheatCode.Text == addMoney)
-                CashControl.Money += 5000;
+                Simulator.Cash.Money += 5000;
             else if (Deanery.CheatCode.Text == upToCourse)
             {
-                CourseControl.Course = 4;
-                CourseControl.Semestr = 2;
+                Simulator.Course.CourseNumber = 4;
+                Simulator.Course.Semestr = 2;
             }
 
             States.RefreshLabels();
             States.RefreshProgressBars();
             Studies.Refresh();
-            CashControl.RefreshCash();
-            CourseControl.RefreshCourse();
+            NeedsPage.RefreshCash();
+            Simulator.Course.RefreshCourse();
             Deanery.CheatCode.Text = "";
         }
     }

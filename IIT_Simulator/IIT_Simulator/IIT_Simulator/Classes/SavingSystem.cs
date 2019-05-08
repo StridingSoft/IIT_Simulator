@@ -16,10 +16,10 @@ namespace IIT_Simulator
             {
                 States.InitializeStates();
                 DaysControl.InitializeDays();
-                CashControl.InitializeCash();
+                Simulator.Cash.InitializeCash();
                 Studies.InitializeSubjects();
                 ExamsControl.InitializeExams();
-                CourseControl.InitializeCourse();
+                Simulator.Course.InitializeCourse();
                 WriteAllData(fileName);
             }
             else
@@ -32,10 +32,10 @@ namespace IIT_Simulator
             {
                 streamWriter.Write($"{DaysControl.DaysCounter};{DaysControl.Countdown};{DaysControl.DaysToGrant};{DaysControl.Session};" +
                                    $"{States.Satiety};{States.Sleep};{States.Happiness};{States.Studying};" +
-                                   $"{CashControl.Money};{CashControl.Grant};" +
+                                   $"{Simulator.Cash.Money};{Simulator.Cash.Grant};" +
                                    $"{Studies.Programming};{Studies.Linal};{Studies.Math};{Studies.Asm_eco};" +
                                    $"{ExamsControl.ExamsCounter};" +
-                                   $"{CourseControl.Group};{CourseControl.Course };{CourseControl.Semestr};{CourseControl.GotHelp}");
+                                   $"{Simulator.Course.Group};{Simulator.Course.CourseNumber };{Simulator.Course.Semestr};{Simulator.Course.GotHelp}");
             }
         }
 
@@ -57,8 +57,8 @@ namespace IIT_Simulator
                     States.Happiness = int.Parse(array[6]);
                     States.Studying = int.Parse(array[7]);
 
-                    CashControl.Money = int.Parse(array[8]);
-                    CashControl.Grant = int.Parse(array[9]);
+                    Simulator.Cash.Money = int.Parse(array[8]);
+                    Simulator.Cash.Grant = int.Parse(array[9]);
 
                     Studies.Programming = int.Parse(array[10]);
                     Studies.Linal = int.Parse(array[11]);
@@ -67,10 +67,10 @@ namespace IIT_Simulator
 
                     ExamsControl.ExamsCounter = int.Parse(array[14]);
 
-                    CourseControl.Group = array[15];
-                    CourseControl.Course = int.Parse(array[16]);
-                    CourseControl.Semestr = int.Parse(array[17]);
-                    CourseControl.GotHelp = bool.Parse(array[18]);
+                    Simulator.Course.Group = array[15];
+                    Simulator.Course.CourseNumber = int.Parse(array[16]);
+                    Simulator.Course.Semestr = int.Parse(array[17]);
+                    Simulator.Course.GotHelp = bool.Parse(array[18]);
                 }
             }
         }

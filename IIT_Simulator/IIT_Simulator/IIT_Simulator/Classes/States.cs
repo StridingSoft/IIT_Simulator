@@ -27,23 +27,23 @@ namespace IIT_Simulator
             Happiness = RemoveOverflowing(Happiness);
             Studying = RemoveOverflowing(Studying);
 
-            Needs.EatPoints.Text = Satiety + "/100";
-            Needs.SleepPoints.Text = Sleep + "/100";
-            Needs.HappyPoints.Text = Happiness + "/100";
-            Needs.StudyPoints.Text = Studying + "/100";
+            NeedsPage.EatPoints.Text = Satiety + "/100";
+            NeedsPage.SleepPoints.Text = Sleep + "/100";
+            NeedsPage.HappyPoints.Text = Happiness + "/100";
+            NeedsPage.StudyPoints.Text = Studying + "/100";
         }
 
         public static void RefreshProgressBars()
         {
-            Needs.PbFood.Progress = Satiety * 0.01;
-            Needs.PbSleep.Progress = Sleep * 0.01;
-            Needs.PbHappiness.Progress = Happiness *0.01;
-            Needs.PbStudying.Progress = Studying * 0.01;
+            NeedsPage.PbFood.Progress = Satiety * 0.01;
+            NeedsPage.PbSleep.Progress = Sleep * 0.01;
+            NeedsPage.PbHappiness.Progress = Happiness * 0.01;
+            NeedsPage.PbStudying.Progress = Studying * 0.01;
 
-            ChangeProgressBarColor(Satiety, Needs.PbFood);
-            ChangeProgressBarColor(Sleep, Needs.PbSleep);
-            ChangeProgressBarColor(Happiness, Needs.PbHappiness);
-            ChangeProgressBarColor(Studying, Needs.PbStudying);
+            ChangeProgressBarColor(Satiety, NeedsPage.PbFood);
+            ChangeProgressBarColor(Sleep, NeedsPage.PbSleep);
+            ChangeProgressBarColor(Happiness, NeedsPage.PbHappiness);
+            ChangeProgressBarColor(Studying, NeedsPage.PbStudying);
         }
 
         private static void ChangeProgressBarColor(int state, Xamarin.Forms.ProgressBar progressBar)

@@ -56,3 +56,5 @@ C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator
 C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator.iOS\obj\iPhoneSimulator\Debug\IIT_Simulator.iOS.csproj.CopyComplete
 C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator.iOS\obj\iPhoneSimulator\Debug\IIT_Simulator.iOS.exe
 C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator.iOS\obj\iPhoneSimulator\Debug\IIT_Simulator.iOS.pdb
+C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator.iOS\bin\iPhoneSimulator\Debug\FormsControls.Base.dll
+C:\Users\stasi\Documents\IIT_Simulator\IIT_Simulator\IIT_Simulator\IIT_Simulator.iOS\bin\iPhoneSimulator\Debug\FormsControls.Touch.dll

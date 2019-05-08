@@ -32,8 +32,8 @@ namespace IIT_Simulator
                 Session = !Session;
                 Countdown = 150;
 
-                CashControl.CalculateGrant();
-                CashControl.CheckPerformance();
+                Simulator.Cash.CalculateGrant();
+                Simulator.Cash.CheckPerformance();
 
                 ExamsControl.ExamsCounter = 0;
 
@@ -42,7 +42,7 @@ namespace IIT_Simulator
 
                 ExamsControl.DeactivateButtons();
 
-                CourseControl.ChangeCourse();
+                Simulator.Course.ChangeCourse();
             }
             else if (Countdown == 0 && !Session)
             {
@@ -52,22 +52,22 @@ namespace IIT_Simulator
             }
             if (DaysToGrant == 0)
             {
-                CashControl.Money += CashControl.Grant;
+                Simulator.Cash.Money += Simulator.Cash.Grant;
                 DaysToGrant = 30;
                 States.RefreshLabels();
-                CashControl.RefreshCash();
+                NeedsPage.RefreshCash();
             }
             RefreshDays();
         }
 
         public static void RefreshDays()
         {
-            Needs.LbDay.Text = "\t\t\tДень: " + DaysCounter;
+            NeedsPage.LbDay.Text = "\t\t\tДень: " + DaysCounter;
             if (Session)
-                Needs.LbSessionDays.Text = "\t\t\tДо конца сессии: " + Countdown;
+                NeedsPage.LbSessionDays.Text = "\t\t\tДо конца сессии: " + Countdown;
             else
-                Needs.LbSessionDays.Text = "\t\t\tДней до сессии: " + Countdown;
-            Needs.LbDaysToGrant.Text = "\t\t\tДней до стипендии: " + DaysToGrant;
+                NeedsPage.LbSessionDays.Text = "\t\t\tДней до сессии: " + Countdown;
+            NeedsPage.LbDaysToGrant.Text = "\t\t\tДней до стипендии: " + DaysToGrant;
         }
 
         public static void DecreaseDays()

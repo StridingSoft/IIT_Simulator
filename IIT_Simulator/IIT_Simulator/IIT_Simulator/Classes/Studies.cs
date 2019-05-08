@@ -22,20 +22,20 @@ namespace IIT_Simulator.Classes
         public static void RefreshStates()
         {
             CalculatePerformance();
-            Study.EatPoints.Text = Needs.EatPoints.Text;
-            Study.SleepPoints.Text = Needs.SleepPoints.Text;
-            Study.HappyPoints.Text = Needs.HappyPoints.Text;
-            Study.StudyPoints.Text = Needs.StudyPoints.Text;
+            Study.EatPoints.Text = NeedsPage.EatPoints.Text;
+            Study.SleepPoints.Text = NeedsPage.SleepPoints.Text;
+            Study.HappyPoints.Text = NeedsPage.HappyPoints.Text;
+            Study.StudyPoints.Text = NeedsPage.StudyPoints.Text;
 
-            Study.PbFood.Progress = Needs.PbFood.Progress;
-            Study.PbSleep.Progress = Needs.PbSleep.Progress;
-            Study.PbStudying.Progress = Needs.PbStudying.Progress;
-            Study.PbHappiness.Progress = Needs.PbHappiness.Progress;
+            Study.PbFood.Progress = NeedsPage.PbFood.Progress;
+            Study.PbSleep.Progress = NeedsPage.PbSleep.Progress;
+            Study.PbStudying.Progress = NeedsPage.PbStudying.Progress;
+            Study.PbHappiness.Progress = NeedsPage.PbHappiness.Progress;
 
-            Study.PbFood.ProgressColor = Needs.PbFood.ProgressColor;
-            Study.PbStudying.ProgressColor = Needs.PbStudying.ProgressColor;
-            Study.PbSleep.ProgressColor = Needs.PbSleep.ProgressColor;
-            Study.PbHappiness.ProgressColor = Needs.PbHappiness.ProgressColor;
+            Study.PbFood.ProgressColor = NeedsPage.PbFood.ProgressColor;
+            Study.PbStudying.ProgressColor = NeedsPage.PbStudying.ProgressColor;
+            Study.PbSleep.ProgressColor = NeedsPage.PbSleep.ProgressColor;
+            Study.PbHappiness.ProgressColor = NeedsPage.PbHappiness.ProgressColor;
         }
 
         public static void RefreshLabels() 
