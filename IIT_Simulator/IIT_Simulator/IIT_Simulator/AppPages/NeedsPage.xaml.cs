@@ -53,33 +53,33 @@ namespace IIT_Simulator
 
         public void RefreshLabels()
         {
-            lblEatPoints.Text = States.Satiety + "/100";
-            lblSleepPoints.Text = States.Sleep + "/100";
-            lblHappyPoints.Text = States.Happiness + "/100";
-            lblStudyPoints.Text = States.Studying + "/100";
+            lblEatPoints.Text = Simulator.States.Satiety + "/100";
+            lblSleepPoints.Text = Simulator.States.Sleep + "/100";
+            lblHappyPoints.Text = Simulator.States.Happiness + "/100";
+            lblStudyPoints.Text = Simulator.States.Studying + "/100";
         }
 
         public void RefreshProgressBars()
         {
-            pbFood.Progress = States.Satiety * 0.01;
-            pbSleep.Progress = States.Sleep * 0.01;
-            pbHappiness.Progress = States.Happiness * 0.01;
-            pbStudying.Progress = States.Studying * 0.01;
+            pbFood.Progress = Simulator.States.Satiety * 0.01;
+            pbSleep.Progress = Simulator.States.Sleep * 0.01;
+            pbHappiness.Progress = Simulator.States.Happiness * 0.01;
+            pbStudying.Progress = Simulator.States.Studying * 0.01;
 
-            ChangeProgressBarColor(States.Satiety,  pbFood);
-            ChangeProgressBarColor(States.Sleep,    pbSleep);
-            ChangeProgressBarColor(States.Happiness,pbHappiness);
-            ChangeProgressBarColor(States.Studying, pbStudying);
+            ChangeProgressBarColor(Simulator.States.Satiety,  pbFood);
+            ChangeProgressBarColor(Simulator.States.Sleep,    pbSleep);
+            ChangeProgressBarColor(Simulator.States.Happiness,pbHappiness);
+            ChangeProgressBarColor(Simulator.States.Studying, pbStudying);
         }
 
         public void RefreshDays()
         {
-            lblDay.Text = "\t\t\tДень: " + DaysControl.DaysCounter;
-            if (DaysControl.Session)
-                lblSessionDays.Text = "\t\t\tДо конца сессии: " + DaysControl.Countdown;
+            lblDay.Text = "\t\t\tДень: " + Simulator.Schedule.DaysCounter;
+            if (Simulator.Schedule.IsSession)
+                lblSessionDays.Text = "\t\t\tДо конца сессии: " + Simulator.Schedule.Countdown;
             else
-                lblSessionDays.Text = "\t\t\tДней до сессии: " + DaysControl.Countdown;
-            lblDaysToGrant.Text = "\t\t\tДней до стипендии: " + DaysControl.DaysToGrant;
+                lblSessionDays.Text = "\t\t\tДней до сессии: " + Simulator.Schedule.Countdown;
+            lblDaysToGrant.Text = "\t\t\tДней до стипендии: " + Simulator.Schedule.DaysToGrant;
         }
 
         private static void ChangeProgressBarColor(int state, Xamarin.Forms.ProgressBar progressBar)
@@ -96,8 +96,8 @@ namespace IIT_Simulator
         {
             if (Simulator.Cash.Money >= 100)
             {
-                States.Satiety += 20 + rnd.Next(1, 10);
-                States.Sleep -= rnd.Next(1, 7);
+                Simulator.States.Satiety += 20 + rnd.Next(1, 10);
+                Simulator.States.Sleep -= rnd.Next(1, 7);
                 Simulator.Cash.Money -= 100;
                 mainPage.DecreaseDays();
                 Refresh();
@@ -108,8 +108,8 @@ namespace IIT_Simulator
 
         private void btnSleep_Click(object sender, EventArgs e)
         {
-            States.Sleep += 20 + rnd.Next(1, 10);
-            States.Satiety -= rnd.Next(1, 7);
+            Simulator.States.Sleep += 20 + rnd.Next(1, 10);
+            Simulator.States.Satiety -= rnd.Next(1, 7);
             mainPage.DecreaseDays();
             Refresh();
         }
@@ -118,9 +118,9 @@ namespace IIT_Simulator
         {
             if (Simulator.Cash.Money >= 200)
             {
-                States.Happiness += 30 + rnd.Next(1, 10);
-                States.Satiety -= rnd.Next(5, 15);
-                States.Sleep -= rnd.Next(5, 15);
+                Simulator.States.Happiness += 30 + rnd.Next(1, 10);
+                Simulator.States.Satiety -= rnd.Next(5, 15);
+                Simulator.States.Sleep -= rnd.Next(5, 15);
                 Simulator.Cash.Money -= 200;
                 mainPage.DecreaseDays();
                 Refresh();
@@ -143,17 +143,17 @@ namespace IIT_Simulator
 
         private async void ForceGameOverAlert()
         {
-            if (States.GameOver())
+            if (Simulator.States.GameOver())
             {
                 await DisplayAlert("Вы проиграли!", "Студент умер. Начните сначала", "ОК");
                 await Navigation.PushAsync(new Menu());
             }
-            else if (DaysControl.Deducted)
+            else if (Simulator.Schedule.IsDeducted)
             {
                 await DisplayAlert("Неуспеваемость!", "Студент был отчислен. Начните сначала", "ОК");
                 await Navigation.PushAsync(new Menu());
             }
-            else if (DaysControl.Congratulate)
+            else if (Simulator.Schedule.IsGraduated)
             {
                 await DisplayAlert("Выпускной!", "Ваш студент только что закончил университет!", "Получить диплом");
                 await Navigation.PushAsync(new Winner());

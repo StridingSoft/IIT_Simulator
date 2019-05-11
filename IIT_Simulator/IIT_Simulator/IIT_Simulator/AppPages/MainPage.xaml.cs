@@ -8,9 +8,9 @@ namespace IIT_Simulator
     public partial class MainPage : TabbedPage
     {
         NeedsPage needsPage;
-        Study studyPage;
-        Deanery deaneryPage;
-        Exams examsPage;
+        StudyPage studyPage;
+        DeaneryPage deaneryPage;
+        ExamsPage examsPage;
         Achievements achievmentsPage;
 
         public MainPage()
@@ -18,9 +18,9 @@ namespace IIT_Simulator
             InitializeComponent();
 
             needsPage = new NeedsPage(this);
-            studyPage = new Study(this, needsPage);
-            deaneryPage = new Deanery(this);
-            examsPage = new Exams(this);
+            studyPage = new StudyPage(this, needsPage);
+            deaneryPage = new DeaneryPage(this);
+            examsPage = new ExamsPage(this);
             achievmentsPage = new Achievements();
 
             Children.Add(needsPage);
@@ -34,36 +34,36 @@ namespace IIT_Simulator
 
         public void ChangePeriodIfNeeded()
         {
-            if (DaysControl.Countdown == 0 && DaysControl.Session)
+            if (Simulator.Schedule.Countdown == 0 && Simulator.Schedule.IsSession)
             {
-                if (States.Studying < 50 || ExamsControl.ExamsCounter < 4)
-                    DaysControl.Deducted = true;
+                if (Simulator.States.Studying < 50 || Simulator.Session.ExamsCounter < 4)
+                    Simulator.Schedule.IsDeducted = true;
 
-                DaysControl.Session = !DaysControl.Session;
-                DaysControl.Countdown = 150;
+                Simulator.Schedule.IsSession = !Simulator.Schedule.IsSession;
+                Simulator.Schedule.Countdown = 150;
 
                 Simulator.Cash.CalculateGrant();
                 Simulator.Cash.CheckPerformance();
 
-                ExamsControl.ExamsCounter = 0;
+                Simulator.Session.ExamsCounter = 0;
 
-                Studies.InitializeSubjects();
+                Simulator.Study.InitializeSubjects();
                 studyPage.Refresh();
 
                 examsPage.DeactivateButtons();
 
                 Simulator.Course.ChangeCourse();
             }
-            else if (DaysControl.Countdown == 0 && !DaysControl.Session)
+            else if (Simulator.Schedule.Countdown == 0 && !Simulator.Schedule.IsSession)
             {
-                DaysControl.Session = !DaysControl.Session;
-                DaysControl.Countdown = 30;
+                Simulator.Schedule.IsSession = !Simulator.Schedule.IsSession;
+                Simulator.Schedule.Countdown = 30;
                 examsPage.ActivateButtons();
             }
-            if (DaysControl.DaysToGrant == 0)
+            if (Simulator.Schedule.DaysToGrant == 0)
             {
                 Simulator.Cash.Money += Simulator.Cash.Grant;
-                DaysControl.DaysToGrant = 30;
+                Simulator.Schedule.DaysToGrant = 30;
                 needsPage.RefreshLabels();
                 needsPage.RefreshCash();
             }
@@ -72,16 +72,16 @@ namespace IIT_Simulator
         
         public void DecreaseDays()
         {
-            DaysControl.DaysCounter++;
-            DaysControl.Countdown--;
-            DaysControl.DaysToGrant--;
+            Simulator.Schedule.DaysCounter++;
+            Simulator.Schedule.Countdown--;
+            Simulator.Schedule.DaysToGrant--;
             ChangePeriodIfNeeded();
         }
 
         protected override void OnDisappearing()
         {
             File.Delete(SavingSystem.GetPathToFile());
-            if (!States.GameOver() && !DaysControl.Deducted && !DaysControl.Congratulate && !Simulator.Course.Expelled)
+            if (!Simulator.States.GameOver() && !Simulator.Schedule.IsDeducted && !Simulator.Schedule.IsGraduated && !Simulator.Course.Expelled)
                 SavingSystem.WriteAllData(SavingSystem.GetPathToFile()); 
         }
 
@@ -99,17 +99,17 @@ namespace IIT_Simulator
         {
             if (deaneryPage.GetCheatCode() == maxNeeds)
             {
-                States.Satiety = 100;
-                States.Sleep = 100;
-                States.Happiness = 100;
+                Simulator.States.Satiety = 100;
+                Simulator.States.Sleep = 100;
+                Simulator.States.Happiness = 100;
 
             }
             else if (deaneryPage.GetCheatCode() == maxPerformance)
             {
-                Studies.Programming = 100;
-                Studies.Linal = 100;
-                Studies.Asm_eco = 100;
-                Studies.Math = 100;
+                Simulator.Study.Programming = 100;
+                Simulator.Study.Linal = 100;
+                Simulator.Study.Asm_eco = 100;
+                Simulator.Study.Math = 100;
             }
             else if (deaneryPage.GetCheatCode() == addMoney)
                 Simulator.Cash.Money += 5000;

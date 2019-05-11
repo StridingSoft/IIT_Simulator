@@ -8,83 +8,17 @@ namespace IIT_Simulator.Classes
     {
         public static Cash Cash = new Cash();
         public static Course Course = new Course();
-    }
+        public static Schedule Schedule = new Schedule();
+        public static Study Study = new Study();
+        public static Session Session = new Session();
+        public static Achievement Achievement = new Achievement();
+        public static States States = new States();
 
-    public class Cash
-    {
-        public int Money;
-        public int Grant;
-        private int fixedGrant = 1800;
-
-        public void InitializeCash()
+        internal static int RemoveOverflowing(int state)
         {
-            Money = 1500;
-            Grant = fixedGrant;
-        }
-
-        public  void CalculateGrant() => Grant = Convert.ToInt32(fixedGrant * (1 - (80 - States.Studying) * 0.01));
-
-        public  void CheckPerformance()
-        {
-            if (States.Studying < 60)
-                Grant = 0;
-        }
-    }
-
-
-    public class Course
-    {
-        public  string Group;
-        public  int CourseNumber;
-        public  int Semestr;
-        public  bool Expelled;
-        public  bool GotHelp;
-
-        public  void InitializeCourse()
-        {
-            Group = "Программная инженерия";
-            CourseNumber = 1;
-            Semestr = 1;
-            GotHelp = false;
-        }
-
-
-        public  void ChangeCourse()
-        {
-            Semestr++;
-
-            if (Semestr % 2 != 0)
-            {
-                CourseNumber++;
-                Semestr = 1;
-            }
-            if (CourseNumber == 5)
-                DaysControl.Congratulate = true;
-        }
-
-        public  void ChangeSpeciality()
-        {
-            //if (!BI)
-            //{
-            //    Group = "Бизнес информатика";
-            //    Study.Asm_economics.Text = "Экономическая теория и ее разделы";
-            //    Exams.Asm_economics.Text = "Экономическая теория и ее разделы";
-            //    Study.BtnASM_ECO.Text = "Рассчитать доход приложения";
-            //    BI = true;
-            //    CountOfTransf++;
-            //}
-            //else
-            //{
-            //    Group = "Программная инженерия";
-            //    Study.Asm_economics.Text = "Архитектура вычислительных систем";
-            //    Exams.Asm_economics.Text = "Архитектура вычислительных систем";
-            //    Study.BtnASM_ECO.Text = "Писать ассемблерные вставки";
-            //    BI = false;
-            //    CountOfTransf++;
-            //}
-            //Studies.Asm_eco = 0;
-            //Studies.Refresh();
-            //RefreshCourse();
+            if (state >= 100)
+                state = 100;
+            return state;
         }
     }
 }

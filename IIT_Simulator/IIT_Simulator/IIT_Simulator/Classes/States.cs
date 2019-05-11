@@ -5,38 +5,30 @@ using System.Drawing;
 
 namespace IIT_Simulator.Classes
 {
-    public static class States
+    public class States
     {
-        private static int satiety;
-        private static int sleep;
-        private static int happiness;
-        private static int studying;
+        private int satiety;
+        private int sleep;
+        private int happiness;
+        private int studying;
+        public int Satiety { get => satiety; set => satiety = Simulator.RemoveOverflowing(value); }
+        public int Sleep { get => sleep; set => sleep = Simulator.RemoveOverflowing(value); }
+        public int Happiness { get => happiness; set => happiness = Simulator.RemoveOverflowing(value); }
+        public int Studying { get => studying; set => studying = Simulator.RemoveOverflowing(value); }
 
-        public static int Satiety { get => satiety; set => satiety = RemoveOverflowing(value); }
-        public static int Sleep { get => sleep; set => sleep = RemoveOverflowing(value); }
-        public static int Happiness { get => happiness; set => happiness = RemoveOverflowing(value); }
-        public static int Studying { get => studying; set => studying = RemoveOverflowing(value); }
-
-        public static void InitializeStates()
+        public void InitializeStates()
         {
             Satiety = 50;
             Sleep = 50;
             Happiness = 50;
             Studying = 0;
-        }        
-        
-        private static int RemoveOverflowing(int state)
-        {
-            if (state >= 100)
-                state = 100;
-            return state;
         }
 
-        public static void CalculatePerformance()
+        public void CalculatePerformance()
         {
-            Studying = (Studies.Programming + Studies.Linal + Studies.Math + Studies.Asm_eco) / 4;
+            Studying = (Simulator.Study.Programming + Simulator.Study.Linal + Simulator.Study.Math + Simulator.Study.Asm_eco) / 4;
         }
 
-        public static bool GameOver() => Satiety <= 0 || Sleep <= 0 || Happiness <= 0;
+        public bool GameOver() => Satiety <= 0 || Sleep <= 0 || Happiness <= 0;
     }
 }

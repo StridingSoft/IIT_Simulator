@@ -4,9 +4,9 @@ using Xamarin.Forms.Xaml;
 namespace IIT_Simulator
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class HowToPlay : ContentPage
+	public partial class HowToPlayPage : ContentPage
 	{
-		public HowToPlay ()
+		public HowToPlayPage ()
 		{
 			InitializeComponent ();
             NavigationPage.SetHasNavigationBar(this, false);
