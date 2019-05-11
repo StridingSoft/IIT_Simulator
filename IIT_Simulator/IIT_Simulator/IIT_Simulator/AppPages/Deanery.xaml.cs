@@ -8,7 +8,7 @@ namespace IIT_Simulator
 	public partial class Deanery : ContentPage
 	{
         Label lblGroup, lblCourse, lblSemester;
-        Label lblCheatCode;
+        Entry tbCheatCode;
         Button btnGetHelp;
 
         MainPage mainPage;
@@ -20,20 +20,20 @@ namespace IIT_Simulator
             this.mainPage = mainPage;
             lblGroup = this.Content.FindByName<Label>("Group");
             lblCourse = this.Content.FindByName<Label>("Course");
-            lblSemester = this.Content.FindByName<Label>("Semester");
-            lblSemester = this.Content.FindByName<Label>("CheatCode");
+            lblSemester = this.Content.FindByName<Label>("Semestr");
+            tbCheatCode = this.Content.FindByName<Entry>("CheatCode");
 
             RefreshCourse();
 		}
 
         public string GetCheatCode()
         {
-            return lblCheatCode.Text;
+            return tbCheatCode.Text;
         }
 
         public void SetCheatCode(string cheat)
         {
-            lblCheatCode.Text = cheat;
+            tbCheatCode.Text = cheat;
         }
 
         public void RefreshCourse()
