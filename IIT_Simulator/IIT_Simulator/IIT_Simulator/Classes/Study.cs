@@ -11,10 +11,10 @@ namespace IIT_Simulator.Classes
         public int math;
         public int asm_eco;
 
-        public int Programming { get { return programming; } set { programming = RemoveOverflowing(value); } }
-        public int Linal { get { return programming; } set { programming = RemoveOverflowing(value); } }
-        public int Math { get { return programming; } set { programming = RemoveOverflowing(value); } }
-        public int Asm_eco { get { return programming; } set { programming = RemoveOverflowing(value); } }
+        public int Programming { get { return programming; } set { programming = Simulator.RemoveOverflowing(value); } }
+        public int Linal { get { return programming; } set { programming = Simulator.RemoveOverflowing(value); } }
+        public int Math { get { return programming; } set { programming = Simulator.RemoveOverflowing(value); } }
+        public int Asm_eco { get { return programming; } set { programming = Simulator.RemoveOverflowing(value); } }
 
         private Random rnd = new Random();
         public void InitializeSubjects()
@@ -23,13 +23,6 @@ namespace IIT_Simulator.Classes
             Linal = 0;
             Math = 0;
             Asm_eco = 0;
-        }
-
-        private int RemoveOverflowing(int state)
-        {
-            if (state >= 100)
-                state = 100;
-            return state;
         }
 
         public int LearningPoints()
