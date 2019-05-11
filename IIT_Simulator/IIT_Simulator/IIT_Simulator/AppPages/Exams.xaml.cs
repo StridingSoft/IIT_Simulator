@@ -11,10 +11,43 @@ namespace IIT_Simulator
         Random rnd = new Random();
         bool unluck;
 
-		public Exams ()
+        MainPage mainPage;
+
+        Button btnProg, btnASM_ECO, btnLinal, btnMath;
+
+		public Exams(MainPage mainPage)
 		{
 			InitializeComponent();
-		}
+
+            this.mainPage = mainPage;
+
+            btnProg = this.Content.FindByName<Button>("BtnProg");
+            btnASM_ECO = this.Content.FindByName<Button>("BtnASM_ECO");
+            btnLinal = this.Content.FindByName<Button>("BtnLinal");
+            btnMath = this.Content.FindByName<Button>("BtnMath");
+        }
+
+        public void DeactivateButtons()
+        {
+            if (!ExamsControl.CouldPassExams())
+            {
+                btnProg.IsEnabled = false;
+                btnASM_ECO.IsEnabled = false;
+                btnLinal.IsEnabled = false;
+                btnMath.IsEnabled = false;
+            }
+        }
+
+        public void ActivateButtons()
+        {
+            if (ExamsControl.CouldPassExams())
+            {
+                btnProg.IsEnabled = true;
+                btnASM_ECO.IsEnabled = true;
+                btnLinal.IsEnabled = true;
+                btnMath.IsEnabled = true;
+            }
+        }
 
         private async void BtnProg_Clicked(object sender, EventArgs e)
         {
@@ -29,7 +62,7 @@ namespace IIT_Simulator
                 Upset();
             else
                 ExamNotPass();
-            DaysControl.DecreaseDays();
+            mainPage.DecreaseDays();
         }
 
         private async void BtnLinal_Clicked(object sender, EventArgs e)
@@ -45,7 +78,7 @@ namespace IIT_Simulator
                 Upset();
             else
                 ExamNotPass();
-            DaysControl.DecreaseDays();
+            mainPage.DecreaseDays();
         }
 
         private async void BtnASM_ECO_Clicked(object sender, EventArgs e)
@@ -61,7 +94,7 @@ namespace IIT_Simulator
                 Upset();
             else
                 ExamNotPass();
-            DaysControl.DecreaseDays();
+            mainPage.DecreaseDays();
         }
 
         private async void BtnMath_Clicked(object sender, EventArgs e)
@@ -77,7 +110,7 @@ namespace IIT_Simulator
                 Upset();
             else
                 ExamNotPass();
-            DaysControl.DecreaseDays();
+            mainPage.DecreaseDays();
         }
 
         private void UnluckyCharm()=> unluck = rnd.Next(0, 50) == rnd.Next(0, 50);

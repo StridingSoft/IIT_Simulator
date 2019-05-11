@@ -48,14 +48,6 @@ namespace IIT_Simulator.Classes
             GotHelp = false;
         }
 
-        public  void RefreshCourse()
-        {
-            Deanery.Group.Text = " Группа: " + Group;
-            Deanery.Course.Text = " Курс: " + CourseNumber;
-            Deanery.Semestr.Text = " Семестр: " + Semestr;
-            if (GotHelp)
-                Deanery.BtnGetHelp.IsEnabled = false;
-        }
 
         public  void ChangeCourse()
         {
