@@ -21,10 +21,10 @@ namespace IIT_Simulator
 
             this.mainPage = mainPage;
 
-            btnProg = this.Content.FindByName<Button>("BtnProg");
-            btnASM_ECO = this.Content.FindByName<Button>("BtnASM_ECO");
-            btnLinal = this.Content.FindByName<Button>("BtnLinal");
-            btnMath = this.Content.FindByName<Button>("BtnMath");
+            btnProg = Content.FindByName<Button>("BtnProg");
+            btnASM_ECO = Content.FindByName<Button>("BtnASM_ECO");
+            btnLinal = Content.FindByName<Button>("BtnLinal");
+            btnMath = Content.FindByName<Button>("BtnMath");
         }
 
         public void DeactivateButtons()
@@ -49,60 +49,22 @@ namespace IIT_Simulator
             }
         }
 
-        private async void BtnProg_Clicked(object sender, EventArgs e)
-        {
-            UnluckyCharm();
-            if (IsPassed(Simulator.Study.Programming) && !unluck)
-            {
-                await DisplayAlert("Успех!", "Вы сдали программирование. Поздравляем", "Ура!");
-                BtnProg.IsEnabled = false;
-                Simulator.Session.ExamsCounter++;
-            }
-            else if (unluck)
-                Upset();
-            else
-                ExamNotPass();
-            mainPage.DecreaseDays();
-        }
+        //create one method for 4 buttons
 
-        private async void BtnLinal_Clicked(object sender, EventArgs e)
-        {
-            UnluckyCharm();
-            if (IsPassed(Simulator.Study.Linal) && !unluck)
-            {
-                await DisplayAlert("Успех!", "Вы сдали линейную алгебру. Поздравляем", "Ура!");
-                BtnLinal.IsEnabled = false;
-                Simulator.Session.ExamsCounter++;
-            }
-            else if (unluck)
-                Upset();
-            else
-                ExamNotPass();
-            mainPage.DecreaseDays();
-        }
+        private void BtnProg_Clicked(object sender, EventArgs e) => PassExamsMessage("программирование", Simulator.Study.Programming);
+        
+        private void BtnLinal_Clicked(object sender, EventArgs e) => PassExamsMessage("линейную алгебру", Simulator.Study.Linal);
 
-        private async void BtnASM_ECO_Clicked(object sender, EventArgs e)
-        {
-            UnluckyCharm();
-            if (IsPassed(Simulator.Study.Asm_eco) && !unluck)
-            {
-                await DisplayAlert("Успех!", "Вы сдали архитектуру вычислительных систем. Поздравляем", "Ура!");
-                BtnASM_ECO.IsEnabled = false;
-                Simulator.Session.ExamsCounter++;
-            }
-            else if (unluck)
-                Upset();
-            else
-                ExamNotPass();
-            mainPage.DecreaseDays();
-        }
+        private void BtnASM_ECO_Clicked(object sender, EventArgs e) => PassExamsMessage("архитектуру вычислительных систем", Simulator.Study.Asm_eco);
 
-        private async void BtnMath_Clicked(object sender, EventArgs e)
+        private void BtnMath_Clicked(object sender, EventArgs e) =>  PassExamsMessage("матанализ",Simulator.Study.Math);
+        
+        private async void PassExamsMessage(string text, int subj)
         {
             UnluckyCharm();
-            if (IsPassed(Simulator.Study.Math) && !unluck)
+            if (IsPassed(subj) && !unluck)
             {
-                await DisplayAlert("Успех!", "Вы сдали матанализ. Поздравляем", "Ура!");
+                await DisplayAlert("Успех!", $"Вы сдали {text}. Поздравляем", "Ура!");
                 BtnMath.IsEnabled = false;
                 Simulator.Session.ExamsCounter++;
             }

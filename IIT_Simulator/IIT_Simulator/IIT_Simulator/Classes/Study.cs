@@ -12,9 +12,9 @@ namespace IIT_Simulator.Classes
         public int asm_eco;
 
         public int Programming { get { return programming; } set { programming = Simulator.RemoveOverflowing(value); } }
-        public int Linal { get { return programming; } set { programming = Simulator.RemoveOverflowing(value); } }
-        public int Math { get { return programming; } set { programming = Simulator.RemoveOverflowing(value); } }
-        public int Asm_eco { get { return programming; } set { programming = Simulator.RemoveOverflowing(value); } }
+        public int Linal { get { return linal; } set { linal = Simulator.RemoveOverflowing(value); } }
+        public int Math { get { return math; } set { math = Simulator.RemoveOverflowing(value); } }
+        public int Asm_eco { get { return asm_eco; } set { asm_eco = Simulator.RemoveOverflowing(value); } }
 
         private Random rnd = new Random();
         public void InitializeSubjects()
