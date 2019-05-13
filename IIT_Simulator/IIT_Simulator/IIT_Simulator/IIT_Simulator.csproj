@@ -15,6 +15,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="AppPages\DeaneryPage.xaml.cs">
+      <DependentUpon>DeaneryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="AppPages\ExamsPage.xaml.cs">
+      <DependentUpon>ExamsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="AppPages\HowToPlayPage.xaml.cs">
+      <DependentUpon>HowToPlayPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="AppPages\NeedsPage.xaml.cs">
+      <DependentUpon>NeedsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="AppPages\StudyPage.xaml.cs">
+      <DependentUpon>StudyPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -26,19 +41,19 @@
     <EmbeddedResource Update="AppPages\Achievements.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="AppPages\Deanery.xaml">
+    <EmbeddedResource Update="AppPages\DeaneryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="AppPages\Exams.xaml">
+    <EmbeddedResource Update="AppPages\ExamsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="AppPages\HowToPlay.xaml">
+    <EmbeddedResource Update="AppPages\HowToPlayPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="AppPages\Menu.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="AppPages\Needs.xaml">
+    <EmbeddedResource Update="AppPages\NeedsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="AppPages\Winner.xaml">
@@ -48,7 +63,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="AppPages\Study.xaml">
+    <EmbeddedResource Update="AppPages\StudyPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

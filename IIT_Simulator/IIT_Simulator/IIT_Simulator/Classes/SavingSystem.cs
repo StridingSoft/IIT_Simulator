@@ -14,12 +14,12 @@ namespace IIT_Simulator
 
             if (!File.Exists(fileName))
             {
-                States.InitializeStates();
-                DaysControl.InitializeDays();
-                CashControl.InitializeCash();
-                Studies.InitializeSubjects();
-                ExamsControl.InitializeExams();
-                CourseControl.InitializeCourse();
+                Simulator.States.InitializeStates();
+                Simulator.Schedule.InitializeDays();
+                Simulator.Cash.InitializeCash();
+                Simulator.Study.InitializeSubjects();
+                Simulator.Session.InitializeExams();
+                Simulator.Course.InitializeCourse();
                 WriteAllData(fileName);
             }
             else
@@ -30,12 +30,12 @@ namespace IIT_Simulator
         {
             using (var streamWriter = new StreamWriter(fileName, true))
             {
-                streamWriter.Write($"{DaysControl.DaysCounter};{DaysControl.Countdown};{DaysControl.DaysToGrant};{DaysControl.Session};" +
-                                   $"{States.Satiety};{States.Sleep};{States.Happiness};{States.Studying};" +
-                                   $"{CashControl.Money};{CashControl.Grant};" +
-                                   $"{Studies.Programming};{Studies.Linal};{Studies.Math};{Studies.Asm_eco};" +
-                                   $"{ExamsControl.ExamsCounter};" +
-                                   $"{CourseControl.Group};{CourseControl.Course };{CourseControl.Semestr};{CourseControl.GotHelp}");
+                streamWriter.Write($"{Simulator.Schedule.DaysCounter};{Simulator.Schedule.Countdown};{Simulator.Schedule.DaysToGrant};{Simulator.Schedule.IsSession};" +
+                                   $"{Simulator.States.Satiety};{Simulator.States.Sleep};{Simulator.States.Happiness};{Simulator.States.Studying};" +
+                                   $"{Simulator.Cash.Money};{Simulator.Cash.Grant};" +
+                                   $"{Simulator.Study.Programming};{Simulator.Study.Linal};{Simulator.Study.Math};{Simulator.Study.Asm_eco};" +
+                                   $"{Simulator.Session.ExamsCounter};" +
+                                   $"{Simulator.Course.Group};{Simulator.Course.CourseNumber };{Simulator.Course.Semestr};{Simulator.Course.GotHelp}");
             }
         }
 
@@ -47,30 +47,30 @@ namespace IIT_Simulator
 
                 if (array.Length == 19)
                 {
-                    DaysControl.DaysCounter = int.Parse(array[0]);
-                    DaysControl.Countdown = int.Parse(array[1]);
-                    DaysControl.DaysToGrant = int.Parse(array[2]);
-                    DaysControl.Session = bool.Parse(array[3]);
+                    Simulator.Schedule.DaysCounter = int.Parse(array[0]);
+                    Simulator.Schedule.Countdown = int.Parse(array[1]);
+                    Simulator.Schedule.DaysToGrant = int.Parse(array[2]);
+                    Simulator.Schedule.IsSession = bool.Parse(array[3]);
 
-                    States.Satiety = int.Parse(array[4]);
-                    States.Sleep = int.Parse(array[5]);
-                    States.Happiness = int.Parse(array[6]);
-                    States.Studying = int.Parse(array[7]);
+                    Simulator.States.Satiety = int.Parse(array[4]);
+                    Simulator.States.Sleep = int.Parse(array[5]);
+                    Simulator.States.Happiness = int.Parse(array[6]);
+                    Simulator.States.Studying = int.Parse(array[7]);
 
-                    CashControl.Money = int.Parse(array[8]);
-                    CashControl.Grant = int.Parse(array[9]);
+                    Simulator.Cash.Money = int.Parse(array[8]);
+                    Simulator.Cash.Grant = int.Parse(array[9]);
 
-                    Studies.Programming = int.Parse(array[10]);
-                    Studies.Linal = int.Parse(array[11]);
-                    Studies.Math = int.Parse(array[12]);
-                    Studies.Asm_eco = int.Parse(array[13]);
+                    Simulator.Study.Programming = int.Parse(array[10]);
+                    Simulator.Study.Linal = int.Parse(array[11]);
+                    Simulator.Study.Math = int.Parse(array[12]);
+                    Simulator.Study.Asm_eco = int.Parse(array[13]);
 
-                    ExamsControl.ExamsCounter = int.Parse(array[14]);
+                    Simulator.Session.ExamsCounter = int.Parse(array[14]);
 
-                    CourseControl.Group = array[15];
-                    CourseControl.Course = int.Parse(array[16]);
-                    CourseControl.Semestr = int.Parse(array[17]);
-                    CourseControl.GotHelp = bool.Parse(array[18]);
+                    Simulator.Course.Group = array[15];
+                    Simulator.Course.CourseNumber = int.Parse(array[16]);
+                    Simulator.Course.Semestr = int.Parse(array[17]);
+                    Simulator.Course.GotHelp = bool.Parse(array[18]);
                 }
             }
         }

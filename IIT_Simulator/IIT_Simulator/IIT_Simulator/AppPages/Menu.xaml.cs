@@ -26,7 +26,7 @@ namespace IIT_Simulator
 
         private async void HowToPlay_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new HowToPlay());
+            await Navigation.PushAsync(new HowToPlayPage());
         }
     }
 }

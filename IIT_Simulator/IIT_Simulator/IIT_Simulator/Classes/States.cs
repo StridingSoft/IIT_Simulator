@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 
-namespace IIT_Simulator
+namespace IIT_Simulator.Classes
 {
-    public static class States
+    public class States
     {
-        public static int Satiety { get; set; }
-        public static int Sleep { get; set; }
-        public static int Happiness { get; set; }
-        public static int Studying { get; set; }
+        private int satiety;
+        private int sleep;
+        private int happiness;
+        private int studying;
+        public int Satiety { get => satiety; set => satiety = Simulator.RemoveOverflowing(value); }
+        public int Sleep { get => sleep; set => sleep = Simulator.RemoveOverflowing(value); }
+        public int Happiness { get => happiness; set => happiness = Simulator.RemoveOverflowing(value); }
+        public int Studying { get => studying; set => studying = Simulator.RemoveOverflowing(value); }
 
-        public static void InitializeStates()
+        public void InitializeStates()
         {
             Satiety = 50;
             Sleep = 50;
@@ -20,50 +24,11 @@ namespace IIT_Simulator
             Studying = 0;
         }
 
-        public static void RefreshLabels()
+        public void CalculatePerformance()
         {
-            Satiety = RemoveOverflowing(Satiety);
-            Sleep = RemoveOverflowing(Sleep);
-            Happiness = RemoveOverflowing(Happiness);
-            Studying = RemoveOverflowing(Studying);
-
-            Needs.EatPoints.Text = Satiety + "/100";
-            Needs.SleepPoints.Text = Sleep + "/100";
-            Needs.HappyPoints.Text = Happiness + "/100";
-            Needs.StudyPoints.Text = Studying + "/100";
+            Studying = (Simulator.Study.Programming + Simulator.Study.Linal + Simulator.Study.Math + Simulator.Study.Asm_eco) / 4;
         }
 
-        public static void RefreshProgressBars()
-        {
-            Needs.PbFood.Progress = Satiety * 0.01;
-            Needs.PbSleep.Progress = Sleep * 0.01;
-            Needs.PbHappiness.Progress = Happiness *0.01;
-            Needs.PbStudying.Progress = Studying * 0.01;
-
-            ChangeProgressBarColor(Satiety, Needs.PbFood);
-            ChangeProgressBarColor(Sleep, Needs.PbSleep);
-            ChangeProgressBarColor(Happiness, Needs.PbHappiness);
-            ChangeProgressBarColor(Studying, Needs.PbStudying);
-        }
-
-        private static void ChangeProgressBarColor(int state, Xamarin.Forms.ProgressBar progressBar)
-        {
-            if (state < 40)
-                progressBar.ProgressColor = Color.Red;
-            else if (state < 70)
-                progressBar.ProgressColor = Color.Yellow;
-            else
-                progressBar.ProgressColor = Color.Green;
-
-        }
-
-        private static int RemoveOverflowing(int state)
-        {
-            if (state >= 100)
-                state = 100;
-            return state;
-        }
-
-        public static bool GameOver() => Satiety <= 0 || Sleep <= 0 || Happiness <= 0;
+        public bool GameOver() => Satiety <= 0 || Sleep <= 0 || Happiness <= 0;
     }
 }
