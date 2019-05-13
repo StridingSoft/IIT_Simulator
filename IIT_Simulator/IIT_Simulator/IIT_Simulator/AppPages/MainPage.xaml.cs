@@ -60,6 +60,7 @@ namespace IIT_Simulator
                 Simulator.Schedule.Countdown = 30;
                 examsPage.ActivateButtons();
             }
+
             if (Simulator.Schedule.DaysToGrant == 0)
             {
                 Simulator.Cash.Money += Simulator.Cash.Grant;

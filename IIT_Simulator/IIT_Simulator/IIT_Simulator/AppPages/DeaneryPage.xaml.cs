@@ -72,6 +72,35 @@ namespace IIT_Simulator
             BtnGetHelp.IsEnabled = false;
         }
 
-        private void BtnTransfer_Clicked(object sender, System.EventArgs e) => Simulator.Course.ChangeSpeciality();
+        private void BtnTransfer_Clicked(object sender, System.EventArgs e)
+        {
+            Simulator.Course.ChangeSpeciality();
+            
+        }
+
+        private void CheckGroupAndRefresh()
+        {
+            if (!Simulator.Course.GroupChanged)
+            {
+                Simulator.Course.Group = "Бизнес информатика";
+                // = "Экономическая теория и ее разделы";
+                //Exams.Asm_economics.Text = "Экономическая теория и ее разделы";
+                //Study.BtnASM_ECO.Text = "Рассчитать доход приложения";
+                
+                //CountOfTransf++;
+            }
+            else
+            {
+                Simulator.Course.Group = "Программная инженерия";
+                //Study.Asm_economics.Text = "Архитектура вычислительных систем";
+                //Exams.Asm_economics.Text = "Архитектура вычислительных систем";
+                //Study.BtnASM_ECO.Text = "Писать ассемблерные вставки";
+                
+                //CountOfTransf++;
+            }
+            Simulator.Study.Asm_eco = 0;
+            mainPage.RefreshLabels();
+            RefreshCourse();
+        }
     }
 }

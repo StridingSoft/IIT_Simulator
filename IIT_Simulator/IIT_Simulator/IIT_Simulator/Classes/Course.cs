@@ -11,6 +11,7 @@ namespace IIT_Simulator.Classes
         public int Semestr;
         public bool Expelled;
         public bool GotHelp;
+        public bool GroupChanged;
 
         public void InitializeCourse()
         {
@@ -36,27 +37,7 @@ namespace IIT_Simulator.Classes
 
         public void ChangeSpeciality()
         {
-            //if (!BI)
-            //{
-            //    Group = "Бизнес информатика";
-            //    Study.Asm_economics.Text = "Экономическая теория и ее разделы";
-            //    Exams.Asm_economics.Text = "Экономическая теория и ее разделы";
-            //    Study.BtnASM_ECO.Text = "Рассчитать доход приложения";
-            //    BI = true;
-            //    CountOfTransf++;
-            //}
-            //else
-            //{
-            //    Group = "Программная инженерия";
-            //    Study.Asm_economics.Text = "Архитектура вычислительных систем";
-            //    Exams.Asm_economics.Text = "Архитектура вычислительных систем";
-            //    Study.BtnASM_ECO.Text = "Писать ассемблерные вставки";
-            //    BI = false;
-            //    CountOfTransf++;
-            //}
-            //Studies.Asm_eco = 0;
-            //Studies.Refresh();
-            //RefreshCourse();
+            GroupChanged = !GroupChanged;
         }
     }
 }
