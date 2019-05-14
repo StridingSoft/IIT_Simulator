@@ -6,7 +6,6 @@ namespace IIT_Simulator.Classes
 {
     public class Achievement
     {
-        string Name;
-        string Text;
+       
     }
 }

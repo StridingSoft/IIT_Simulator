@@ -13,6 +13,7 @@ namespace IIT_Simulator.Classes
         public static Session Session = new Session();
         public static Achievement Achievement = new Achievement();
         public static States States = new States();
+        public static Statistics Statistics = new Statistics();
 
         internal static int RemoveOverflowing(int state)
         {

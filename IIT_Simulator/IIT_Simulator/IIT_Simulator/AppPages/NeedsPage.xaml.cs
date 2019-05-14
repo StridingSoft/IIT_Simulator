@@ -38,7 +38,7 @@ namespace IIT_Simulator
             pbHappiness = Content.FindByName<ProgressBar>("PbHappiness");
             pbStudying = Content.FindByName<ProgressBar>("PbStudying");
 
-            SavingSystem.ReadFile();
+            SavingSystem.ReadDataFile();
             RefreshStates();
             RefreshStatesPBars();
             RefreshDays();

@@ -8,9 +8,9 @@ namespace IIT_Simulator
 {
     public static class SavingSystem
     {
-        public static void ReadFile()
+        public static void ReadDataFile()
         {
-            string fileName = GetPathToFile();
+            string fileName = GetPathToFile("data.txt");
 
             if (!File.Exists(fileName))
             {
@@ -23,7 +23,7 @@ namespace IIT_Simulator
                 WriteAllData(fileName);
             }
             else
-                ParseFile(fileName);
+                ParseDataFile(fileName);
         }
 
         public static void WriteAllData(string fileName)
@@ -32,20 +32,21 @@ namespace IIT_Simulator
             {
                 streamWriter.Write($"{Simulator.Schedule.DaysCounter};{Simulator.Schedule.Countdown};{Simulator.Schedule.DaysToGrant};{Simulator.Schedule.IsSession};" +
                                    $"{Simulator.States.Satiety};{Simulator.States.Sleep};{Simulator.States.Happiness};{Simulator.States.Studying};" +
-                                   $"{Simulator.Cash.Money};{Simulator.Cash.Grant};" +
+                                   $"{Simulator.Cash.Money};{Simulator.Cash.Grant};{Simulator.Cash.Premium};" +
                                    $"{Simulator.Study.Programming};{Simulator.Study.Linal};{Simulator.Study.Math};{Simulator.Study.Asm_eco};" +
                                    $"{Simulator.Session.ExamsCounter};" +
-                                   $"{Simulator.Course.Group};{Simulator.Course.CourseNumber };{Simulator.Course.Semestr};{Simulator.Course.GotHelp};{Simulator.Course.GroupChanged}");
+                                   $"{Simulator.Course.Group};{Simulator.Course.CourseNumber };{Simulator.Course.Semestr};{Simulator.Course.GotHelp};{Simulator.Course.GroupChanged};{Simulator.Course.Corpus}");
             }
         }
 
-        private static void ParseFile(string fileName)
+
+        private static void ParseDataFile(string fileName)
         {
             using (var streamReader = new StreamReader(fileName))
             {
                 var array = streamReader.ReadToEnd().Trim().Split(';');
 
-                if (array.Length == 20)
+                if (array.Length == 22)
                 {
                     Simulator.Schedule.DaysCounter = int.Parse(array[0]);
                     Simulator.Schedule.Countdown = int.Parse(array[1]);
@@ -59,23 +60,62 @@ namespace IIT_Simulator
 
                     Simulator.Cash.Money = int.Parse(array[8]);
                     Simulator.Cash.Grant = int.Parse(array[9]);
+                    Simulator.Cash.Premium = int.Parse(array[10]);
 
-                    Simulator.Study.Programming = int.Parse(array[10]);
-                    Simulator.Study.Linal = int.Parse(array[11]);
-                    Simulator.Study.Math = int.Parse(array[12]);
-                    Simulator.Study.Asm_eco = int.Parse(array[13]);
+                    Simulator.Study.Programming = int.Parse(array[11]);
+                    Simulator.Study.Linal = int.Parse(array[12]);
+                    Simulator.Study.Math = int.Parse(array[13]);
+                    Simulator.Study.Asm_eco = int.Parse(array[14]);
 
-                    Simulator.Session.ExamsCounter = int.Parse(array[14]);
+                    Simulator.Session.ExamsCounter = int.Parse(array[15]);
 
-                    Simulator.Course.Group = array[15];
-                    Simulator.Course.CourseNumber = int.Parse(array[16]);
-                    Simulator.Course.Semestr = int.Parse(array[17]);
-                    Simulator.Course.GotHelp = bool.Parse(array[18]);
-                    Simulator.Course.GroupChanged = bool.Parse(array[19]);
+                    Simulator.Course.Group = array[16];
+                    Simulator.Course.CourseNumber = int.Parse(array[17]);
+                    Simulator.Course.Semestr = int.Parse(array[18]);
+                    Simulator.Course.GotHelp = bool.Parse(array[19]);
+                    Simulator.Course.GroupChanged = bool.Parse(array[20]);
+                    Simulator.Course.Corpus = bool.Parse(array[21]);
                 }
             }
         }
 
-        public static string GetPathToFile() => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal),"data.txt");
+        public static void ReadStatisticsFile()
+        {
+            string fileName = GetPathToFile("statistics.txt");
+
+            if (!File.Exists(fileName))
+            {
+                Simulator.Statistics.InitializeStatistics();
+                WriteAllStatistics(fileName);
+            }
+            else
+                ParseStatisticsFile(fileName);
+        }
+
+        private static void WriteAllStatistics(string fileName)
+        {
+            using (var streamWriter = new StreamWriter(fileName, true))
+            {
+                streamWriter.Write($"{Simulator.Statistics.GameWins};{Simulator.Statistics.GameLoses};{Simulator.Statistics.Achievements};" +
+                                   $"{Simulator.Schedule.DaysCounter};{Simulator.Statistics.MoneyCount}");
+            }
+        }
+
+        private static void ParseStatisticsFile(string fileName) //TODO: new page with statistics
+        {
+            using (var streamReader = new StreamReader(fileName))
+            {
+                var array = streamReader.ReadToEnd().Trim().Split(';');
+
+                if (array.Length == 5)
+                {
+                    Simulator.Statistics.GameWins = int.Parse(array[0]);
+                    Simulator.Statistics.GameLoses = int.Parse(array[1]);
+                    Simulator.Statistics.Achievements = int.Parse(array[2]);
+                }
+            }
+        }
+
+        public static string GetPathToFile(string name) => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal),name);
     }
 }

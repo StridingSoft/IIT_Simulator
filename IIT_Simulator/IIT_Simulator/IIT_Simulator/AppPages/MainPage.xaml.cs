@@ -18,6 +18,8 @@ namespace IIT_Simulator
         {
             InitializeComponent();
 
+            NavigationPage.SetHasNavigationBar(this, false);
+
             needsPage = new NeedsPage(this);
             studyPage = new StudyPage(this, needsPage);
             deaneryPage = new DeaneryPage(this, examsPage, studyPage);
@@ -30,8 +32,8 @@ namespace IIT_Simulator
             Children.Add(examsPage);
             Children.Add(achievmentsPage);
 
-            NavigationPage.SetHasNavigationBar(this, false);
             deaneryPage.CheckGroupAndRefresh();
+            deaneryPage.BtnCorp.IsEnabled = !Simulator.Course.Corpus;
         }
 
         public void ChangePeriodIfNeeded() //не знаю как это исправить, все блять ломается нахуй
@@ -66,7 +68,9 @@ namespace IIT_Simulator
 
             if (Simulator.Schedule.DaysToGrant == 0)
             {
-                Simulator.Cash.Money += Simulator.Cash.Grant;
+                Simulator.Cash.CalculatePremium();
+                Simulator.Cash.Money += Simulator.Cash.Grant + Simulator.Cash.Premium;
+                Simulator.Statistics.MoneyCount += Simulator.Cash.Grant + Simulator.Cash.Premium;
                 Simulator.Schedule.DaysToGrant = 30;
                 needsPage.RefreshStates();
                 needsPage.RefreshCash();
@@ -152,16 +156,19 @@ namespace IIT_Simulator
         {
             if (Simulator.States.GameOver())
             {
+                Simulator.Statistics.GameLoses++;
                 await DisplayAlert("Вы проиграли!", "Студент умер. Начните сначала", "ОК");
                 await Navigation.PushAsync(new Menu());
             }
             else if (Simulator.Schedule.IsDeducted)
             {
+                Simulator.Statistics.GameLoses++;
                 await DisplayAlert("Неуспеваемость!", "Студент был отчислен. Начните сначала", "ОК");
                 await Navigation.PushAsync(new Menu());
             }
             else if (Simulator.Schedule.IsGraduated)
             {
+                Simulator.Statistics.GameWins++;
                 await DisplayAlert("Выпускной!", "Ваш студент только что закончил университет!", "Получить диплом");
                 await Navigation.PushAsync(new Winner());
             }

@@ -12,6 +12,7 @@ namespace IIT_Simulator.Classes
         public bool Expelled;
         public bool GotHelp;
         public bool GroupChanged;
+        public bool Corpus;
 
         public void InitializeCourse()
         {
@@ -19,6 +20,8 @@ namespace IIT_Simulator.Classes
             CourseNumber = 1;
             Semestr = 1;
             GotHelp = false;
+            GroupChanged = false;
+            Corpus = false;
         }
 
 
@@ -40,5 +43,7 @@ namespace IIT_Simulator.Classes
             GroupChanged = !GroupChanged;
             Simulator.Study.Asm_eco = 0;
         }
+
+        public int GetChance() => new Random().Next(1, 100);
     }
 }
