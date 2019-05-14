@@ -129,7 +129,7 @@ namespace IIT_Simulator
                 ForceNoMoneyAlert();
         }
 
-        private void RefreshPage()
+        public void RefreshPage()
         {
             RefreshStates();
             RefreshStatesPBars();

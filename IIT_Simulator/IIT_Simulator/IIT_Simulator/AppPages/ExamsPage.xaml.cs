@@ -14,12 +14,15 @@ namespace IIT_Simulator
         MainPage mainPage;
 
         Button btnProg, btnASM_ECO, btnLinal, btnMath;
+        public Label lblAsm_eco;
 
 		public ExamsPage(MainPage mainPage)
 		{
 			InitializeComponent();
 
             this.mainPage = mainPage;
+
+            lblAsm_eco = Asm_economics;
 
             btnProg = Content.FindByName<Button>("BtnProg");
             btnASM_ECO = Content.FindByName<Button>("BtnASM_ECO");
@@ -49,23 +52,21 @@ namespace IIT_Simulator
             }
         }
 
-        //create one method for 4 buttons
-
-        private void BtnProg_Clicked(object sender, EventArgs e) => PassExamsMessage("программирование", Simulator.Study.Programming);
+        private void BtnProg_Clicked(object sender, EventArgs e) => PassExamsMessage("программирование", Simulator.Study.Programming, btnProg);
         
-        private void BtnLinal_Clicked(object sender, EventArgs e) => PassExamsMessage("линейную алгебру", Simulator.Study.Linal);
+        private void BtnLinal_Clicked(object sender, EventArgs e) => PassExamsMessage("линейную алгебру", Simulator.Study.Linal, btnLinal);
 
-        private void BtnASM_ECO_Clicked(object sender, EventArgs e) => PassExamsMessage("архитектуру вычислительных систем", Simulator.Study.Asm_eco);
+        private void BtnASM_ECO_Clicked(object sender, EventArgs e) => PassExamsMessage("архитектуру вычислительных систем", Simulator.Study.Asm_eco, btnASM_ECO);
 
-        private void BtnMath_Clicked(object sender, EventArgs e) =>  PassExamsMessage("матанализ",Simulator.Study.Math);
+        private void BtnMath_Clicked(object sender, EventArgs e) =>  PassExamsMessage("матанализ",Simulator.Study.Math, btnMath);
         
-        private async void PassExamsMessage(string text, int subj)
+        private async void PassExamsMessage(string text, int subj, Button btn)
         {
             UnluckyCharm();
             if (IsPassed(subj) && !unluck)
             {
                 await DisplayAlert("Успех!", $"Вы сдали {text}. Поздравляем", "Ура!");
-                BtnMath.IsEnabled = false;
+                btn.IsEnabled = false;
                 Simulator.Session.ExamsCounter++;
             }
             else if (unluck)

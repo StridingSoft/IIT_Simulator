@@ -35,7 +35,7 @@ namespace IIT_Simulator
                                    $"{Simulator.Cash.Money};{Simulator.Cash.Grant};" +
                                    $"{Simulator.Study.Programming};{Simulator.Study.Linal};{Simulator.Study.Math};{Simulator.Study.Asm_eco};" +
                                    $"{Simulator.Session.ExamsCounter};" +
-                                   $"{Simulator.Course.Group};{Simulator.Course.CourseNumber };{Simulator.Course.Semestr};{Simulator.Course.GotHelp}");
+                                   $"{Simulator.Course.Group};{Simulator.Course.CourseNumber };{Simulator.Course.Semestr};{Simulator.Course.GotHelp};{Simulator.Course.GroupChanged}");
             }
         }
 
@@ -45,7 +45,7 @@ namespace IIT_Simulator
             {
                 var array = streamReader.ReadToEnd().Trim().Split(';');
 
-                if (array.Length == 19)
+                if (array.Length == 20)
                 {
                     Simulator.Schedule.DaysCounter = int.Parse(array[0]);
                     Simulator.Schedule.Countdown = int.Parse(array[1]);
@@ -71,6 +71,7 @@ namespace IIT_Simulator
                     Simulator.Course.CourseNumber = int.Parse(array[16]);
                     Simulator.Course.Semestr = int.Parse(array[17]);
                     Simulator.Course.GotHelp = bool.Parse(array[18]);
+                    Simulator.Course.GroupChanged = bool.Parse(array[19]);
                 }
             }
         }

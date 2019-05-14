@@ -6,10 +6,10 @@ namespace IIT_Simulator.Classes
 {
     public class Study
     {
-        public int programming;
-        public int linal;
-        public int math;
-        public int asm_eco;
+        private int programming;
+        private int linal;
+        private int math;
+        private int asm_eco;
 
         public int Programming { get { return programming; } set { programming = Simulator.RemoveOverflowing(value); } }
         public int Linal { get { return linal; } set { linal = Simulator.RemoveOverflowing(value); } }
@@ -32,6 +32,5 @@ namespace IIT_Simulator.Classes
             Simulator.States.Happiness -= rnd.Next(5, 13) + (int)(0.1 * Simulator.States.Studying);
             return new Random().Next(1, 8);
         }
-
     }
 }

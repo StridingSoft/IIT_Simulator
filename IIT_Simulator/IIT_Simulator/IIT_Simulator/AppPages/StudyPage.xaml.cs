@@ -14,8 +14,9 @@ namespace IIT_Simulator
 
         public Label lblEatPoints, lblSleepPoints, lblHappyPoints, lblStudyPoints;
         public ProgressBar pbFood, pbSleep, pbHappiness, pbStudying;
-        public Label lblProgrPoints, lblLinalPoints, lblMathPoints, lblAsmEconomicsPoints;
+        public Label lblProgrPoints, lblLinalPoints, lblMathPoints, lblAsmEconomicsPoints, lblAsm_eco;
         public ProgressBar pbProgrPoints, pbLinalPoints, pbMathPoints, pbAsmEconomicsPoints;
+        public Button btnAsm_eco;
 
         Random rnd = new Random();
 		public StudyPage(MainPage mainPage, NeedsPage needsPage)
@@ -25,27 +26,30 @@ namespace IIT_Simulator
             this.mainPage = mainPage;
             this.needsPage = needsPage;
 
-            lblEatPoints = this.Content.FindByName<Label>("EatPoints");
-            lblSleepPoints = this.Content.FindByName<Label>("SleepPoints");
-            lblHappyPoints = this.Content.FindByName<Label>("HappyPoints");
-            lblStudyPoints = this.Content.FindByName<Label>("StudyPoints");
-            lblProgrPoints = this.Content.FindByName<Label>("ProgrPoints");
-            lblLinalPoints = this.Content.FindByName<Label>("LinalPoints");
-            lblMathPoints = this.Content.FindByName<Label>("MathPoints");
-            lblAsmEconomicsPoints = this.Content.FindByName<Label>("Asm_economicsPoints");
+            lblEatPoints = Content.FindByName<Label>("EatPoints");
+            lblSleepPoints = Content.FindByName<Label>("SleepPoints");
+            lblHappyPoints = Content.FindByName<Label>("HappyPoints");
+            lblStudyPoints = Content.FindByName<Label>("StudyPoints");
+            lblProgrPoints = Content.FindByName<Label>("ProgrPoints");
+            lblLinalPoints = Content.FindByName<Label>("LinalPoints");
+            lblMathPoints = Content.FindByName<Label>("MathPoints");
+            lblAsmEconomicsPoints = Content.FindByName<Label>("Asm_economicsPoints");
+            lblAsm_eco = Content.FindByName<Label>("Asm_economics");
 
-            pbFood = this.Content.FindByName<ProgressBar>("PbFood");
-            pbSleep = this.Content.FindByName<ProgressBar>("PbSleep");
-            pbHappiness = this.Content.FindByName<ProgressBar>("PbHappiness");
-            pbStudying = this.Content.FindByName<ProgressBar>("PbStudying");
-            pbProgrPoints = this.Content.FindByName<ProgressBar>("PbProg");
-            pbLinalPoints = this.Content.FindByName<ProgressBar>("PbLinal");
-            pbMathPoints = this.Content.FindByName<ProgressBar>("PbMath");
-            pbAsmEconomicsPoints = this.Content.FindByName<ProgressBar>("PbASM_ECO");
+            pbFood = Content.FindByName<ProgressBar>("PbFood");
+            pbSleep = Content.FindByName<ProgressBar>("PbSleep");
+            pbHappiness = Content.FindByName<ProgressBar>("PbHappiness");
+            pbStudying = Content.FindByName<ProgressBar>("PbStudying");
+            pbProgrPoints = Content.FindByName<ProgressBar>("PbProg");
+            pbLinalPoints = Content.FindByName<ProgressBar>("PbLinal");
+            pbMathPoints = Content.FindByName<ProgressBar>("PbMath");
+            pbAsmEconomicsPoints = Content.FindByName<ProgressBar>("PbASM_ECO");
+            btnAsm_eco = Content.FindByName<Button>("BtnASM_ECO");
 
             Refresh();
         }
 
+        //не знаю как изменить это >:c
         private void BtnProg_Clicked(object sender, System.EventArgs e)
         {
             Simulator.Study.Programming += Simulator.Study.LearningPoints();
@@ -144,7 +148,5 @@ namespace IIT_Simulator
         }
 
         private async void Congrat() => await DisplayAlert("Везунчик!", "Ты был удостоен автомата. Поздравляем!", "Ура!");
-
-        
     }
 }

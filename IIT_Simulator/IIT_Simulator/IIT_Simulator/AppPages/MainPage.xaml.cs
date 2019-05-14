@@ -20,7 +20,7 @@ namespace IIT_Simulator
 
             needsPage = new NeedsPage(this);
             studyPage = new StudyPage(this, needsPage);
-            deaneryPage = new DeaneryPage(this);
+            deaneryPage = new DeaneryPage(this, examsPage, studyPage);
             examsPage = new ExamsPage(this);
             achievmentsPage = new Achievements();
 
@@ -31,9 +31,10 @@ namespace IIT_Simulator
             Children.Add(achievmentsPage);
 
             NavigationPage.SetHasNavigationBar(this, false);
+            deaneryPage.CheckGroupAndRefresh();
         }
 
-        public void ChangePeriodIfNeeded()
+        public void ChangePeriodIfNeeded() //не знаю как это исправить, все блять ломается нахуй
         {
             if (Simulator.Schedule.Countdown == 0 && Simulator.Schedule.IsSession)
             {
@@ -55,6 +56,7 @@ namespace IIT_Simulator
 
                 Simulator.Course.ChangeCourse();
             }
+
             else if (Simulator.Schedule.Countdown == 0 && !Simulator.Schedule.IsSession)
             {
                 Simulator.Schedule.IsSession = !Simulator.Schedule.IsSession;
@@ -120,13 +122,30 @@ namespace IIT_Simulator
                 Simulator.Course.CourseNumber = 4;
                 Simulator.Course.Semestr = 2;
             }
-
             needsPage.RefreshStates();
             needsPage.RefreshStatesPBars();
             studyPage.Refresh();
             needsPage.RefreshCash();
             deaneryPage.RefreshCourse();
-            deaneryPage.SetCheatCode(""); // TODO string.Empty
+            deaneryPage.SetCheatCode(string.Empty);
+        }
+
+        public void RefreshTransfBtnsAndLbls()
+        {
+            if (Simulator.Course.GroupChanged)
+            {
+                examsPage.lblAsm_eco.Text = "Экономическая теория и ее разделы";
+                studyPage.lblAsm_eco.Text = "Экономическая теория и ее разделы";
+                studyPage.btnAsm_eco.Text = "Рассчитать доход приложения";
+            }
+            else
+            {
+                examsPage.lblAsm_eco.Text = "Архитектура вычислительных систем";
+                studyPage.lblAsm_eco.Text = "Архитектура вычислительных систем";
+                studyPage.btnAsm_eco.Text = "Писать ассемблерные вставки";
+            }
+            studyPage.lblAsmEconomicsPoints.Text = $"{Simulator.Study.Asm_eco}/100";
+            studyPage.pbAsmEconomicsPoints.Progress = Simulator.Study.Asm_eco * 0.01;
         }
 
         public async void ForceGameOverAlert()

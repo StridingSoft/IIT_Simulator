@@ -38,6 +38,7 @@ namespace IIT_Simulator.Classes
         public void ChangeSpeciality()
         {
             GroupChanged = !GroupChanged;
+            Simulator.Study.Asm_eco = 0;
         }
     }
 }
