@@ -1,4 +1,5 @@
-﻿using IIT_Simulator.Classes;
+﻿using IIT_Simulator.AppPages;
+using IIT_Simulator.Classes;
 using System;
 using System.IO;
 using Xamarin.Forms;
@@ -65,7 +66,7 @@ namespace IIT_Simulator
             {
                 Simulator.Cash.Money += Simulator.Cash.Grant;
                 Simulator.Schedule.DaysToGrant = 30;
-                needsPage.RefreshLabels();
+                needsPage.RefreshStates();
                 needsPage.RefreshCash();
             }
             needsPage.RefreshDays();
@@ -120,12 +121,31 @@ namespace IIT_Simulator
                 Simulator.Course.Semestr = 2;
             }
 
-            needsPage.RefreshLabels();
-            needsPage.RefreshProgressBars();
+            needsPage.RefreshStates();
+            needsPage.RefreshStatesPBars();
             studyPage.Refresh();
             needsPage.RefreshCash();
             deaneryPage.RefreshCourse();
             deaneryPage.SetCheatCode(""); // TODO string.Empty
+        }
+
+        public async void ForceGameOverAlert()
+        {
+            if (Simulator.States.GameOver())
+            {
+                await DisplayAlert("Вы проиграли!", "Студент умер. Начните сначала", "ОК");
+                await Navigation.PushAsync(new Menu());
+            }
+            else if (Simulator.Schedule.IsDeducted)
+            {
+                await DisplayAlert("Неуспеваемость!", "Студент был отчислен. Начните сначала", "ОК");
+                await Navigation.PushAsync(new Menu());
+            }
+            else if (Simulator.Schedule.IsGraduated)
+            {
+                await DisplayAlert("Выпускной!", "Ваш студент только что закончил университет!", "Получить диплом");
+                await Navigation.PushAsync(new Winner());
+            }
         }
 
         internal void RefreshStates()
@@ -140,12 +160,12 @@ namespace IIT_Simulator
 
         internal void RefreshLabels()
         {
-            needsPage.RefreshLabels();
+            needsPage.RefreshStates();
         }
 
         internal void RefreshProgressBars()
         {
-            needsPage.RefreshProgressBars();
+            needsPage.RefreshStatesPBars();
         }
     }
 }

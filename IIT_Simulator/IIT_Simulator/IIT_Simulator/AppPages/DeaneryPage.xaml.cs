@@ -25,20 +25,7 @@ namespace IIT_Simulator
 
             RefreshCourse();
 		}
-
-        public string GetCheatCode() => tbCheatCode.Text;
-
-        public void SetCheatCode(string cheat) => tbCheatCode.Text = cheat;
-
-        public void RefreshCourse()
-        {
-            lblGroup.Text = " Группа: " + Simulator.Course.Group;
-            lblCourse.Text = " Курс: " + Simulator.Course.CourseNumber;
-            lblSemester.Text = " Семестр: " + Simulator.Course.Semestr;
-            if (Simulator.Course.GotHelp)
-                btnGetHelp.IsEnabled = false;
-        }
-
+        
         private void BtnAcceptCode_Clicked(object sender, System.EventArgs e) => mainPage.Cheat();
 
         private async void BtnLeave_Clicked(object sender, System.EventArgs e)
@@ -65,7 +52,6 @@ namespace IIT_Simulator
             Simulator.Course.GotHelp = true;
             BtnGetHelp.IsEnabled = false;
         }
-
 
         //TODO
         private void BtnTransfer_Clicked(object sender, System.EventArgs e) => Simulator.Course.ChangeSpeciality();
@@ -94,5 +80,18 @@ namespace IIT_Simulator
             mainPage.RefreshLabels();
             RefreshCourse();
         }
+
+        public void RefreshCourse()
+        {
+            lblGroup.Text = " Группа: " + Simulator.Course.Group;
+            lblCourse.Text = " Курс: " + Simulator.Course.CourseNumber;
+            lblSemester.Text = " Семестр: " + Simulator.Course.Semestr;
+            if (Simulator.Course.GotHelp)
+                btnGetHelp.IsEnabled = false;
+        }
+
+        public string GetCheatCode() => tbCheatCode.Text;
+
+        public void SetCheatCode(string cheat) => tbCheatCode.Text = cheat;
     }
 }

@@ -78,10 +78,10 @@ namespace IIT_Simulator
         {
             mainPage.DecreaseDays();
             needsPage.RefreshDays();
-            needsPage.RefreshLabels();
-            needsPage.RefreshProgressBars();
+            needsPage.RefreshStates();
+            needsPage.RefreshStatesPBars();
             Refresh();
-            ForceGameOverAlert();
+            mainPage.ForceGameOverAlert();
         }
 
         public void RefreshStates()
@@ -129,8 +129,8 @@ namespace IIT_Simulator
         private void CalculatePerformance()
         {
             Simulator.States.CalculatePerformance();
-            needsPage.RefreshLabels();
-            needsPage.RefreshProgressBars();
+            needsPage.RefreshStates();
+            needsPage.RefreshStatesPBars();
         }
 
         private int LuckyCharm()
@@ -145,23 +145,6 @@ namespace IIT_Simulator
 
         private async void Congrat() => await DisplayAlert("Везунчик!", "Ты был удостоен автомата. Поздравляем!", "Ура!");
 
-        private async void ForceGameOverAlert()
-        {
-            if (Simulator.States.GameOver())
-            {
-                await DisplayAlert("Вы проиграли!", "Студент умер. Начните сначала", "ОК");
-                await Navigation.PushAsync(new Menu());
-            }
-            else if (Simulator.Schedule.IsDeducted)
-            {
-                await DisplayAlert("Неуспеваемость!", "Студент был отчислен. Начните сначала", "ОК");
-                await Navigation.PushAsync(new Menu());
-            }
-            else if (Simulator.Schedule.IsGraduated)
-            {
-                await DisplayAlert("Выпускной!", "Ваш студент только что закончил университет!", "Получить диплом");
-                await Navigation.PushAsync(new Winner());
-            }
-        }
+        
     }
 }

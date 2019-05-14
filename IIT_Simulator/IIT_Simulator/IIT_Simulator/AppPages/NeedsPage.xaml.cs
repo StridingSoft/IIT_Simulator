@@ -23,24 +23,24 @@ namespace IIT_Simulator
             InitializeComponent();
 
             this.mainPage = mainPage;
-            lbMoney = this.Content.FindByName<Label>("LbMoney");
-            lbGrant = this.Content.FindByName<Label>("LbGrant");
-            lblEatPoints = this.Content.FindByName<Label>("EatPoints");
-            lblSleepPoints = this.Content.FindByName<Label>("SleepPoints");
-            lblHappyPoints = this.Content.FindByName<Label>("HappyPoints");
-            lblStudyPoints = this.Content.FindByName<Label>("StudyPoints");
-            lblDay = this.Content.FindByName<Label>("LbDay");
-            lblSessionDays = this.Content.FindByName<Label>("LbSessionDays");
-            lblDaysToGrant = this.Content.FindByName<Label>("LbDaysToGrant");
+            lbMoney = Content.FindByName<Label>("LbMoney");
+            lbGrant = Content.FindByName<Label>("LbGrant");
+            lblEatPoints = Content.FindByName<Label>("EatPoints");
+            lblSleepPoints = Content.FindByName<Label>("SleepPoints");
+            lblHappyPoints = Content.FindByName<Label>("HappyPoints");
+            lblStudyPoints = Content.FindByName<Label>("StudyPoints");
+            lblDay = Content.FindByName<Label>("LbDay");
+            lblSessionDays = Content.FindByName<Label>("LbSessionDays");
+            lblDaysToGrant = Content.FindByName<Label>("LbDaysToGrant");
 
-            pbFood = this.Content.FindByName<ProgressBar>("PbFood");
-            pbSleep = this.Content.FindByName<ProgressBar>("PbSleep");
-            pbHappiness = this.Content.FindByName<ProgressBar>("PbHappiness");
-            pbStudying = this.Content.FindByName<ProgressBar>("PbStudying");
+            pbFood = Content.FindByName<ProgressBar>("PbFood");
+            pbSleep = Content.FindByName<ProgressBar>("PbSleep");
+            pbHappiness = Content.FindByName<ProgressBar>("PbHappiness");
+            pbStudying = Content.FindByName<ProgressBar>("PbStudying");
 
             SavingSystem.ReadFile();
-            RefreshLabels();
-            RefreshProgressBars();
+            RefreshStates();
+            RefreshStatesPBars();
             RefreshDays();
             RefreshCash();
         }
@@ -51,7 +51,7 @@ namespace IIT_Simulator
             lbGrant.Text = "\t\t\tСтипендия(руб.): " + Simulator.Cash.Grant;
         }
 
-        public void RefreshLabels()
+        public void RefreshStates()
         {
             lblEatPoints.Text = Simulator.States.Satiety + "/100";
             lblSleepPoints.Text = Simulator.States.Sleep + "/100";
@@ -59,7 +59,7 @@ namespace IIT_Simulator
             lblStudyPoints.Text = Simulator.States.Studying + "/100";
         }
 
-        public void RefreshProgressBars()
+        public void RefreshStatesPBars()
         {
             pbFood.Progress = Simulator.States.Satiety * 0.01;
             pbSleep.Progress = Simulator.States.Sleep * 0.01;
@@ -100,7 +100,7 @@ namespace IIT_Simulator
                 Simulator.States.Sleep -= rnd.Next(1, 7);
                 Simulator.Cash.Money -= 100;
                 mainPage.DecreaseDays();
-                Refresh();
+                RefreshPage();
             }
             else
                 ForceNoMoneyAlert();
@@ -111,7 +111,7 @@ namespace IIT_Simulator
             Simulator.States.Sleep += 20 + rnd.Next(1, 10);
             Simulator.States.Satiety -= rnd.Next(1, 7);
             mainPage.DecreaseDays();
-            Refresh();
+            RefreshPage();
         }
 
         private void btnEnjoy_Click(object sender, EventArgs e)
@@ -123,41 +123,23 @@ namespace IIT_Simulator
                 Simulator.States.Sleep -= rnd.Next(5, 15);
                 Simulator.Cash.Money -= 200;
                 mainPage.DecreaseDays();
-                Refresh();
+                RefreshPage();
             }
             else
                 ForceNoMoneyAlert();
         }
 
-        private void Refresh()
+        private void RefreshPage()
         {
-            RefreshLabels();
-            RefreshProgressBars();
+            RefreshStates();
+            RefreshStatesPBars();
             mainPage.RefreshStates();
             mainPage.RefreshDays();
             RefreshCash();
-            ForceGameOverAlert();
+            RefreshDays();
+            mainPage.ForceGameOverAlert();
         }
 
         private async void ForceNoMoneyAlert() => await DisplayAlert("Недостаточно средств", "У вас закончились деньги", "ОК");
-
-        private async void ForceGameOverAlert()
-        {
-            if (Simulator.States.GameOver())
-            {
-                await DisplayAlert("Вы проиграли!", "Студент умер. Начните сначала", "ОК");
-                await Navigation.PushAsync(new Menu());
-            }
-            else if (Simulator.Schedule.IsDeducted)
-            {
-                await DisplayAlert("Неуспеваемость!", "Студент был отчислен. Начните сначала", "ОК");
-                await Navigation.PushAsync(new Menu());
-            }
-            else if (Simulator.Schedule.IsGraduated)
-            {
-                await DisplayAlert("Выпускной!", "Ваш студент только что закончил университет!", "Получить диплом");
-                await Navigation.PushAsync(new Winner());
-            }
-        }
     }
 }
