@@ -39,8 +39,8 @@ namespace IIT_Simulator
             if (res)
             {
                 Simulator.Course.Expelled = true;
-                await DisplayAlert("Отчислен!", "Студент забрал документы из вуза", "ОК");
-                await Navigation.PushAsync(new Menu());
+                Simulator.Statistics.GameLoses++;
+                mainPage.DispAlertAndPushPage("Отчислен!", "Студент забрал документы из вуза. Посмотреть статистику?", new Menu());
             }
         }
 
@@ -112,11 +112,10 @@ namespace IIT_Simulator
             }
         }
 
-        private async void GetExpelled()
+        private void GetExpelled()
         {
             Simulator.Statistics.GameLoses++;
-            await DisplayAlert("Отчислен!", "Из-за слишком большой занятости в Корпусе вы перестали учиться.", "ОК");
-            await Navigation.PushAsync(new Menu());
+            mainPage.DispAlertAndPushPage("Отчислен!", "Из-за слишком большой занятости в Корпусе вы перестали учиться. Посмотреть статистику?", new Menu());
         }
 
         private async void LoseMoneyAlert() => await DisplayAlert("Неудача!", "С вас был снят вступительный взнос, но вы не прошли испытание", "ОК");

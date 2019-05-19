@@ -34,6 +34,7 @@ namespace IIT_Simulator
 
             deaneryPage.CheckGroupAndRefresh();
             deaneryPage.BtnCorp.IsEnabled = !Simulator.Course.Corpus;
+            SavingSystem.ReadStatisticsFile();
         }
 
         public void ChangePeriodIfNeeded() //не знаю как это исправить, все блять ломается нахуй
@@ -88,9 +89,9 @@ namespace IIT_Simulator
 
         protected override void OnDisappearing()
         {
-            File.Delete(SavingSystem.GetPathToFile());
+            File.Delete(SavingSystem.GetPathToFile("data.txt"));
             if (!Simulator.States.GameOver() && !Simulator.Schedule.IsDeducted && !Simulator.Schedule.IsGraduated && !Simulator.Course.Expelled)
-                SavingSystem.WriteAllData(SavingSystem.GetPathToFile()); 
+                SavingSystem.WriteAllData(SavingSystem.GetPathToFile("data.txt")); 
         }
 
         internal void RefreshCash()
@@ -152,26 +153,38 @@ namespace IIT_Simulator
             studyPage.pbAsmEconomicsPoints.Progress = Simulator.Study.Asm_eco * 0.01;
         }
 
-        public async void ForceGameOverAlert()
+        public void ForceGameOverAlert()
         {
             if (Simulator.States.GameOver())
             {
                 Simulator.Statistics.GameLoses++;
-                await DisplayAlert("Вы проиграли!", "Студент умер. Начните сначала", "ОК");
-                await Navigation.PushAsync(new Menu());
+                DispAlertAndPushPage("Вы проиграли!", "Студент умер. Хотите увидеть статистику?", new Menu());
             }
             else if (Simulator.Schedule.IsDeducted)
             {
                 Simulator.Statistics.GameLoses++;
-                await DisplayAlert("Неуспеваемость!", "Студент был отчислен. Начните сначала", "ОК");
-                await Navigation.PushAsync(new Menu());
+                DispAlertAndPushPage("Неуспеваемость!", "Студент был отчислен. Хотите увидеть статистику?", new Menu());
             }
             else if (Simulator.Schedule.IsGraduated)
             {
                 Simulator.Statistics.GameWins++;
-                await DisplayAlert("Выпускной!", "Ваш студент только что закончил университет!", "Получить диплом");
-                await Navigation.PushAsync(new Winner());
+                DispAlertAndPushPage("Выпускной!", "Ваш студент только что закончил университет! Хотите увидеть статистику?", new Winner());
             }
+        }
+
+        public async void DispAlertAndPushPage(string title, string message, Page page)
+        {
+            File.Delete(SavingSystem.GetPathToFile("statistics.txt"));
+            SavingSystem.WriteAllStatistics(SavingSystem.GetPathToFile("statistics.txt"));
+            bool res = await DisplayAlert(title,message, "Да","Нет");
+            if (res)
+                await DisplayAlert("Статистика", 
+                    $"Кол-во выигрышей: {Simulator.Statistics.GameWins}{Environment.NewLine}" +
+                    $"Кол-во проигрышей: {Simulator.Statistics.GameLoses}{Environment.NewLine}" +
+                    $"Кол-во достижений: {Simulator.Statistics.Achievements}{Environment.NewLine}" +
+                    $"Прожито дней: {Simulator.Schedule.DaysCounter}{Environment.NewLine}" +
+                    $"Получено денег за игру: {Simulator.Statistics.MoneyCount}", "ОК");
+            await Navigation.PushAsync(page);
         }
 
         internal void RefreshStates()

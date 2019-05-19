@@ -82,22 +82,19 @@ namespace IIT_Simulator
         public static void ReadStatisticsFile()
         {
             string fileName = GetPathToFile("statistics.txt");
+            Simulator.Statistics.InitializeStatistics();
 
             if (!File.Exists(fileName))
-            {
-                Simulator.Statistics.InitializeStatistics();
                 WriteAllStatistics(fileName);
-            }
             else
                 ParseStatisticsFile(fileName);
         }
 
-        private static void WriteAllStatistics(string fileName)
+        public static void WriteAllStatistics(string fileName)
         {
             using (var streamWriter = new StreamWriter(fileName, true))
             {
-                streamWriter.Write($"{Simulator.Statistics.GameWins};{Simulator.Statistics.GameLoses};{Simulator.Statistics.Achievements};" +
-                                   $"{Simulator.Schedule.DaysCounter};{Simulator.Statistics.MoneyCount}");
+                streamWriter.Write($"{Simulator.Statistics.GameWins};{Simulator.Statistics.GameLoses};{Simulator.Statistics.Achievements};");
             }
         }
 
@@ -107,7 +104,7 @@ namespace IIT_Simulator
             {
                 var array = streamReader.ReadToEnd().Trim().Split(';');
 
-                if (array.Length == 5)
+                if (array.Length == 3)
                 {
                     Simulator.Statistics.GameWins = int.Parse(array[0]);
                     Simulator.Statistics.GameLoses = int.Parse(array[1]);
