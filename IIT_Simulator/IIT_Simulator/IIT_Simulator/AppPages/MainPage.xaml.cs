@@ -12,7 +12,7 @@ namespace IIT_Simulator
         StudyPage studyPage;
         DeaneryPage deaneryPage;
         ExamsPage examsPage;
-        Achievements achievmentsPage;
+        Achievements achievementsPage;
 
         public MainPage()
         {
@@ -24,13 +24,13 @@ namespace IIT_Simulator
             studyPage = new StudyPage(this, needsPage);
             deaneryPage = new DeaneryPage(this, examsPage, studyPage);
             examsPage = new ExamsPage(this);
-            achievmentsPage = new Achievements();
+            achievementsPage = new Achievements();
 
             Children.Add(needsPage);
             Children.Add(studyPage);
             Children.Add(deaneryPage);
             Children.Add(examsPage);
-            Children.Add(achievmentsPage);
+            Children.Add(achievementsPage);
 
             deaneryPage.CheckGroupAndRefresh();
             deaneryPage.BtnCorp.IsEnabled = !Simulator.Course.Corpus;

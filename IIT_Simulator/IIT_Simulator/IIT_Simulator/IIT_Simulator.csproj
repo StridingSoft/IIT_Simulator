@@ -15,6 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="AppPages\Achievements.xaml.cs">
+      <DependentUpon>Achievements.xaml</DependentUpon>
+    </Compile>
     <Compile Update="AppPages\DeaneryPage.xaml.cs">
       <DependentUpon>DeaneryPage.xaml</DependentUpon>
     </Compile>

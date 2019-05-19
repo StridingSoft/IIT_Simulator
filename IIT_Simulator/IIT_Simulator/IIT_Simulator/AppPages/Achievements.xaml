@@ -5,10 +5,73 @@
              Title="Достижения"
              Icon="achieve">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout x:Name="stackLayout" Spacing="5">
+                <Label HeightRequest="1"/>
+                <Label HeightRequest="22" Text="Достижения" TextColor="White" BackgroundColor="DeepSkyBlue" FontSize="Medium"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                <Label HeightRequest="2"/>
+                
+                <Label x:Name="childTitle" HeightRequest="22" Text=" Дитя Сатаны" TextColor="LightGray" FontSize="Large"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <Label x:Name="childText" HeightRequest="22" Text=" Сделать 666 кликов в игре " TextColor="LightGray" FontSize="Large"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+
+                <Label HeightRequest="2"/>
+
+                <Label x:Name="luckyTitle" HeightRequest="22" Text=" ''Везунчик''" TextColor="LightGray" FontSize="Large"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <Label x:Name="luckyText" HeightRequest="22" Text=" Неудачно поступить в 'Корпус' и быть отчисленным" TextColor="LightGray" FontSize="Large"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+
+                <Label HeightRequest="2"/>
+                
+                <Label x:Name="incorruptibleTitle" HeightRequest="22" Text=" Неподкупный" TextColor="LightGray" FontSize="Large"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <Label x:Name="incorruptibleText" HeightRequest="22" Text=" Лишиться стипендии" TextColor="LightGray" FontSize="Large"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <Label x:Name="incorruptibleReward" HeightRequest="22" Text=" - +200(руб.) на хлебушек " TextColor="LightGray" FontSize="Large"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+
+                <Label HeightRequest="2"/>
+
+                <Label x:Name="lifeHostTitle" HeightRequest="22" Text=" ''Хозяин жизни''" TextColor="LightGray" FontSize="Large"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <Label x:Name="lifeHostText" HeightRequest="22" Text=" Сдать АВС с 0% прогресса" TextColor="LightGray" FontSize="Large"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <Label x:Name="lifeHostReward" HeightRequest="22" Text=" - восстановит все потребности" TextColor="LightGray" FontSize="Large"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+
+                <Label HeightRequest="2"/>
+                
+                <Label x:Name="unnoticedTitle" HeightRequest="22" Text=" ''Беспалевный''" TextColor="LightGray" FontSize="Large"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <Label x:Name="unnoticedText" HeightRequest="22" Text=" Попасться на списывании" TextColor="LightGray" FontSize="Large"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+
+                <Label HeightRequest="2"/>
+
+                <Label x:Name="unstableTitle" HeightRequest="22" Text=" Непостоянный" TextColor="LightGray" FontSize="Large"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <Label x:Name="unstableText" HeightRequest="22" Text=" Перевестись из одной группы в другую 3 раза" TextColor="LightGray" FontSize="Large"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+
+                <Label HeightRequest="2"/>
+
+                <Label x:Name="ulearnGodTitle" HeightRequest="22" Text=" 'Бог Юлерна" TextColor="LightGray" FontSize="Large"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <Label x:Name="ulearnGodText" HeightRequest="22" Text=" Сдать 3 сессии по программированию с >90% прогресса" TextColor="LightGray" FontSize="Large"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <Label x:Name="ulearnGodReward" HeightRequest="22" Text=" - автомат по программированию до выпуска" TextColor="LightGray" FontSize="Large"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+
+                <Label HeightRequest="2"/>
+
+                <Label x:Name="onEdgeTitle" HeightRequest="22" Text=" На грани" TextColor="LightGray" FontSize="Large"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <Label x:Name="onEdgeText" HeightRequest="22" Text=" Выжить с 1% сытости, бодрости или счастья" TextColor="LightGray" FontSize="Large"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <Label x:Name="onEdgeReward" HeightRequest="22" Text=" - +1000(руб.)" TextColor="LightGray" FontSize="Large"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+
+                <Label HeightRequest="2"/>
+
+                <Label x:Name="godLikeTitle" HeightRequest="22" Text=" God like" TextColor="LightGray" FontSize="Large"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <Label x:Name="godLikeText" HeightRequest="22" Text=" 3 раза пройти игру" TextColor="LightGray" FontSize="Large"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <Label x:Name="godLikeReward" HeightRequest="22" Text=" - увожение от создателя в карму" TextColor="LightGray" FontSize="Large"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+
+                <Label HeightRequest="2"/>
+
+                <Label x:Name="loserTitle" HeightRequest="22" Text=" Лузер" TextColor="LightGray" FontSize="Large"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <Label x:Name="loserText" HeightRequest="22" Text=" Проиграть 10 раз" TextColor="LightGray" FontSize="Large"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <Label x:Name="loserReward" HeightRequest="22" Text=" - неувожение от создателя " TextColor="LightGray" FontSize="Large"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+
+                <Label HeightRequest="2"/>
+                
+                <Label x:Name="suicideTitle" HeightRequest="22" Text=" Самовыпил" TextColor="LightGray" FontSize="Large"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <Label x:Name="suicideText" HeightRequest="22" Text=" Отчислиться " TextColor="LightGray" FontSize="Large"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                
+                <Label HeightRequest="2"/>
+                </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
