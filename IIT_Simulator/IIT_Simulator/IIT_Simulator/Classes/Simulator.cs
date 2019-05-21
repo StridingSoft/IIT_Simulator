@@ -11,7 +11,7 @@ namespace IIT_Simulator.Classes
         public static Schedule Schedule = new Schedule();
         public static Study Study = new Study();
         public static Session Session = new Session();
-        public static Achievement Achievement = new Achievement();
+        public static Achievements Achievements = new Achievements();
         public static States States = new States();
         public static Statistics Statistics = new Statistics();
 
