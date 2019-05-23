@@ -29,7 +29,10 @@ namespace IIT_Simulator.Classes
         public void CheckPerformance()
         {
             if (Simulator.States.Studying < 60)
+            {
                 Grant = 0;
+                Simulator.Achievements.Uncorrupt = true;
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using IIT_Simulator.Classes;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace IIT_Simulator
@@ -7,7 +8,7 @@ namespace IIT_Simulator
 	public partial class Achievements : ContentPage
 	{
         Label childTtl, childTxt,
-            luckyTtl, luckyTxt,
+            luckyTtl, luckyTxt1, luckyTxt2,
             incorruptibleTtl, incorruptibleTxt, incorruptibleRwd,
             lifeHostTtl, lifeHostTxt, lifeHostRwd,
             unnoticedTtl, unnoticedTxt,
@@ -25,7 +26,8 @@ namespace IIT_Simulator
             childTtl = Content.FindByName<Label>("childTitle");
             childTxt = Content.FindByName<Label>("childText");
             luckyTtl = Content.FindByName<Label>("luckyTitle");
-            luckyTxt = Content.FindByName<Label>("luckyText");
+            luckyTxt1 = Content.FindByName<Label>("luckyText1");
+            luckyTxt2 = Content.FindByName<Label>("luckyText2");
             incorruptibleTtl = Content.FindByName<Label>("incorruptibleTitle");
             incorruptibleTxt = Content.FindByName<Label>("incorruptibleText");
             incorruptibleRwd = Content.FindByName<Label>("incorruptibleReward");
@@ -48,13 +50,130 @@ namespace IIT_Simulator
             loserTtl = Content.FindByName<Label>("loserTitle");
             loserTxt = Content.FindByName<Label>("loserText");
             loserRwd = Content.FindByName<Label>("loserReward");
-            suicideTtl = Content.FindByName<Label>("suicudeTitle");
+            suicideTtl = Content.FindByName<Label>("suicideTitle");
             suicideTxt = Content.FindByName<Label>("suicideText");
         }
 
-        public void ActivateAchievement(Label label)
+        public void CheckTransfer()
         {
-            label.BackgroundColor = Color.DeepSkyBlue;
+            if (Simulator.Achievements.TransferCounter == 3)
+            {
+                ActivateAchievement(unstableTtl, unstableTxt);
+                GetAchievementAlert();
+            }
         }
-	}
+
+        public void CheckCorpus()
+        {
+            if (Simulator.Achievements.Corpus)
+            {
+                ActivateAchievement(luckyTxt1, luckyTxt2, luckyTtl);
+                GetAchievementAlert();
+            }
+        }
+
+        public void CheckClicks()
+        {
+            if (Simulator.Achievements.ClicksCounter == 666)
+            {
+                ActivateAchievement(childTxt, childTtl);
+                GetAchievementAlert();
+            }
+        }
+
+        public void CheckProgramming()
+        {
+            if (Simulator.Achievements.ProgExCounter >=3)
+                Simulator.Study.Programming = 100;
+            if (Simulator.Achievements.ProgExCounter == 3)
+            {
+                ActivateAchievement(ulearnGodTtl, ulearnGodTxt, ulearnGodRwd);
+                GetAchievementAlert();
+            }
+        }
+
+        public void CheckStates()
+        {
+            if (Simulator.States.Satiety == 1 || Simulator.States.Sleep == 1 || Simulator.States.Happiness == 1)
+            {
+                ActivateAchievement(onEdgeTtl, onEdgeTxt, onEdgeRwd);
+                GetAchievementAlert();
+                Simulator.Cash.Money += 1000;
+            }
+        }
+
+        public void CheckWins()
+        {
+            if (Simulator.Statistics.GameWins == 3)
+            {
+                ActivateAchievement(godLikeTtl,godLikeTxt,godLikeRwd);
+                GetAchievementAlert();
+            }
+        }
+
+        public void CheckLoses()
+        {
+            if (Simulator.Statistics.GameLoses == 10)
+            {
+                ActivateAchievement(loserTtl, loserTxt, loserRwd);
+                GetAchievementAlert();
+            }
+        }
+
+        public void CheckGrant()
+        {
+            if (Simulator.Achievements.Uncorrupt)
+            {
+                ActivateAchievement(incorruptibleRwd, incorruptibleTtl, incorruptibleTxt);
+                Simulator.Cash.Money += 200;
+                GetAchievementAlert();
+            }
+        }
+        public void CheckSuicide()
+        {
+            if (Simulator.Achievements.Suicide)
+            {
+                ActivateAchievement(suicideTtl, suicideTxt);
+                GetAchievementAlert();
+            }
+        }
+
+        public void CheckUnluck()
+        { 
+            if (Simulator.Achievements.Unnoticed)
+            {
+                ActivateAchievement(unnoticedTtl, unnoticedTxt);
+                GetAchievementAlert();
+            }
+        }
+
+        private void ActivateAchievement(params Label[] labels)
+        {
+            foreach (var label in labels)
+            {
+                label.TextColor = Color.DeepSkyBlue;
+                label.TextDecorations = TextDecorations.Strikethrough;
+            }
+        }
+
+        public void CheckAchievementsOnStart()
+        {
+            if (Simulator.Achievements.TransferCounter >= 3)
+                ActivateAchievement(unstableTtl, unstableTxt);
+            if (Simulator.Achievements.Corpus)
+                ActivateAchievement(luckyTxt1, luckyTxt2, luckyTtl);
+            if (Simulator.Achievements.ClicksCounter >= 666)
+                ActivateAchievement(childTxt, childTtl);
+            if (Simulator.Statistics.GameWins >= 3)
+                ActivateAchievement(godLikeTtl, godLikeTxt, godLikeRwd);
+            if (Simulator.Statistics.GameLoses >= 10)
+                ActivateAchievement(loserTtl, loserTxt, loserRwd);
+            if (Simulator.Achievements.Suicide)
+                ActivateAchievement(suicideTtl, suicideTxt);
+            if (Simulator.Achievements.Unnoticed)
+                ActivateAchievement(unnoticedTtl, unnoticedTxt);
+        }
+
+        private async void GetAchievementAlert() => await DisplayAlert("Получено достижение.","Вы получили достижение, поздравляем!", "Ура!");
+    }
 }

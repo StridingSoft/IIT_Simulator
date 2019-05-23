@@ -62,6 +62,7 @@ namespace IIT_Simulator
         
         private async void PassExamsMessage(string text, int subj, Button btn)
         {
+            Simulator.Achievements.CheckProgrammingPoints();
             UnluckyCharm();
             if (IsPassed(subj) && !unluck)
             {
@@ -70,7 +71,11 @@ namespace IIT_Simulator
                 Simulator.Session.ExamsCounter++;
             }
             else if (unluck)
+            {
                 Upset();
+                Simulator.Achievements.Unnoticed = true;
+                mainPage.AchievementsPage.CheckUnluck();
+            }
             else
                 ExamNotPass();
             mainPage.DecreaseDays();

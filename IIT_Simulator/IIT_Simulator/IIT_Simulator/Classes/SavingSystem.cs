@@ -113,6 +113,45 @@ namespace IIT_Simulator
             }
         }
 
+        public static void ReadAchievementsFile()
+        {
+            string fileName = GetPathToFile("achievements.txt");
+
+            if (!File.Exists(fileName))
+            {
+                Simulator.Achievements.InitializeAchievements();
+                WriteAllAchievements(fileName);
+            }
+            else
+                ParseAchievementFile(fileName);
+        }
+
+        private static void ParseAchievementFile(string fileName)
+        {
+            using (var streamReader = new StreamReader(fileName))
+            {
+                var array = streamReader.ReadToEnd().Trim().Split(';');
+
+                if (array.Length == 5)
+                {
+                    Simulator.Achievements.Unnoticed = bool.Parse(array[0]);
+                    Simulator.Achievements.TransferCounter = int.Parse(array[1]);
+                    Simulator.Achievements.ClicksCounter = int.Parse(array[2]);
+                    Simulator.Achievements.Corpus = bool.Parse(array[3]);
+                    Simulator.Achievements.Suicide = bool.Parse(array[4]);
+                }
+            }
+        }
+
+        public static void WriteAllAchievements(string fileName)
+        {
+            using (var streamWriter = new StreamWriter(fileName, true))
+            {
+                streamWriter.Write($"{Simulator.Achievements.Unnoticed};{Simulator.Achievements.TransferCounter};" +
+                                   $"{Simulator.Achievements.ClicksCounter};{Simulator.Achievements.Corpus};{Simulator.Achievements.Suicide}");
+            }
+        }
+
         public static string GetPathToFile(string name) => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal),name);
     }
 }

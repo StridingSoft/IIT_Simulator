@@ -12,7 +12,7 @@ namespace IIT_Simulator
         StudyPage studyPage;
         DeaneryPage deaneryPage;
         ExamsPage examsPage;
-        Achievements achievementsPage;
+        public Achievements AchievementsPage;
 
         public MainPage()
         {
@@ -24,17 +24,19 @@ namespace IIT_Simulator
             studyPage = new StudyPage(this, needsPage);
             deaneryPage = new DeaneryPage(this, examsPage, studyPage);
             examsPage = new ExamsPage(this);
-            achievementsPage = new Achievements();
+            AchievementsPage = new Achievements();
 
             Children.Add(needsPage);
             Children.Add(studyPage);
             Children.Add(deaneryPage);
             Children.Add(examsPage);
-            Children.Add(achievementsPage);
+            Children.Add(AchievementsPage);
 
             deaneryPage.CheckGroupAndRefresh();
             deaneryPage.BtnCorp.IsEnabled = !Simulator.Course.Corpus;
             SavingSystem.ReadStatisticsFile();
+            SavingSystem.ReadAchievementsFile();
+            AchievementsPage.CheckAchievementsOnStart();
         }
 
         public void ChangePeriodIfNeeded() //не знаю как это исправить, все блять ломается нахуй
@@ -50,6 +52,8 @@ namespace IIT_Simulator
                 Simulator.Cash.CalculateGrant();
                 Simulator.Cash.CheckPerformance();
 
+                AchievementsPage.CheckGrant();
+                AchievementsPage.CheckProgramming();
                 Simulator.Session.ExamsCounter = 0;
 
                 Simulator.Study.InitializeSubjects();
@@ -58,6 +62,7 @@ namespace IIT_Simulator
                 examsPage.DeactivateButtons();
 
                 Simulator.Course.ChangeCourse();
+                deaneryPage.RefreshCourse();
             }
 
             else if (Simulator.Schedule.Countdown == 0 && !Simulator.Schedule.IsSession)
@@ -91,7 +96,9 @@ namespace IIT_Simulator
         {
             File.Delete(SavingSystem.GetPathToFile("data.txt"));
             if (!Simulator.States.GameOver() && !Simulator.Schedule.IsDeducted && !Simulator.Schedule.IsGraduated && !Simulator.Course.Expelled)
-                SavingSystem.WriteAllData(SavingSystem.GetPathToFile("data.txt")); 
+                SavingSystem.WriteAllData(SavingSystem.GetPathToFile("data.txt"));
+            File.Delete(SavingSystem.GetPathToFile("achievements.txt"));
+            SavingSystem.WriteAllAchievements(SavingSystem.GetPathToFile("achievements.txt"));
         }
 
         internal void RefreshCash()
@@ -103,6 +110,7 @@ namespace IIT_Simulator
         private static string maxPerformance = "maxstudy";
         private static string addMoney = "motherlode";
         private static string upToCourse = "tolastsemestr";
+        private static string progr = "progup";
 
         public void Cheat()
         {
@@ -127,6 +135,8 @@ namespace IIT_Simulator
                 Simulator.Course.CourseNumber = 4;
                 Simulator.Course.Semestr = 2;
             }
+            else if (deaneryPage.GetCheatCode() == progr)
+                Simulator.Achievements.ProgExCounter = 3;
             needsPage.RefreshStates();
             needsPage.RefreshStatesPBars();
             studyPage.Refresh();
@@ -158,16 +168,19 @@ namespace IIT_Simulator
             if (Simulator.States.GameOver())
             {
                 Simulator.Statistics.GameLoses++;
+                AchievementsPage.CheckLoses();
                 DispAlertAndPushPage("Вы проиграли!", "Студент умер. Хотите увидеть статистику?", new Menu());
             }
             else if (Simulator.Schedule.IsDeducted)
             {
                 Simulator.Statistics.GameLoses++;
+                AchievementsPage.CheckLoses();
                 DispAlertAndPushPage("Неуспеваемость!", "Студент был отчислен. Хотите увидеть статистику?", new Menu());
             }
             else if (Simulator.Schedule.IsGraduated)
             {
                 Simulator.Statistics.GameWins++;
+                AchievementsPage.CheckWins();
                 DispAlertAndPushPage("Выпускной!", "Ваш студент только что закончил университет! Хотите увидеть статистику?", new Winner());
             }
         }

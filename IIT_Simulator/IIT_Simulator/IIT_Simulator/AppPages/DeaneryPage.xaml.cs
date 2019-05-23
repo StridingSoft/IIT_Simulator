@@ -40,7 +40,10 @@ namespace IIT_Simulator
             {
                 Simulator.Course.Expelled = true;
                 Simulator.Statistics.GameLoses++;
+                Simulator.Achievements.Suicide = true;
+                mainPage.AchievementsPage.CheckLoses();
                 mainPage.DispAlertAndPushPage("Отчислен!", "Студент забрал документы из вуза. Посмотреть статистику?", new Menu());
+                mainPage.AchievementsPage.CheckSuicide();
             }
         }
 
@@ -61,6 +64,8 @@ namespace IIT_Simulator
 
         private void BtnTransfer_Clicked(object sender, System.EventArgs e)
         {
+            Simulator.Achievements.TransferCounter++;
+            mainPage.AchievementsPage.CheckTransfer();
             Simulator.Course.ChangeSpeciality();
             CheckGroupAndRefresh();
         }
@@ -72,7 +77,6 @@ namespace IIT_Simulator
             else
                 Simulator.Course.Group = "Программная инженерия";
             mainPage.RefreshTransfBtnsAndLbls();
-            //countoftrans++
             mainPage.RefreshLabels();
             RefreshCourse();
         }
@@ -93,6 +97,8 @@ namespace IIT_Simulator
             {
                 Simulator.Statistics.GameLoses++;
                 Simulator.Course.Expelled = true;
+                Simulator.Achievements.Corpus = true;
+                mainPage.AchievementsPage.CheckCorpus();
                 GetExpelled();
                 BtnCorpus.IsEnabled = false;
             }
@@ -115,6 +121,7 @@ namespace IIT_Simulator
         private void GetExpelled()
         {
             Simulator.Statistics.GameLoses++;
+            mainPage.AchievementsPage.CheckLoses();
             mainPage.DispAlertAndPushPage("Отчислен!", "Из-за слишком большой занятости в Корпусе вы перестали учиться. Посмотреть статистику?", new Menu());
         }
 

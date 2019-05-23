@@ -94,6 +94,7 @@ namespace IIT_Simulator
 
         private void btnEat_Click(object sender, EventArgs e)
         {
+            Simulator.Achievements.ClicksCounter++;
             if (Simulator.Cash.Money >= 100)
             {
                 Simulator.States.Satiety += 20 + rnd.Next(1, 10);
@@ -108,6 +109,7 @@ namespace IIT_Simulator
 
         private void btnSleep_Click(object sender, EventArgs e)
         {
+            Simulator.Achievements.ClicksCounter++;
             Simulator.States.Sleep += 20 + rnd.Next(1, 10);
             Simulator.States.Satiety -= rnd.Next(1, 7);
             mainPage.DecreaseDays();
@@ -116,6 +118,7 @@ namespace IIT_Simulator
 
         private void btnEnjoy_Click(object sender, EventArgs e)
         {
+            Simulator.Achievements.ClicksCounter++;
             if (Simulator.Cash.Money >= 200)
             {
                 Simulator.States.Happiness += 30 + rnd.Next(1, 10);
@@ -137,6 +140,8 @@ namespace IIT_Simulator
             mainPage.RefreshDays();
             RefreshCash();
             RefreshDays();
+            mainPage.AchievementsPage.CheckStates();
+            mainPage.AchievementsPage.CheckClicks();
             mainPage.ForceGameOverAlert();
         }
 

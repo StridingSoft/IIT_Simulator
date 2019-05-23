@@ -7,13 +7,26 @@ namespace IIT_Simulator.Classes
     public class Achievements
     {
         public int ClicksCounter;
-        public bool Uncorrupt;
-        public bool Unnoticed;
         public int TransferCounter;
         public int ProgExCounter;
-        public bool OnEdge;
-        public int GameWinsCounter;
-        public int GameLosesCounter;
+        public bool Uncorrupt;
+        public bool Unnoticed;
         public bool Suicide;
+        public bool Corpus;
+
+        public void InitializeAchievements()
+        {
+            ClicksCounter = 0;
+            TransferCounter = 0;
+            Unnoticed = false;
+            Suicide = false;
+            Corpus = false;
+        }
+
+        public void CheckProgrammingPoints()
+        {
+            if (Simulator.Study.Programming >= 90)
+                ProgExCounter++;
+        }
     }
 }
