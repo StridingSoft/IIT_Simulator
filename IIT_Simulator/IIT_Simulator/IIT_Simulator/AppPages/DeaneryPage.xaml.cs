@@ -42,7 +42,7 @@ namespace IIT_Simulator
                 Simulator.Statistics.GameLoses++;
                 Simulator.Achievements.Suicide = true;
                 mainPage.AchievementsPage.CheckLoses();
-                mainPage.DispAlertAndPushPage("Отчислен!", "Студент забрал документы из вуза. Посмотреть статистику?", new Menu());
+                mainPage.DispAlertAndPushPage("Отчислен!", "Студент забрал документы из вуза. Посмотреть статистику?");
                 mainPage.AchievementsPage.CheckSuicide();
             }
         }
@@ -122,7 +122,7 @@ namespace IIT_Simulator
         {
             Simulator.Statistics.GameLoses++;
             mainPage.AchievementsPage.CheckLoses();
-            mainPage.DispAlertAndPushPage("Отчислен!", "Из-за слишком большой занятости в Корпусе вы перестали учиться. Посмотреть статистику?", new Menu());
+            mainPage.DispAlertAndPushPage("Отчислен!", "Из-за слишком большой занятости в Корпусе вы перестали учиться. Посмотреть статистику?");
         }
 
         private async void LoseMoneyAlert() => await DisplayAlert("Неудача!", "С вас был снят вступительный взнос, но вы не прошли испытание", "ОК");

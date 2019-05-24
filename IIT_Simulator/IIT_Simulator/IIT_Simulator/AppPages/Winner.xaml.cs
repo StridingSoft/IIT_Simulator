@@ -17,5 +17,10 @@ namespace IIT_Simulator.AppPages
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
         }
+
+        protected override void OnDisappearing()
+        {
+            Environment.Exit(0);
+        }
     }
 }

@@ -13,6 +13,7 @@ namespace IIT_Simulator
         DeaneryPage deaneryPage;
         ExamsPage examsPage;
         public Achievements AchievementsPage;
+        bool congr;
 
         public MainPage()
         {
@@ -169,23 +170,24 @@ namespace IIT_Simulator
             {
                 Simulator.Statistics.GameLoses++;
                 AchievementsPage.CheckLoses();
-                DispAlertAndPushPage("Вы проиграли!", "Студент умер. Хотите увидеть статистику?", new Menu());
+                DispAlertAndPushPage("Вы проиграли!", "Студент умер. Хотите увидеть статистику?");
             }
             else if (Simulator.Schedule.IsDeducted)
             {
                 Simulator.Statistics.GameLoses++;
                 AchievementsPage.CheckLoses();
-                DispAlertAndPushPage("Неуспеваемость!", "Студент был отчислен. Хотите увидеть статистику?", new Menu());
+                DispAlertAndPushPage("Неуспеваемость!", "Студент был отчислен. Хотите увидеть статистику?");
             }
             else if (Simulator.Schedule.IsGraduated)
             {
                 Simulator.Statistics.GameWins++;
                 AchievementsPage.CheckWins();
-                DispAlertAndPushPage("Выпускной!", "Ваш студент только что закончил университет! Хотите увидеть статистику?", new Winner());
+                congr = true;
+                DispAlertAndPushPage("Выпускной!", "Ваш студент только что закончил университет! Хотите увидеть статистику?");
             }
         }
 
-        public async void DispAlertAndPushPage(string title, string message, Page page)
+        public async void DispAlertAndPushPage(string title, string message)
         {
             File.Delete(SavingSystem.GetPathToFile("statistics.txt"));
             SavingSystem.WriteAllStatistics(SavingSystem.GetPathToFile("statistics.txt"));
@@ -197,7 +199,10 @@ namespace IIT_Simulator
                     $"Кол-во достижений: {Simulator.Statistics.Achievements}{Environment.NewLine}" +
                     $"Прожито дней: {Simulator.Schedule.DaysCounter}{Environment.NewLine}" +
                     $"Получено денег за игру: {Simulator.Statistics.MoneyCount}", "ОК");
-            await Navigation.PushAsync(page);
+            if (congr)
+                await Navigation.PushAsync(new Winner());
+            else
+                await Navigation.PopAsync();
         }
 
         internal void RefreshStates()
