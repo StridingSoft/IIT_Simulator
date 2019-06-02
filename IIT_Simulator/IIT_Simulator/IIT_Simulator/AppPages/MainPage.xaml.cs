@@ -52,7 +52,6 @@ namespace IIT_Simulator
                 Simulator.Cash.CheckPerformance();
 
                 AchievementsPage.CheckGrant();
-                AchievementsPage.CheckProgramming();
                 Simulator.Session.ExamsCounter = 0;
 
                 Simulator.Study.InitializeSubjects();
@@ -111,6 +110,7 @@ namespace IIT_Simulator
         private static string addMoney = "motherlode";
         private static string upToCourse = "tolastsemestr";
         private static string progr = "progup";
+        private static string reduceDays = "reducedays";
 
         public void Cheat()
         {
@@ -136,7 +136,9 @@ namespace IIT_Simulator
                 Simulator.Course.Semestr = 2;
             }
             else if (deaneryPage.GetCheatCode() == progr)
-                Simulator.Achievements.ProgExCounter = 3;
+                Simulator.Achievements.ProgExCounter = 2;
+            else if (deaneryPage.GetCheatCode() == reduceDays)
+                Simulator.Schedule.Countdown = 1;
             needsPage.RefreshStates();
             needsPage.RefreshStatesPBars();
             studyPage.Refresh();

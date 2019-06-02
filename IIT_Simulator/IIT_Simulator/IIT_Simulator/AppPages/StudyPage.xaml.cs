@@ -52,7 +52,7 @@ namespace IIT_Simulator
         //не знаю как изменить это >:c
         private void BtnProg_Clicked(object sender, System.EventArgs e)
         {
-            mainPage.AchievementsPage.CheckProgramming();
+            mainPage.AchievementsPage.GetOffset();
             Simulator.Study.Programming += Simulator.Study.LearningPoints();
             Simulator.Study.Programming += LuckyCharm();
             Refreshing();

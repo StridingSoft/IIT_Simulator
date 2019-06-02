@@ -52,7 +52,12 @@ namespace IIT_Simulator
             }
         }
 
-        private void BtnProg_Clicked(object sender, EventArgs e) => PassExamsMessage("программирование", Simulator.Study.Programming, btnProg);
+        private void BtnProg_Clicked(object sender, EventArgs e)
+        {
+            Simulator.Achievements.CheckProgrammingPoints();
+            mainPage.AchievementsPage.CheckProgramming();
+            PassExamsMessage("программирование", Simulator.Study.Programming, btnProg);
+        }
         
         private void BtnLinal_Clicked(object sender, EventArgs e) => PassExamsMessage("линейную алгебру", Simulator.Study.Linal, btnLinal);
 
@@ -62,7 +67,6 @@ namespace IIT_Simulator
         
         private async void PassExamsMessage(string text, int subj, Button btn)
         {
-            Simulator.Achievements.CheckProgrammingPoints();
             UnluckyCharm();
             if (IsPassed(subj) && !unluck)
             {

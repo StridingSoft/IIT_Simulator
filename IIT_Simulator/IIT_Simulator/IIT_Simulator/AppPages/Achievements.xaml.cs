@@ -85,15 +85,21 @@ namespace IIT_Simulator
             }
         }
 
+        public async void GetOffset()
+        {
+            if (Simulator.Achievements.ProgExCounter >= 3)
+            {
+                Simulator.Study.Programming = 100;
+                await DisplayAlert("Автомат по программированию", "За отличную успеваемость по программированию, вы получаете автомат", "Ура!");
+            }
+        }
+
         public void CheckProgramming()
         {
-            if (Simulator.Achievements.ProgExCounter >=3)
-                Simulator.Study.Programming = 100;
-            if (Simulator.Achievements.ProgExCounter == 3)
-            {
+            if (Simulator.Achievements.ProgExCounter >= 3)
                 ActivateAchievement(ulearnGodTtl, ulearnGodTxt, ulearnGodRwd);
+            if (Simulator.Achievements.ProgExCounter == 3)
                 GetAchievementAlert();
-            }
         }
 
         public void CheckStates()
