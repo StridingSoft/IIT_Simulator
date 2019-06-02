@@ -24,9 +24,9 @@ namespace IIT_Simulator
             Environment.Exit(0);
         }
 
-        private async void HowToPlay_Clicked(object sender, EventArgs e)
+        private async void Achievements_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new HowToPlayPage());
+            await Navigation.PushAsync(new Achievements());
         }
     }
 }

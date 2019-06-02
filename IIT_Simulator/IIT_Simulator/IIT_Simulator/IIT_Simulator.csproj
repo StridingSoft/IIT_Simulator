@@ -24,9 +24,6 @@
     <Compile Update="AppPages\ExamsPage.xaml.cs">
       <DependentUpon>ExamsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="AppPages\HowToPlayPage.xaml.cs">
-      <DependentUpon>HowToPlayPage.xaml</DependentUpon>
-    </Compile>
     <Compile Update="AppPages\NeedsPage.xaml.cs">
       <DependentUpon>NeedsPage.xaml</DependentUpon>
     </Compile>
@@ -48,9 +45,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="AppPages\ExamsPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="AppPages\HowToPlayPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="AppPages\Menu.xaml">

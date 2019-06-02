@@ -36,8 +36,6 @@ namespace IIT_Simulator
             deaneryPage.CheckGroupAndRefresh();
             deaneryPage.BtnCorp.IsEnabled = !Simulator.Course.Corpus;
             SavingSystem.ReadStatisticsFile();
-            SavingSystem.ReadAchievementsFile();
-            AchievementsPage.CheckAchievementsOnStart();
         }
 
         public void ChangePeriodIfNeeded() //не знаю как это исправить, все блять ломается нахуй

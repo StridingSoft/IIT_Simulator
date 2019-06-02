@@ -7,7 +7,7 @@
             <Image Source="iitsim" WidthRequest="300"/>
             <Label HeightRequest="100"/>
             <Button x:Name="gameStart" WidthRequest="200" BackgroundColor="DeepSkyBlue" HorizontalOptions="Center" Text="Начать игру" Clicked="GameStart_Clicked"/>
-            <Button x:Name="howToPlay" WidthRequest="200" BackgroundColor="DeepSkyBlue" HorizontalOptions="Center" Text="Как играть?" Clicked="HowToPlay_Clicked"/>
+            <Button x:Name="achievements" WidthRequest="200" BackgroundColor="DeepSkyBlue" HorizontalOptions="Center" Text="Достижения" Clicked="Achievements_Clicked"/>
             <Button x:Name="exit" WidthRequest="200" BackgroundColor="DeepSkyBlue" HorizontalOptions="Center" Text="Выход" Clicked="Exit_Clicked"/>
         </StackLayout>
     </ContentPage.Content>

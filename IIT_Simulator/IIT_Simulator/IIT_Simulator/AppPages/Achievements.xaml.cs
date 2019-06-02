@@ -22,6 +22,7 @@ namespace IIT_Simulator
         public Achievements ()
 		{
 			InitializeComponent ();
+            NavigationPage.SetHasNavigationBar(this, false);
 
             childTtl = Content.FindByName<Label>("childTitle");
             childTxt = Content.FindByName<Label>("childText");
@@ -52,6 +53,9 @@ namespace IIT_Simulator
             loserRwd = Content.FindByName<Label>("loserReward");
             suicideTtl = Content.FindByName<Label>("suicideTitle");
             suicideTxt = Content.FindByName<Label>("suicideText");
+
+            SavingSystem.ReadAchievementsFile();
+            CheckAchievementsOnStart();
         }
 
         public void CheckTransfer()
