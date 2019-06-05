@@ -20,6 +20,7 @@ namespace IIT_Simulator
             InitializeComponent();
 
             NavigationPage.SetHasNavigationBar(this, false);
+            SavingSystem.ReadStatisticsFile();
 
             needsPage = new NeedsPage(this);
             studyPage = new StudyPage(this, needsPage);
@@ -35,7 +36,6 @@ namespace IIT_Simulator
 
             deaneryPage.CheckGroupAndRefresh();
             deaneryPage.BtnCorp.IsEnabled = !Simulator.Course.Corpus;
-            SavingSystem.ReadStatisticsFile();
         }
 
         public void ChangePeriodIfNeeded() //не знаю как это исправить, все блять ломается нахуй
@@ -96,8 +96,10 @@ namespace IIT_Simulator
             File.Delete(SavingSystem.GetPathToFile("data.txt"));
             if (!Simulator.States.GameOver() && !Simulator.Schedule.IsDeducted && !Simulator.Schedule.IsGraduated && !Simulator.Course.Expelled)
                 SavingSystem.WriteAllData(SavingSystem.GetPathToFile("data.txt"));
+            File.Delete(SavingSystem.GetPathToFile("statistics.txt"));
+            SavingSystem.WriteAllStatistics(SavingSystem.GetPathToFile("statistics.txt"));
             File.Delete(SavingSystem.GetPathToFile("achievements.txt"));
-            SavingSystem.WriteAllAchievements(SavingSystem.GetPathToFile("achievements.txt"));
+            SavingSystem.WriteAchievements(SavingSystem.GetPathToFile("achievements.txt"));
         }
 
         internal void RefreshCash()
@@ -203,7 +205,11 @@ namespace IIT_Simulator
             if (congr)
                 await Navigation.PushAsync(new Winner());
             else
+            {
+                Simulator.Achievements.OnEdge = false;
+                Simulator.Achievements.ProgExCounter = 0;
                 await Navigation.PopAsync();
+            }
         }
 
         private async void GetHelp()

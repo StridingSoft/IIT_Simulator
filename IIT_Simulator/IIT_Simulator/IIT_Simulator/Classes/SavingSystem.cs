@@ -94,7 +94,7 @@ namespace IIT_Simulator
         {
             using (var streamWriter = new StreamWriter(fileName, true))
             {
-                streamWriter.Write($"{Simulator.Statistics.GameWins};{Simulator.Statistics.GameLoses};{Simulator.Statistics.Achievements};");
+                streamWriter.Write($"{Simulator.Statistics.GameWins};{Simulator.Statistics.GameLoses};{Simulator.Statistics.Achievements}");
             }
         }
 
@@ -120,7 +120,7 @@ namespace IIT_Simulator
             if (!File.Exists(fileName))
             {
                 Simulator.Achievements.InitializeAchievements();
-                WriteAllAchievements(fileName);
+                WriteAchievements(fileName);
             }
             else
                 ParseAchievementFile(fileName);
@@ -132,23 +132,26 @@ namespace IIT_Simulator
             {
                 var array = streamReader.ReadToEnd().Trim().Split(';');
 
-                if (array.Length == 5)
+                if (array.Length == 7)
                 {
                     Simulator.Achievements.Unnoticed = bool.Parse(array[0]);
                     Simulator.Achievements.TransferCounter = int.Parse(array[1]);
                     Simulator.Achievements.ClicksCounter = int.Parse(array[2]);
                     Simulator.Achievements.Corpus = bool.Parse(array[3]);
                     Simulator.Achievements.Suicide = bool.Parse(array[4]);
+                    Simulator.Achievements.OnEdge = bool.Parse(array[5]);
+                    Simulator.Achievements.ProgExCounter = int.Parse(array[6]);
                 }
             }
         }
 
-        public static void WriteAllAchievements(string fileName)
+        public static void WriteAchievements(string fileName)
         {
             using (var streamWriter = new StreamWriter(fileName, true))
             {
                 streamWriter.Write($"{Simulator.Achievements.Unnoticed};{Simulator.Achievements.TransferCounter};" +
-                                   $"{Simulator.Achievements.ClicksCounter};{Simulator.Achievements.Corpus};{Simulator.Achievements.Suicide}");
+                                   $"{Simulator.Achievements.ClicksCounter};{Simulator.Achievements.Corpus};" +
+                                   $"{Simulator.Achievements.Suicide};{Simulator.Achievements.OnEdge};{Simulator.Achievements.ProgExCounter}");
             }
         }
 

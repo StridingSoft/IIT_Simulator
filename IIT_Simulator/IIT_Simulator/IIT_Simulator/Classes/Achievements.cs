@@ -13,6 +13,7 @@ namespace IIT_Simulator.Classes
         public bool Unnoticed;
         public bool Suicide;
         public bool Corpus;
+        public bool OnEdge;
 
         public void InitializeAchievements()
         {

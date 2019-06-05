@@ -109,6 +109,7 @@ namespace IIT_Simulator
                 ActivateAchievement(onEdgeTtl, onEdgeTxt, onEdgeRwd);
                 GetAchievementAlert();
                 Simulator.Cash.Money += 1000;
+                Simulator.Achievements.OnEdge = true;
             }
         }
 
@@ -182,6 +183,12 @@ namespace IIT_Simulator
                 ActivateAchievement(suicideTtl, suicideTxt);
             if (Simulator.Achievements.Unnoticed)
                 ActivateAchievement(unnoticedTtl, unnoticedTxt);
+            if (Simulator.Cash.Grant == 0)
+                ActivateAchievement(incorruptibleTtl, incorruptibleTxt, incorruptibleRwd);
+            if (Simulator.Achievements.OnEdge)
+                ActivateAchievement(onEdgeTtl, onEdgeTxt, onEdgeRwd);
+            if (Simulator.Achievements.ProgExCounter >= 3)
+                ActivateAchievement(ulearnGodTtl, ulearnGodTxt, ulearnGodRwd);
         }
 
         private async void GetAchievementAlert() => await DisplayAlert("Получено достижение.","Вы получили достижение, поздравляем!", "Ура!");
