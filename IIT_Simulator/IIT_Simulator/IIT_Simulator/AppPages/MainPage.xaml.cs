@@ -98,6 +98,12 @@ namespace IIT_Simulator
             Simulator.Course.Expelled = false;
         }
 
+        private void ResetRefreshableAchievements()
+        {
+            Simulator.Achievements.OnEdge = false;
+            Simulator.Achievements.ProgExCounter = 0;
+        }
+
         protected override void OnDisappearing()
         {
             File.Delete(SavingSystem.GetPathToFile("data.txt"));
@@ -106,9 +112,12 @@ namespace IIT_Simulator
             File.Delete(SavingSystem.GetPathToFile("statistics.txt"));
             SavingSystem.WriteAllStatistics(SavingSystem.GetPathToFile("statistics.txt"));
             File.Delete(SavingSystem.GetPathToFile("achievements.txt"));
+            if (Simulator.States.GameOver() || Simulator.Schedule.IsDeducted || Simulator.Schedule.IsGraduated || Simulator.Course.Expelled)
+                ResetRefreshableAchievements();
             SavingSystem.WriteAchievements(SavingSystem.GetPathToFile("achievements.txt"));
             ResetLosesOrWins();
         }
+
 
         internal void RefreshCash()
         {
