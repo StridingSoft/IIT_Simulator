@@ -118,6 +118,7 @@ namespace IIT_Simulator
 
         private void btnEnjoy_Click(object sender, EventArgs e)
         {
+            
             Simulator.Achievements.ClicksCounter++;
             if (Simulator.Cash.Money >= 200)
             {

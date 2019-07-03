@@ -53,6 +53,7 @@ namespace IIT_Simulator
         private void BtnProg_Clicked(object sender, System.EventArgs e)
         {
             mainPage.AchievementsPage.GetOffset();
+            Simulator.Achievements.ClicksCounter++;
             Simulator.Study.Programming += Simulator.Study.LearningPoints();
             Simulator.Study.Programming += LuckyCharm();
             Refreshing();
@@ -60,6 +61,7 @@ namespace IIT_Simulator
 
         private void BtnLinal_Clicked(object sender, System.EventArgs e)
         {
+            Simulator.Achievements.ClicksCounter++;
             Simulator.Study.Linal += Simulator.Study.LearningPoints();
             Simulator.Study.Linal += LuckyCharm();
             Refreshing();
@@ -67,6 +69,7 @@ namespace IIT_Simulator
 
         private void BtnASM_ECO_Clicked(object sender, System.EventArgs e)
         {
+            Simulator.Achievements.ClicksCounter++;
             Simulator.Study.Asm_eco += Simulator.Study.LearningPoints();
             Simulator.Study.Asm_eco += LuckyCharm();
             Refreshing();
@@ -74,6 +77,7 @@ namespace IIT_Simulator
 
         private void BtnMath_Clicked(object sender, System.EventArgs e)
         {
+            Simulator.Achievements.ClicksCounter++;
             Simulator.Study.Math += Simulator.Study.LearningPoints();
             Simulator.Study.Math += LuckyCharm();
             Refreshing();
@@ -81,6 +85,7 @@ namespace IIT_Simulator
 
         private void Refreshing()
         {
+            mainPage.AchievementsPage.CheckClicks();
             mainPage.DecreaseDays();
             needsPage.RefreshDays();
             needsPage.RefreshStates();

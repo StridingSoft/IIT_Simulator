@@ -38,7 +38,7 @@ namespace IIT_Simulator
             deaneryPage.BtnCorp.IsEnabled = !Simulator.Course.Corpus;
         }
 
-        public void ChangePeriodIfNeeded() //не знаю как это исправить, все блять ломается нахуй
+        public void ChangePeriodIfNeeded() //не знаю как это исправить
         {
             if (Simulator.Schedule.Countdown == 0 && Simulator.Schedule.IsSession)
             {
@@ -230,7 +230,7 @@ namespace IIT_Simulator
             }
         }
 
-        private bool NeedHelp() => Simulator.Statistics.GameLoses == 0 && Simulator.Statistics.GameWins == 0 && Simulator.Schedule.DaysCounter == 1;
+        private bool NeedHelp() => Simulator.Schedule.DaysCounter == 1;
 
         internal void RefreshStates()
         {
