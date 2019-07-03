@@ -91,6 +91,13 @@ namespace IIT_Simulator
             ChangePeriodIfNeeded();
         }
 
+        private void ResetLosesOrWins()
+        {
+            Simulator.Schedule.IsDeducted = false;
+            Simulator.Schedule.IsGraduated = false;
+            Simulator.Course.Expelled = false;
+        }
+
         protected override void OnDisappearing()
         {
             File.Delete(SavingSystem.GetPathToFile("data.txt"));
@@ -100,6 +107,7 @@ namespace IIT_Simulator
             SavingSystem.WriteAllStatistics(SavingSystem.GetPathToFile("statistics.txt"));
             File.Delete(SavingSystem.GetPathToFile("achievements.txt"));
             SavingSystem.WriteAchievements(SavingSystem.GetPathToFile("achievements.txt"));
+            ResetLosesOrWins();
         }
 
         internal void RefreshCash()

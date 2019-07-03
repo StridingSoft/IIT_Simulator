@@ -51,6 +51,7 @@ namespace IIT_Simulator
             lbGrant.Text = "\t\t\tСтипендия(руб.): " + Simulator.Cash.Grant;
         }
 
+
         public void RefreshStates()
         {
             lblEatPoints.Text = Simulator.States.Satiety + "/100";
