@@ -13,6 +13,7 @@ namespace IIT_Simulator.Classes
         public bool GotHelp;
         public bool GroupChanged;
         public bool Corpus;
+        public static int CoursesCount;
 
         public void InitializeCourse()
         {
@@ -34,7 +35,7 @@ namespace IIT_Simulator.Classes
                 CourseNumber++;
                 Semestr = 1;
             }
-            if (CourseNumber == 5)
+            if (CourseNumber == (CoursesCount+1))
                 Simulator.Schedule.IsGraduated = true;
         }
 

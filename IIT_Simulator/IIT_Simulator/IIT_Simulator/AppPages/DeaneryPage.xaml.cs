@@ -12,7 +12,6 @@ namespace IIT_Simulator
         Entry tbCheatCode;
         Button btnGetHelp;
         public Button BtnCorp;
-
         MainPage mainPage;
 
 		public DeaneryPage(MainPage mainPage, ExamsPage examsPage, StudyPage studyPage)

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IIT_Simulator.AppPages.DifficultyPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <Image Source="difficulty" WidthRequest="300" VerticalOptions="Center"/>
+            <Label HeightRequest="100"/>
+            <Button x:Name="easy" WidthRequest="200" BackgroundColor="DeepSkyBlue" HorizontalOptions="Center" Text="Изи (2 семестра)" Clicked="Easy_Clicked"/>
+            <Button x:Name="normal" WidthRequest="200" BackgroundColor="DeepSkyBlue" HorizontalOptions="Center" Text="Норм (4 семестра)" Clicked="Normal_Clicked"/>
+            <Button x:Name="hard" WidthRequest="200" BackgroundColor="DeepSkyBlue" HorizontalOptions="Center" Text="Хард (8 семестров)" Clicked="Hard_Clicked"/>
+            <Label HeightRequest="100"/>
+            <Label TextColor="Gray" Text="для получения диплома необходимо пройти режим 'хард'" HorizontalOptions="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

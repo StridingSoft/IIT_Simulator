@@ -1,4 +1,5 @@
-﻿using IIT_Simulator.Classes;
+﻿using IIT_Simulator.AppPages;
+using IIT_Simulator.Classes;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,6 +9,7 @@ namespace IIT_Simulator
 {
     public static class SavingSystem
     {
+        static DifficultyPage difPage = new DifficultyPage();
         public static void ReadDataFile()
         {
             string fileName = GetPathToFile("data.txt");
@@ -35,7 +37,8 @@ namespace IIT_Simulator
                                    $"{Simulator.Cash.Money};{Simulator.Cash.Grant};{Simulator.Cash.Premium};" +
                                    $"{Simulator.Study.Programming};{Simulator.Study.Linal};{Simulator.Study.Math};{Simulator.Study.Asm_eco};" +
                                    $"{Simulator.Session.ExamsCounter};" +
-                                   $"{Simulator.Course.Group};{Simulator.Course.CourseNumber };{Simulator.Course.Semestr};{Simulator.Course.GotHelp};{Simulator.Course.GroupChanged};{Simulator.Course.Corpus}");
+                                   $"{Simulator.Course.Group};{Simulator.Course.CourseNumber };{Simulator.Course.Semestr};{Simulator.Course.GotHelp};{Simulator.Course.GroupChanged};{Simulator.Course.Corpus};" +
+                                   $"{Course.CoursesCount}");
             }
         }
 
@@ -46,7 +49,7 @@ namespace IIT_Simulator
             {
                 var array = streamReader.ReadToEnd().Trim().Split(';');
 
-                if (array.Length == 22)
+                if (array.Length == 23)
                 {
                     Simulator.Schedule.DaysCounter = int.Parse(array[0]);
                     Simulator.Schedule.Countdown = int.Parse(array[1]);
@@ -75,6 +78,8 @@ namespace IIT_Simulator
                     Simulator.Course.GotHelp = bool.Parse(array[19]);
                     Simulator.Course.GroupChanged = bool.Parse(array[20]);
                     Simulator.Course.Corpus = bool.Parse(array[21]);
+
+                    Course.CoursesCount = int.Parse(array[22]);
                 }
             }
         }

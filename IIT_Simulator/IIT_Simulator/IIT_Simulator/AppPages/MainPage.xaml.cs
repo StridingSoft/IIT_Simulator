@@ -14,10 +14,11 @@ namespace IIT_Simulator
         ExamsPage examsPage;
         public Achievements AchievementsPage;
         bool congr;
-
-        public MainPage()
+        
+        public MainPage(int courses)
         {
             InitializeComponent();
+            Course.CoursesCount = courses;
 
             NavigationPage.SetHasNavigationBar(this, false);
             SavingSystem.ReadStatisticsFile();
@@ -101,6 +102,7 @@ namespace IIT_Simulator
         private void ResetRefreshableAchievements()
         {
             Simulator.Achievements.OnEdge = false;
+            Simulator.Achievements.Uncorrupt = false;
             Simulator.Achievements.ProgExCounter = 0;
         }
 
@@ -116,8 +118,14 @@ namespace IIT_Simulator
                 ResetRefreshableAchievements();
             SavingSystem.WriteAchievements(SavingSystem.GetPathToFile("achievements.txt"));
             ResetLosesOrWins();
+            if (Navigation.NavigationStack.Count == 2)
+            {
+                Navigation.PopAsync();
+                Navigation.PopAsync();
+            }
+            else
+                Navigation.PopAsync();
         }
-
 
         internal void RefreshCash()
         {
