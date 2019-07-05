@@ -117,13 +117,18 @@ namespace IIT_Simulator
             if (Simulator.States.GameOver() || Simulator.Schedule.IsDeducted || Simulator.Schedule.IsGraduated || Simulator.Course.Expelled)
                 ResetRefreshableAchievements();
             SavingSystem.WriteAchievements(SavingSystem.GetPathToFile("achievements.txt"));
+            PopPages();
             ResetLosesOrWins();
-            if (Navigation.NavigationStack.Count == 2)
+        }
+
+        private void PopPages()
+        {
+            if (Navigation.NavigationStack.Count == 2 && !Simulator.Schedule.IsGraduated)
             {
                 Navigation.PopAsync();
                 Navigation.PopAsync();
             }
-            else
+            else if (!Simulator.Schedule.IsGraduated)
                 Navigation.PopAsync();
         }
 
@@ -211,7 +216,10 @@ namespace IIT_Simulator
                 Simulator.Statistics.GameWins++;
                 AchievementsPage.CheckWins();
                 congr = true;
-                DispAlertAndPushPage("Выпускной!", "Ваш студент только что закончил университет! Хотите увидеть статистику?");
+                if (Course.CoursesCount < 4)
+                    DispAlertAndPushPage("Учеба закончилась!", $"Ваш студент только что закончил {Course.CoursesCount*2} семестра! Хотите увидеть статистику?");
+                else
+                    DispAlertAndPushPage("Выпускной!", "Ваш студент только что закончил университет! Хотите увидеть статистику?");
             }
         }
 
@@ -224,10 +232,13 @@ namespace IIT_Simulator
                 await DisplayAlert("Статистика", 
                     $"Кол-во выигрышей: {Simulator.Statistics.GameWins}{Environment.NewLine}" +
                     $"Кол-во проигрышей: {Simulator.Statistics.GameLoses}{Environment.NewLine}" +
-                    $"Кол-во достижений: {Simulator.Statistics.Achievements}{Environment.NewLine}" +
                     $"Прожито дней: {Simulator.Schedule.DaysCounter}{Environment.NewLine}" +
                     $"Получено денег за игру: {Simulator.Statistics.MoneyCount}", "ОК");
-            if (congr)
+            await DisplayAlert("От создателя", $"По всем вопросам и предложениям: {Environment.NewLine}" +
+                $"vk.com/akane_izanami{Environment.NewLine}" +
+                $"Если вам понравилась игра, вы можете поддержать создателя{Environment.NewLine}" +
+                $"QIWI +79634609865", "ОК");
+            if (congr && Course.CoursesCount > 2)
                 await Navigation.PushAsync(new Winner());
             else
             {
