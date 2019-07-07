@@ -123,7 +123,7 @@ namespace IIT_Simulator
 
         private void PopPages()
         {
-            if (Navigation.NavigationStack.Count == 2 && !Simulator.Schedule.IsGraduated)
+            if (Navigation.NavigationStack.Count >= 2 && !Simulator.Schedule.IsGraduated)
             {
                 Navigation.PopAsync();
                 Navigation.PopAsync();

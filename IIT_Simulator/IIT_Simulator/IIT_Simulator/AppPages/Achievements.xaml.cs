@@ -183,7 +183,7 @@ namespace IIT_Simulator
                 ActivateAchievement(suicideTtl, suicideTxt);
             if (Simulator.Achievements.Unnoticed)
                 ActivateAchievement(unnoticedTtl, unnoticedTxt);
-            if (Simulator.Cash.Grant == 0)
+            if (Simulator.Achievements.Uncorrupt)
                 ActivateAchievement(incorruptibleTtl, incorruptibleTxt, incorruptibleRwd);
             if (Simulator.Achievements.OnEdge)
                 ActivateAchievement(onEdgeTtl, onEdgeTxt, onEdgeRwd);
